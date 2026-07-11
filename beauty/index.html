@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beauty & Style AI — Muneeb Arshad</title>
+<meta name="description" content="Beauty, fashion & photo AI apps that users love — designed, built, and scaled by Muneeb Arshad. Five beauty/style apps live on the App Store & Play Store, from onboarding quizzes to before/after reveals to paywalls.">
+<meta name="author" content="Muneeb Arshad">
+<meta name="theme-color" content="#7856ff">
+<link rel="canonical" href="https://muneebarshad.com/beauty/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Beauty & Style AI — Muneeb Arshad">
+<meta property="og:description" content="Beauty, fashion & photo AI apps that users love. Five beauty/style apps shipped — face analysis, style personalization, one-tap enhancement, viral share loops.">
+<meta property="og:url" content="https://muneebarshad.com/beauty/">
+<meta property="og:site_name" content="Muneeb Arshad">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Beauty & Style AI — Muneeb Arshad">
+<meta name="twitter:description" content="Beauty, fashion & photo AI apps that users love — five already live, patterns already solved.">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/icons/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;--bg-soft:#f7f5ff;--panel:#f0edff;--surface:#ffffff;
+  --border:#e9e6f5;--border-2:#d9d3ee;
+  --ink:#1f2023;--ink-2:#4a4757;--muted:#6f6b7e;--muted-2:#a7a2b6;
+  --accent:#7856ff;--accent-2:#6a48f0;--accent-lt:#f0edff;--accent-mid:#e2dbff;
+  --navy:#2a1270;--navy-2:#25105c;
+  --peach:#ff9d7e;--peach-soft:#ffe4d6;--rose:#ff8fb0;
+  --shadow-xs:0 1px 2px rgba(31,20,64,.05);
+  --shadow-sm:0 1px 2px rgba(31,20,64,.06),0 2px 6px rgba(31,20,64,.05);
+  --shadow-md:0 6px 20px rgba(31,20,64,.09);
+  --shadow-lg:0 18px 44px rgba(31,20,64,.14);
+  --radius:12px;--radius-lg:16px;--radius-xl:20px;
+  --maxw:1160px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink-2);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+ radial-gradient(55% 38% at 12% 5%,rgba(120,86,255,.10),transparent 60%),
+ radial-gradient(48% 32% at 88% 2%,rgba(255,168,138,.12),transparent 60%),
+ radial-gradient(45% 32% at 6% 55%,rgba(127,225,216,.08),transparent 60%),
+ radial-gradient(55% 40% at 90% 80%,rgba(150,120,255,.12),transparent 58%),
+ radial-gradient(85% 50% at 50% 100%,rgba(170,130,255,.14),transparent 60%),
+ radial-gradient(50% 40% at 8% 95%,rgba(255,196,160,.10),transparent 60%)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Hanken Grotesk',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.1;color:var(--ink)}
+.accent{color:var(--ink);background:linear-gradient(transparent 80%,var(--accent-mid) 80%)}
+.hl-warm{color:var(--ink);background:linear-gradient(transparent 74%,#ffd2c0 74%);padding:0 .03em}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.82);backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+nav.scrolled{border-bottom-color:var(--border);box-shadow:var(--shadow-xs)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 32px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Hanken Grotesk',sans-serif;font-size:16.5px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
+.logo-mark{width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;flex-shrink:0;overflow:hidden;position:relative}
+.logo-mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-links a{padding:8px 13px;border-radius:8px;font-size:14px;font-weight:500;color:var(--muted);transition:all .18s}
+.nav-links a:hover{color:var(--ink);background:var(--panel)}
+.nav-links a[aria-current="page"]{color:var(--ink);font-weight:600}
+.nav-right{display:flex;align-items:center;gap:12px}
+.btn-cta{padding:10px 20px;border-radius:100px;background:var(--ink);color:#fff;font-family:'Inter',sans-serif;font-size:13.5px;font-weight:600;border:none;cursor:pointer;transition:all .2s;white-space:nowrap}
+.btn-cta:hover{background:var(--accent)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:66px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:14px 24px 22px;z-index:199;box-shadow:var(--shadow-md);flex-direction:column;gap:2px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:12px 14px;border-radius:9px;font-size:15px;font-weight:500;color:var(--ink-2);transition:all .18s}
+.mobile-menu a:hover{background:var(--panel)}
+.mobile-menu .btn-cta{margin-top:10px;text-align:center;padding:13px}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:140px 32px 76px;background:transparent}
+.hero-beauty{padding-bottom:88px;background:
+ radial-gradient(56% 54% at 50% -10%,#ffe6d8 0%,rgba(255,230,216,0) 60%),
+ radial-gradient(40% 44% at 86% 4%,#ffdfec 0%,rgba(255,223,236,0) 58%),
+ radial-gradient(46% 48% at 8% 34%,#ece3ff 0%,rgba(236,227,255,0) 60%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.5;mask-image:radial-gradient(ellipse 70% 55% at 50% 0%,#000,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 55% at 50% 0%,#000,transparent 75%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:840px;margin:0 auto;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 15px;background:var(--surface);border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-2);box-shadow:var(--shadow-xs);margin-bottom:28px}
+.bdot{width:7px;height:7px;border-radius:50%;background:var(--peach);position:relative}
+.bdot::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1px solid rgba(255,157,126,.5);animation:ping 2.2s ease-out infinite}
+@keyframes ping{0%{transform:scale(.8);opacity:1}100%{transform:scale(2);opacity:0}}
+.hero h1{font-size:clamp(36px,5.4vw,60px);letter-spacing:-.035em;line-height:1.03}
+.flourish{display:block;width:min(340px,66%);height:20px;margin:16px auto 0;overflow:visible}
+.flourish path{fill:none;stroke:var(--peach);stroke-width:4.5;stroke-linecap:round;stroke-dasharray:440;stroke-dashoffset:440;animation:draw 1.5s cubic-bezier(.6,.05,.2,1) .35s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero-sub{max-width:620px;margin:24px auto 0;font-size:clamp(16px,2vw,18px);color:var(--ink-2);line-height:1.65}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.btn-lg{padding:14px 28px;border-radius:100px;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;border:1px solid transparent}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:var(--shadow-sm)}
+.btn-primary:hover{background:#000;transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.btn-ghost{background:var(--surface);color:var(--ink);border-color:var(--border-2)}
+.btn-ghost:hover{border-color:var(--ink);color:var(--ink)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);max-width:620px;margin:56px auto 0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden}
+.hstat{padding:24px 14px;border-right:1px solid var(--border)}
+.hstat:last-child{border-right:none}
+.hstat-n{font-family:'Hanken Grotesk',sans-serif;font-size:clamp(24px,3.6vw,32px);font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+.hstat-l{font-size:12.5px;font-weight:500;color:var(--muted);margin-top:5px}
+
+/* SECTIONS */
+.sec{max-width:var(--maxw);margin:0 auto;padding:84px 32px}
+.sec-head{max-width:660px;margin:0 auto 50px;text-align:center}
+.sec-tag{display:inline-block;padding:6px 13px;border-radius:100px;background:var(--accent-lt);color:var(--accent);font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:16px;border:1px solid var(--accent-mid)}
+.sec-title{font-size:clamp(28px,3.8vw,44px);letter-spacing:-.03em}
+.sec-sub{color:var(--muted);font-size:16.5px;margin-top:14px;line-height:1.6}
+
+/* CARDS */
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 26px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-2)}
+.icon-tile{width:46px;height:46px;border-radius:13px;background:var(--accent-lt);border:1px solid var(--accent-mid);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.icon-tile svg{width:23px;height:23px;stroke:var(--accent);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:18px;margin-bottom:8px;letter-spacing:-.02em}
+.card p{color:var(--muted);font-size:14.5px;line-height:1.6}
+.card-link{display:inline-flex;align-items:center;gap:6px;margin-top:15px;font-size:13.5px;font-weight:600;color:var(--accent)}
+.card-link svg{width:14px;height:14px;transition:transform .2s}
+.card:hover .card-link svg{transform:translateX(3px)}
+
+/* SHOWCASE (alternating device rows) */
+.show-sec{background:transparent;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.showcase{display:flex;flex-direction:column;gap:76px;margin-top:6px}
+.spot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:6px}
+.spot{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px;box-shadow:var(--shadow-xs);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s;position:relative;overflow:hidden}
+.spot::before{content:'';position:absolute;top:0;left:0;right:0;height:76px;background:linear-gradient(180deg,var(--accent-lt),transparent);opacity:.8;pointer-events:none}
+.spot:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--border-2)}
+.spot-top{display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;z-index:1}
+.spot-icon{width:72px;height:72px;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--border);flex-shrink:0}
+.spot-icon img{width:100%;height:100%;object-fit:cover;display:block}
+.spot-rating{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:#8a5b00;background:#fff5e1;border:1px solid #f3dfa8;padding:5px 11px;border-radius:100px;white-space:nowrap}
+.spot-rating .stg{color:#f5a623}
+.spot-plat{font-size:11px;font-weight:700;letter-spacing:.03em;color:var(--muted);background:var(--panel);border:1px solid var(--border);padding:5px 11px;border-radius:100px}
+.spot h3{font-size:20px;margin-top:18px;letter-spacing:-.02em}
+.spot-tag{color:var(--muted);font-size:14px;margin-top:5px;line-height:1.5;flex:1}
+.spot-link{display:inline-flex;align-items:center;gap:7px;margin-top:20px;padding:10px 17px;border-radius:100px;background:var(--ink);color:#fff;font-size:13px;font-weight:600;align-self:flex-start;transition:background .2s}
+.spot-link:hover{background:var(--accent)}
+.spot-link svg{width:13px;height:13px}
+@media(max-width:900px){.spot-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.spot-grid{grid-template-columns:1fr}}
+.srow{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.srow:nth-child(even) .sc-media{order:2}
+.sc-media{position:relative;display:flex;justify-content:center;align-items:center;padding:14px 0}
+.sc-media::before{content:'';position:absolute;width:78%;height:80%;border-radius:48% 52% 55% 45%/50% 48% 52% 50%;background:radial-gradient(circle at 40% 35%,var(--g1),transparent 72%);filter:blur(6px);opacity:.85;z-index:0}
+.device{position:relative;z-index:1;width:100%;max-width:270px;aspect-ratio:9/18.6;border-radius:42px;background:#100322;padding:10px;box-shadow:0 34px 68px -22px rgba(31,20,64,.5),0 10px 26px rgba(31,20,64,.16);border:1px solid rgba(255,255,255,.09)}
+.device::after{content:'';position:absolute;top:15px;left:50%;transform:translateX(-50%);width:90px;height:22px;background:#100322;border-radius:12px;z-index:4}
+.screen{position:relative;width:100%;height:100%;border-radius:33px;overflow:hidden;background:linear-gradient(165deg,var(--g1),var(--g2));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 22px}
+.screen-bar{position:absolute;top:0;left:0;right:0;height:46px;display:flex;align-items:center;justify-content:space-between;padding:16px 24px 0;font-size:12px;font-weight:700;color:rgba(31,20,64,.62)}
+.screen-bar .sig{display:flex;gap:3px;align-items:flex-end}
+.screen-bar .sig i{width:3px;border-radius:1px;background:rgba(31,20,64,.5)}
+.screen-bar .sig i:nth-child(1){height:5px}.screen-bar .sig i:nth-child(2){height:7px}.screen-bar .sig i:nth-child(3){height:9px}.screen-bar .sig i:nth-child(4){height:11px}
+.screen-icon{width:100px;height:100px;border-radius:23px;overflow:hidden;box-shadow:0 16px 32px -10px rgba(31,20,64,.45);border:1px solid rgba(255,255,255,.75)}
+.screen-icon img{width:100%;height:100%;object-fit:cover}
+.screen-name{font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:19px;color:#211547;margin-top:20px;letter-spacing:-.02em}
+.screen-tag{font-size:12.5px;color:rgba(33,21,71,.6);margin-top:6px;max-width:180px;line-height:1.4}
+.screen-cta{margin-top:22px;padding:9px 26px;border-radius:100px;background:#211547;color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.01em}
+.screen-dots{display:flex;gap:6px;margin-top:20px}
+.screen-dots i{width:6px;height:6px;border-radius:50%;background:rgba(33,21,71,.22)}
+.screen-dots i:first-child{background:rgba(33,21,71,.55);width:16px;border-radius:3px}
+.screen-home{position:absolute;bottom:9px;left:50%;transform:translateX(-50%);width:94px;height:4px;border-radius:3px;background:rgba(33,21,71,.3)}
+.sc-float{position:absolute;z-index:3;display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border-radius:100px;background:#fff;box-shadow:var(--shadow-md);border:1px solid var(--border);font-size:12.5px;font-weight:700;color:var(--ink);white-space:nowrap}
+.sc-float .st{color:var(--accent);letter-spacing:1px}
+.sc-float .dot-live{width:7px;height:7px;border-radius:50%;background:#16a34a;flex-shrink:0}
+.sc-float.tr{top:12%;right:2%}
+.sc-float.bl{bottom:16%;left:0%}
+.sc-eyebrow{display:inline-block;padding:6px 13px;border-radius:100px;background:var(--accent-lt);color:var(--accent);font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:15px;border:1px solid var(--accent-mid)}
+.sc-name{font-size:clamp(24px,3vw,33px);letter-spacing:-.03em}
+.sc-lead{color:var(--accent);font-weight:600;font-size:15px;margin-top:9px}
+.sc-badges{display:flex;gap:6px;margin-top:15px;flex-wrap:wrap}
+.bdg{padding:4px 9px;border-radius:6px;font-size:10.5px;font-weight:700;letter-spacing:.02em;display:inline-flex;align-items:center;gap:3px;background:var(--panel);color:var(--ink-2)}
+.sc-desc{color:var(--muted);font-size:15.5px;line-height:1.68;margin-top:16px;max-width:470px}
+.feat-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.fchip{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:100px;background:var(--surface);border:1px solid var(--border);font-size:12.5px;font-weight:600;color:var(--ink-2);box-shadow:var(--shadow-xs)}
+.fchip svg{width:13px;height:13px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.store-link{display:inline-flex;align-items:center;gap:7px;margin-top:24px;padding:12px 22px;border-radius:100px;background:var(--ink);color:#fff;font-size:13.5px;font-weight:600;transition:all .18s;white-space:nowrap}
+.store-link:hover{background:var(--accent);transform:translateY(-1px)}
+.store-link svg{width:15px;height:15px;flex-shrink:0}
+
+/* DARK (vertical expertise) */
+.dark{background:linear-gradient(160deg,#2e1266 0%,#3f1f8f 55%,#241058 100%);color:#cbd5e1;position:relative;overflow:hidden;border-radius:36px 36px 0 0;margin-top:0}
+.dark::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(255,157,126,.08),transparent 68%),radial-gradient(ellipse 50% 40% at 85% 100%,rgba(120,86,255,.14),transparent 70%);pointer-events:none}
+.dark .sec{position:relative;z-index:1}
+.dark .sec-tag{background:rgba(120,86,255,.28);color:#d6ccff;border-color:rgba(120,86,255,.5)}
+.dark .sec-title{color:#fff}
+.dark .sec-sub{color:#9d97b8}
+.dark .card{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.09)}
+.dark .card:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.2)}
+.dark .card h3{color:#fff}
+.dark .card p{color:#9d97b8}
+.dark .icon-tile{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
+.dark .icon-tile svg{stroke:#e2ddff}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tool-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:44px}
+.tpill{display:flex;align-items:center;gap:8px;padding:9px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;font-size:13px;font-weight:600;color:#cbd5e1;transition:all .18s}
+.tpill:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);color:#fff}
+.tpill img{width:16px;height:16px;object-fit:contain}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:42px}
+.cta-pill{padding:13px 22px;border-radius:10px;border:1px solid rgba(255,255,255,.16);color:#e2e8f0;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.cta-pill:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.1);color:#fff}
+.cta-pill svg{width:15px;height:15px}
+
+/* REVIEWS */
+.rev-sec{background:transparent;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev-carousel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;height:640px;overflow:hidden;position:relative;-webkit-mask:linear-gradient(180deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask:linear-gradient(180deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+.rev-col{display:flex;flex-direction:column;gap:16px;will-change:transform;animation:revscroll 120s linear infinite}
+.rev-col.rev-down{animation-direction:reverse}
+.rev-carousel:hover .rev-col,.rev-carousel:focus-within .rev-col{animation-play-state:paused}
+@keyframes revscroll{to{transform:translateY(-50%)}}
+@media(max-width:760px){.rev-carousel{grid-template-columns:1fr 1fr;height:560px}.rev-col:nth-child(3){display:none}}
+@media(max-width:480px){.rev-carousel{grid-template-columns:1fr}.rev-col:nth-child(2){display:none}}
+@media(prefers-reduced-motion:reduce){.rev-carousel{height:auto;overflow:visible;-webkit-mask:none;mask:none}.rev-col{animation:none}}
+.rev{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;box-shadow:var(--shadow-xs);transition:transform .25s,box-shadow .25s,border-color .25s}
+.rev:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-2)}
+.rev-stars{color:var(--accent);font-size:13px;letter-spacing:3px;margin-bottom:12px}
+.rev-q{color:var(--ink-2);font-size:14.5px;line-height:1.62;flex:1}
+.rev-by{display:flex;align-items:center;gap:11px;margin-top:18px;padding-top:15px;border-top:1px solid var(--border)}
+.rev-av{width:34px;height:34px;border-radius:50%;background:var(--panel);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Hanken Grotesk',sans-serif;color:var(--ink-2);font-size:13px;flex-shrink:0}
+.rev-meta{min-width:0}
+.rev-name{font-size:13.5px;font-weight:700;color:var(--ink)}
+.rev-loc{font-size:12px;color:var(--muted)}
+.rev-repeat{margin-left:auto;font-size:10px;font-weight:700;letter-spacing:.03em;color:var(--ink-2);background:var(--panel);border:1px solid var(--border);padding:3px 9px;border-radius:100px;white-space:nowrap}
+.rev-proof{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:36px}
+.rev-chip{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;background:var(--surface);border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-2);box-shadow:var(--shadow-xs)}
+.rev-chip b{color:var(--ink);font-family:'Hanken Grotesk',sans-serif}
+.rev-chip .st{color:var(--accent);letter-spacing:1px}
+
+/* CTA BAND */
+.cta-band{position:relative;padding:104px 32px 116px;text-align:center;background:radial-gradient(ellipse 55% 45% at 50% 0%,#ffe6d6 0%,transparent 55%),linear-gradient(180deg,#ffffff 0%,#f3eeff 42%,#d8caff 78%,#c2b1f2 100%)}
+.cta-band h2{font-size:clamp(30px,4.6vw,52px);letter-spacing:-.03em;max-width:680px;margin:0 auto;color:var(--ink)}
+.cta-band p{color:var(--ink-2);font-size:17px;line-height:1.6;margin:16px auto 0;max-width:540px}
+.cta-band .hero-actions{margin-top:34px}
+
+/* FOOTER */
+footer{background:linear-gradient(180deg,#e8e0ff 0%,#f3eeff 100%);color:var(--ink-2);border-radius:36px 36px 0 0;position:relative}
+.foot-top{max-width:var(--maxw);margin:0 auto;padding:64px 32px 42px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px}
+.foot-logo{display:flex;align-items:center;gap:10px;font-family:'Hanken Grotesk',sans-serif;font-size:17px;font-weight:800;color:var(--ink);margin-bottom:14px}
+.foot-desc{color:var(--muted);font-size:14px;line-height:1.7;max-width:330px}
+.foot-col-t{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);margin-bottom:16px}
+.foot-links{display:flex;flex-direction:column;gap:11px}
+.foot-links a{font-size:14px;font-weight:500;color:var(--ink-2);transition:color .18s}
+.foot-links a:hover{color:var(--accent)}
+.foot-bottom{border-top:1px solid var(--border);max-width:var(--maxw);margin:0 auto;padding:22px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.foot-bottom p{font-size:12.5px;color:var(--muted-2)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.06s}.d2{transition-delay:.12s}.d3{transition-delay:.18s}.d4{transition-delay:.24s}.d5{transition-delay:.3s}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .cards-3{grid-template-columns:repeat(2,1fr)}
+  .rev-grid{grid-template-columns:repeat(2,1fr)}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .foot-top{grid-template-columns:1fr 1fr;gap:36px}
+  .foot-top>:first-child{grid-column:1/-1}
+}
+@media(max-width:860px){
+  .srow{grid-template-columns:1fr;gap:36px}
+  .srow:nth-child(even) .sc-media{order:0}
+  .sc-body{text-align:center;display:flex;flex-direction:column;align-items:center}
+  .sc-desc{max-width:560px}
+  .feat-chips{justify-content:center}
+}
+@media(max-width:760px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .nav-inner,.wrap{padding-left:20px;padding-right:20px}
+  .hero{padding:118px 20px 68px}
+  .hero-stats{grid-template-columns:1fr}
+  .hstat{border-right:none;border-bottom:1px solid var(--border)}
+  .hstat:last-child{border-bottom:none}
+  .sec{padding:68px 20px}
+  .cards-3{grid-template-columns:1fr}
+  .rev-grid{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr;gap:30px;padding:44px 20px 30px}
+  .foot-top>:first-child{grid-column:1}
+  .foot-bottom{flex-direction:column;text-align:center;gap:6px}
+}
+@media(max-width:520px){ .grid-4{grid-template-columns:1fr} }
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  .flourish path{stroke-dashoffset:0}
+}
+
+/* ── reviews v3: designed cards, no pricing ── */
+.rev-carousel{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;height:720px;overflow:hidden;position:relative;-webkit-mask:linear-gradient(180deg,transparent 0,#000 6%,#000 94%,transparent 100%);mask:linear-gradient(180deg,transparent 0,#000 6%,#000 94%,transparent 100%)}
+.rev-col{display:flex;flex-direction:column;gap:18px;will-change:transform;animation:revscroll 120s linear infinite}
+.rev-col.rev-down{animation-direction:reverse}
+.rev-carousel:hover .rev-col,.rev-carousel:focus-within .rev-col{animation-play-state:paused}
+@keyframes revscroll{to{transform:translateY(-50%)}}
+.rev{position:relative;background:linear-gradient(180deg,#ffffff 0%,#fcfbff 100%);border:1px solid var(--border);border-radius:18px;padding:24px 24px 20px;box-shadow:0 1px 2px rgba(31,20,64,.04),0 14px 34px -20px rgba(31,20,64,.16);display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.rev:hover{transform:translateY(-4px);border-color:var(--accent-mid);box-shadow:0 2px 5px rgba(31,20,64,.05),0 26px 52px -22px rgba(120,86,255,.32)}
+.rev-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:13px}
+.rev-stars{color:var(--accent);font-size:14px;letter-spacing:2.5px;text-shadow:0 1px 0 rgba(120,86,255,.15)}
+.rev-plat{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.02em;padding:4px 11px;border-radius:100px;border:1px solid var(--border);background:#fff;color:var(--ink-2)}
+.rev-plat i{width:7px;height:7px;border-radius:50%}
+.rev-plat-fv i{background:#1dbf73}
+.rev-plat-uw i{background:#14a800}
+.rev-role{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted-2);margin:-4px 0 8px}
+.rev-q{color:var(--ink-2);font-size:15.5px;line-height:1.68;flex:1;font-weight:450}
+.rev-by{display:flex;align-items:center;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--border)}
+.rev-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#b39dff);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Hanken Grotesk',sans-serif;font-size:15px;flex-shrink:0;box-shadow:0 4px 10px rgba(120,86,255,.3)}
+.rev-meta{min-width:0}
+.rev-name{font-size:14px;font-weight:700;color:var(--ink)}
+.rev-loc{font-size:12px;color:var(--muted);margin-top:1px}
+.rev-repeat{margin-left:auto;font-size:10px;font-weight:700;color:var(--accent);background:var(--accent-lt);border:1px solid var(--accent-mid);padding:4px 10px;border-radius:100px;white-space:nowrap}
+@media(max-width:760px){.rev-carousel{grid-template-columns:1fr 1fr;height:600px}.rev-col:nth-child(3){display:none}}
+@media(max-width:480px){.rev-carousel{grid-template-columns:1fr}.rev-col:nth-child(2){display:none}}
+@media(prefers-reduced-motion:reduce){.rev-carousel{height:auto;overflow:visible;-webkit-mask:none;mask:none}.rev-col{animation:none}}
+/* ── micro-polish ── */
+::selection{background:var(--accent);color:#fff}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}
+.btn-lg svg,.btn-cta svg,.card-link svg,.spot-link svg,.cta-pill svg{transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+.btn-lg:hover svg,.spot-link:hover svg,.cta-pill:hover svg{transform:translateX(3px)}
+.nav-links a{position:relative}
+.nav-links a::after{content:'';position:absolute;left:13px;right:13px;bottom:5px;height:2px;border-radius:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.7,.2,1)}
+.nav-links a:hover::after{transform:scaleX(1)}
+
+/* ── v4: light bands + seamless colored bottom ── */
+.dark,.hero-fin{background:linear-gradient(180deg,#f1ebff 0%,#e2d5ff 100%)!important;color:var(--ink-2)!important}
+.dark::before{display:none!important}
+.dark .sec-tag,.hero-fin .sec-tag{background:#fff!important;color:var(--accent)!important;border:1px solid var(--accent-mid)!important}
+.dark .sec-title,.hero-fin .sec-title,.dark h2,.dark h3,.hero-fin h1{color:var(--ink)!important}
+.dark .sec-sub,.dark p,.hero-fin .hero-sub{color:var(--muted)!important}
+.dark .card{background:var(--surface)!important;border-color:var(--border)!important;backdrop-filter:none!important}
+.dark .card:hover{border-color:var(--accent-mid)!important}
+.dark .icon-tile{background:var(--accent-lt)!important;border-color:var(--accent-mid)!important}
+.dark .icon-tile svg{stroke:var(--accent)!important}
+.dark .tpill{background:#fff!important;border-color:var(--border)!important;color:var(--ink-2)!important}
+.dark .rstat{background:#fff!important;border-color:var(--border)!important}
+.dark .rstat-n{color:var(--accent)!important}
+.dark .rstat-l{color:var(--muted)!important}
+.dark .cta-pill{border-color:var(--border-2)!important;color:var(--ink)!important;background:#fff!important}
+.dark .cta-pill:hover{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+.hero-fin .btn-ghost{background:#fff!important;color:var(--ink)!important;border-color:var(--border-2)!important}
+/* timeline light + animated numbering */
+.tl-track{background:var(--accent-mid)!important}
+.tl-fill{background:linear-gradient(90deg,var(--accent),#b39dff)!important}
+.tl-dot{background:#fff!important;border:2px solid var(--accent)!important;color:var(--accent)!important;font-weight:800}
+.tl-body h3{color:var(--ink)!important}
+.tl-body p{color:var(--muted)!important}
+@keyframes stepPop{0%{transform:scale(.3);opacity:0}55%{transform:scale(1.18)}100%{transform:scale(1);opacity:1}}
+@keyframes stepRing{0%{box-shadow:0 0 0 0 rgba(120,86,255,.4)}100%{box-shadow:0 0 0 22px rgba(120,86,255,0)}}
+.reveal.in .tl-dot{animation:stepPop .6s cubic-bezier(.34,1.56,.64,1) both,stepRing 1.1s ease-out both}
+.tl-step:nth-child(1) .tl-dot{animation-delay:.05s,.45s}
+.tl-step:nth-child(2) .tl-dot{animation-delay:.17s,.57s}
+.tl-step:nth-child(3) .tl-dot{animation-delay:.29s,.69s}
+.tl-step:nth-child(4) .tl-dot{animation-delay:.41s,.81s}
+.tl-step:nth-child(5) .tl-dot{animation-delay:.53s,.93s}
+.tl-step:nth-child(6) .tl-dot{animation-delay:.65s,1.05s}
+/* seamless: cta-band flows into footer, color runs to the very end */
+.cta-band{background:radial-gradient(ellipse 55% 45% at 50% 0%,#ffe6d6 0%,transparent 55%),linear-gradient(180deg,#ffffff 0%,#f0e8ff 34%,#d9c8ff 68%,#c3aaff 100%)!important}
+footer{background:linear-gradient(180deg,#c3aaff 0%,#b193f8 60%,#a486f0 100%)!important;border-radius:0!important;color:#3b2f66!important}
+.foot-desc{color:#4a3f75!important}
+.foot-col-t{color:#5c4d8f!important}
+.foot-links a{color:#3b2f66!important}
+.foot-links a:hover{color:var(--ink)!important}
+.foot-logo{color:var(--ink)!important}
+.foot-bottom{border-top:1px solid rgba(36,16,88,.16)!important}
+.foot-bottom p{color:#5c4d8f!important}
+
+.dark h4,.hero-fin h4,.tl-body h4{color:var(--ink)!important}
+.dark h5,.dark strong,.dark b{color:var(--ink)!important}
+
+/* ── v5: real review screenshots, zoomed wide ── */
+.rev-carousel{width:min(1340px,calc(100vw - 48px));position:relative;left:50%;transform:translateX(-50%);grid-template-columns:repeat(3,1fr);height:800px}
+.rev-shot{margin:0;background:#fff;border:1px solid var(--border);border-radius:16px;padding:8px;box-shadow:0 1px 2px rgba(31,20,64,.05),0 14px 34px -20px rgba(31,20,64,.16);transition:transform .3s,box-shadow .3s}
+.rev-shot:hover{transform:translateY(-3px);box-shadow:0 20px 44px -18px rgba(120,86,255,.3)}
+.rev-shot img{width:100%;height:auto;display:block;border-radius:10px}
+@media(max-width:760px){.rev-carousel{grid-template-columns:1fr 1fr;height:640px;width:calc(100vw - 40px)}}
+@media(max-width:480px){.rev-carousel{grid-template-columns:1fr}}
+
+.dark .checks li,.hero-fin .checks li{color:var(--ink-2)!important}
+.dark li{color:var(--ink-2)!important}
+
+/* v4c-li-accent-fix */
+.dark .checks li,.hero-fin .checks li,.dark li{color:var(--ink-2)!important}
+.dark .sec-title .accent,.dark .accent{color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important;background:linear-gradient(transparent 78%,var(--accent-mid) 78%)!important}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Muneeb Arshad","url":"https://muneebarshad.com","jobTitle":"Mobile App Developer & Growth Marketer","description":"Beauty, fashion and photo AI app specialist — five beauty/style apps shipped to the App Store and Play Store, then scaled with subscriptions and performance marketing.","knowsAbout":["Beauty Tech","Fashion Apps","Photo AI","Computer Vision","AI Personalization","Mobile App Development","iOS","Android","React Native","Flutter","RevenueCat","AppsFlyer","Meta Ads","TikTok Ads","App Store Optimization"]}
+</script>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/"><span class="logo-mark"><img src="/assets/muneeb-avatar.jpg" alt="Muneeb Arshad" onerror="this.remove()">M</span>Muneeb Arshad</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/apps/">All Apps</a></li>
+      <li><a href="/ai-apps/">AI Development</a></li>
+      <li><a href="/growth/">Growth</a></li>
+      <li><a href="/revenuecat/">Subscriptions</a></li>
+      <li><a href="/appsflyer/">Attribution</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/apps/" class="btn-cta">View All Apps</a>
+      <button class="hamburger" id="hb" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mm">
+  <a href="/" onclick="closeMenu()">Home</a>
+  <a href="/apps/" onclick="closeMenu()">All Apps</a>
+  <a href="/ai-apps/" onclick="closeMenu()">AI Development</a>
+  <a href="/growth/" onclick="closeMenu()">Growth</a>
+  <a href="/revenuecat/" onclick="closeMenu()">Subscriptions</a>
+  <a href="/appsflyer/" onclick="closeMenu()">Attribution</a>
+  <a href="/apps/" class="btn-cta" onclick="closeMenu()">View All Apps</a>
+</div>
+
+<!-- HERO -->
+<section class="hero hero-beauty">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="badge"><span class="bdot"></span>Beauty · Fashion · Photo AI</div>
+    <h1>Beauty tech that users <span class="hl-warm">love.</span></h1>
+    <svg class="flourish" viewBox="0 0 340 20" aria-hidden="true"><path d="M6 13 C 70 4, 130 4, 176 10 S 292 17, 334 7"/></svg>
+    <p class="hero-sub">I design, build, and scale beauty, fashion &amp; photo AI apps — from the onboarding quiz to the before/after reveal to the paywall that converts. Five are already live on the App Store and Play Store.</p>
+    <div class="hero-actions">
+      <a href="#showcase" class="btn-lg btn-primary">See the apps <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="/ai-apps/" class="btn-lg btn-ghost">AI Development</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-n"><span class="count" data-count="5">0</span></div><div class="hstat-l">Beauty &amp; style apps live</div></div>
+      <div class="hstat"><div class="hstat-n"><span class="count" data-count="100" data-suffix="+">0</span></div><div class="hstat-l">Apps shipped, every vertical</div></div>
+      <div class="hstat"><div class="hstat-n"><span class="count" data-count="20" data-suffix="M+">0</span></div><div class="hstat-l">Downloads worldwide</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<section id="showcase" class="show-sec">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">The Work</span>
+      <h2 class="sec-title">Beauty &amp; style apps, <span class="accent">live on the stores</span></h2>
+      <p class="sec-sub">Real apps with real users — makeup, looksmaxxing, fashion, photo enhancement, and face swap. Every one designed and built end to end.</p>
+    </div>
+
+    <div class="spot-grid">
+      <article class="spot reveal ">
+        <div class="spot-top">
+          <div class="spot-icon"><img loading="lazy" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c8/81/bc/c881bc52-1959-a2e9-eead-fbaea2b2c820/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg" alt="Lush AI app icon"></div>
+          <span class="spot-rating"><span class="stg">★</span> 4.1 · 9</span>
+        </div>
+        <h3>Lush AI</h3>
+        <p class="spot-tag">AI beauty &amp; makeup assistant</p>
+        <a class="spot-link" href="https://apps.apple.com/us/app/lush-ai-beauty-makeup/id6744766905" target="_blank" rel="noopener">App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      </article>
+      <article class="spot reveal d1">
+        <div class="spot-top">
+          <div class="spot-icon"><img loading="lazy" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/3a/bd/1c/3abd1c42-2ef4-d45d-1569-bb0cc7736894/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" alt="Sculpted app icon"></div>
+          <span class="spot-plat">iOS</span>
+        </div>
+        <h3>Sculpted</h3>
+        <p class="spot-tag">AI looksmaxxing &amp; grooming</p>
+        <a class="spot-link" href="https://apps.apple.com/us/app/sculpted-looksmax/id6745438071" target="_blank" rel="noopener">App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      </article>
+      <article class="spot reveal d2">
+        <div class="spot-top">
+          <div class="spot-icon"><img loading="lazy" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/3e/80/06/3e8006d4-3af4-99cb-5de1-b0b5d48022c4/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" alt="FashAI app icon"></div>
+          <span class="spot-plat">iOS</span>
+        </div>
+        <h3>FashAI</h3>
+        <p class="spot-tag">AI-powered style assistant</p>
+        <a class="spot-link" href="https://apps.apple.com/us/app/fashai-your-style-assistant/id6740182679" target="_blank" rel="noopener">App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      </article>
+      <article class="spot reveal ">
+        <div class="spot-top">
+          <div class="spot-icon"><img loading="lazy" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/43/df/f5/43dff518-1422-db08-5ee4-455c031988cc/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/512x512bb.jpg" alt="Refine AI app icon"></div>
+          <span class="spot-rating"><span class="stg">★</span> 4.0 · 7</span>
+        </div>
+        <h3>Refine AI</h3>
+        <p class="spot-tag">AI photo enhancer &amp; upscaler</p>
+        <a class="spot-link" href="https://apps.apple.com/us/app/refine-ai-style-enhancer/id6670221733" target="_blank" rel="noopener">App Store <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      </article>
+      <article class="spot reveal d1">
+        <div class="spot-top">
+          <div class="spot-icon"><img loading="lazy" src="https://play-lh.googleusercontent.com/DhxuOZ2K9siN-6R-38tPUuqI2uk8tHsiiPiThrFuA_M_OZL4LtcFsB3sMn0oP8aavA=w480-h960-rw" alt="FaceSwap AVA app icon"></div>
+          <span class="spot-plat">Android</span>
+        </div>
+        <h3>FaceSwap AVA</h3>
+        <p class="spot-tag">AI face swap &amp; avatar creator</p>
+        <a class="spot-link" href="https://play.google.com/store/apps/details?id=ai.faceswap.avatar.age.gender.changer" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="#00D9FF" d="M3.6 2.1 13.7 12 3.6 21.9c-.37-.28-.6-.74-.6-1.32V3.42c0-.58.23-1.04.6-1.32z"/><path fill="#00F076" d="M17.6 8.2 5.3 1.7c-.5-.27-1.07-.24-1.5.1L13.7 12l3.9-3.8z"/><path fill="#FFC900" d="M17.6 15.8c1.6-.85 3.2-1.7 3.2-1.7 1.07-.57 1.07-2.03 0-2.6 0 0-1.6-.85-3.2-1.7L13.7 12l3.9 3.8z"/><path fill="#FF3A44" d="M3.8 22.2c.43.34 1 .37 1.5.1l12.3-6.5-3.9-3.8L3.8 22.2z"/></svg> Play Store</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Capabilities</span>
+      <h2 class="sec-title">Everything a beauty app needs, <span class="accent">in one build</span></h2>
+      <p class="sec-sub">From the AI that powers the magic to the monetization and marketing that make it a business — handled end to end.</p>
+    </div>
+    <div class="cards-3">
+      <div class="card reveal">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3.2"/></svg></div>
+        <h3>Face &amp; photo analysis AI</h3>
+        <p>Vision models that read skin, features, and photos — the engine behind beauty scoring, recommendations, and analysis flows.</p>
+      </div>
+      <div class="card reveal d1">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M15 4l1.5 3.5L20 9l-3.5 1.5L15 14l-1.5-3.5L10 9l3.5-1.5z"/><path d="M6 14l.9 2.1L9 17l-2.1.9L6 20l-.9-2.1L3 17l2.1-.9z"/></svg></div>
+        <h3>Style personalization engines</h3>
+        <p>Quizzes and preference models that tailor makeup, grooming, and outfit suggestions to each user from the very first session.</p>
+      </div>
+      <div class="card reveal d2">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><path d="M8 9.5a1.2 1.2 0 1 0 0-.01"/></svg></div>
+        <h3>One-tap image enhancement</h3>
+        <p>Instant AI upscaling, sharpening, and clean-up — the effortless "wow" moment proven live in Refine AI.</p>
+        <a href="#showcase" class="card-link">See Refine AI <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="card reveal">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.7l7.4-4.3M8.3 13.3l7.4 4.3"/></svg></div>
+        <h3>Viral share loops</h3>
+        <p>Share-ready exports and referral hooks that turn a great result into new installs — the growth flywheel behind FaceSwap.</p>
+        <a href="#showcase" class="card-link">See FaceSwap AVA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="card reveal d1">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M4 7l8-4 8 4v10l-8 4-8-4z"/><path d="M4 7l8 4 8-4"/><path d="M12 11v10"/></svg></div>
+        <h3>Subscription monetization</h3>
+        <p>RevenueCat paywalls, trials, and IAP built for beauty apps — placed where they convert, not where they annoy.</p>
+        <a href="/revenuecat/" class="card-link">Subscription setup <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="card reveal d2">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M3 11l18-7-4 18-5-6-5 3z"/><path d="M12 16l5-8"/></svg></div>
+        <h3>Beauty-app UA on Meta &amp; TikTok</h3>
+        <p>Creative-led user acquisition tuned to beauty and fashion audiences — the channels where these products scale fastest.</p>
+        <a href="/growth/" class="card-link">Performance marketing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERTICAL EXPERTISE (dark) -->
+<section id="expertise" class="dark">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Vertical Expertise</span>
+      <h2 class="sec-title">Five apps in — the hard parts are already solved</h2>
+      <p class="sec-sub">Shipping beauty and style apps means the patterns are figured out. You skip the false starts and go straight to what works.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card reveal">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M9 5h9M9 12h9M9 19h9"/><path d="M4 5l1 1 1.5-2M4 12l1 1 1.5-2M4 19l1 1 1.5-2"/></svg></div>
+        <h3>Onboarding quizzes</h3>
+        <p>Skin, style, and preference quizzes that segment users and personalize day one — for higher activation and retention.</p>
+      </div>
+      <div class="card reveal d1">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M12 4v16"/><path d="M6.5 13l2-2 2 2M15.5 10l2 2"/></svg></div>
+        <h3>Before / after reveals</h3>
+        <p>The reveal moment — sliders and animated transforms that make results feel like magic and keep users coming back.</p>
+      </div>
+      <div class="card reveal d2">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v2"/></svg></div>
+        <h3>Paywall placement</h3>
+        <p>Where and when to show the paywall in a beauty app — timing and design tested across live products.</p>
+      </div>
+      <div class="card reveal d3">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.7l7.4-4.3M8.3 13.3l7.4 4.3"/></svg></div>
+        <h3>Viral share loops</h3>
+        <p>Result exports, watermarks, and referral hooks engineered so users do the marketing for you.</p>
+      </div>
+    </div>
+
+    <div class="tool-pills reveal">
+      <span class="tpill"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/120px-OpenAI_Logo.svg.png" alt="">Vision AI</span>
+      <span class="tpill"><img src="https://cdn.simpleicons.org/revenuecat/F25A5A" alt="">RevenueCat</span>
+      <span class="tpill"><img src="https://cdn.simpleicons.org/meta/0081FB" alt="">Meta Ads</span>
+      <span class="tpill"><img src="https://cdn.simpleicons.org/tiktok/000000" alt="">TikTok Ads</span>
+      <span class="tpill"><img src="https://www.appsflyer.com/favicon.ico" alt="">AppsFlyer</span>
+      <span class="tpill"><img src="https://cdn.simpleicons.org/swift/ffffff" alt="">Swift</span>
+      <span class="tpill"><img src="https://cdn.simpleicons.org/react/ffffff" alt="">React Native</span>
+    </div>
+
+    <div class="cta-row reveal">
+      <a class="cta-pill" href="/ai-apps/">AI Development <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="cta-pill" href="/revenuecat/">RevenueCat Subscriptions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="cta-pill" href="/growth/">Growth Marketing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="rev-sec">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Testimonials</span>
+      <h2 class="sec-title">What clients say</h2>
+      <p class="sec-sub">5.0★ across Fiverr &amp; Upwork — founders who came back for the polish, the pace, and the results.</p>
+    </div>
+    <div class="rev-carousel">
+      <div class="rev-col"><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-01.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-04.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-07.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-10.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-13.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-16.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-19.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-01.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-04.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-07.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-10.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-13.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-16.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-19.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure></div>
+      <div class="rev-col rev-down"><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-02.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-05.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-08.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-11.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-14.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-17.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-20.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-02.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-05.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-08.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-11.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-14.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-17.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-20.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure></div>
+      <div class="rev-col"><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-03.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-06.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-09.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-12.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-15.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-18.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-21.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-03.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-06.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-09.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-12.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-15.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-18.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-21.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure></div>
+    </div>
+    <div class="rev-proof reveal">
+      <span class="rev-chip"><span class="st">★★★★★</span> <b>5.0</b> on Fiverr</span>
+      <span class="rev-chip"><b>Top Rated</b> seller</span>
+      <span class="rev-chip"><b>5.0</b> on Upwork</span>
+      <span class="rev-chip">Repeat clients across <b>US · Europe · Asia</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="reveal">
+    <span class="sec-tag">Let's build</span>
+    <h2>Building a beauty or fashion <span class="accent">AI app?</span></h2>
+    <p>Start with a partner who has already shipped five. See the full portfolio, then let's talk about what your product needs.</p>
+    <div class="hero-actions">
+      <a href="/apps/" class="btn-lg btn-primary">View All Apps <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="/ai-apps/" class="btn-lg btn-ghost">AI Development</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-top">
+    <div>
+      <a class="foot-logo" href="/"><span class="logo-mark"><img src="/assets/muneeb-avatar.jpg" alt="Muneeb Arshad" onerror="this.remove()">M</span>Muneeb Arshad</a>
+      <p class="foot-desc">Mobile app developer &amp; growth marketer — building AI-powered apps and scaling them with performance marketing. 100+ apps shipped worldwide.</p>
+    </div>
+    <div>
+      <p class="foot-col-t">Pages</p>
+      <div class="foot-links">
+        <a href="/">Home</a>
+        <a href="/apps/">All Apps</a>
+        <a href="/ai-apps/">AI Development</a>
+        <a href="/growth/">Growth Marketing</a>
+        <a href="/revenuecat/">Subscriptions &amp; RevenueCat</a>
+        <a href="/appsflyer/">Attribution &amp; AppsFlyer</a>
+      </div>
+    </div>
+    <div>
+      <p class="foot-col-t">Solutions</p>
+      <div class="foot-links">
+        <a href="/beauty/">Beauty &amp; Style AI</a>
+        <a href="/wellness/">Health &amp; Wellness</a>
+        <a href="/finance/">Trading &amp; Finance</a>
+        <a href="/productivity/">Productivity &amp; Lifestyle</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p>© 2026 Muneeb Arshad. All rights reserved.</p>
+    <p>Mobile App Developer · Growth Marketer</p>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30),{passive:true});
+const hb=document.getElementById('hb'),mm=document.getElementById('mm');
+hb.addEventListener('click',()=>{hb.classList.toggle('open');mm.classList.toggle('open')});
+function closeMenu(){hb.classList.remove('open');mm.classList.remove('open')}
+document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!mm.contains(e.target))closeMenu()});
+
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const easeOut=t=>1-Math.pow(1-t,4);
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function finalVal(el){const d=+(el.dataset.decimals||0);return (el.dataset.prefix||'')+(d?parseFloat(el.dataset.count).toFixed(d):Math.round(el.dataset.count).toLocaleString('en-US'))+(el.dataset.suffix||'')}
+function runCount(el){
+ const target=parseFloat(el.dataset.count),dec=+(el.dataset.decimals||0),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';
+ const dur=1500,t0=performance.now();let done=false;
+ function step(now){if(done)return;const p=Math.min((now-t0)/dur,1),v=target*easeOut(p);
+  el.textContent=pre+(dec?v.toFixed(dec):Math.round(v).toLocaleString('en-US'))+suf;
+  if(p<1)requestAnimationFrame(step); else{done=true;el.textContent=finalVal(el);}}
+ requestAnimationFrame(step);
+ setTimeout(()=>{if(!done){done=true;el.textContent=finalVal(el);}},dur+400);
+}
+const cio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){reduce?e.target.textContent=finalVal(e.target):runCount(e.target);cio.unobserve(e.target)}})},{threshold:.5});
+document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+</script>
+</body>
+</html>

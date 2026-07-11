@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trading &amp; Finance — Muneeb Arshad</title>
+<meta name="description" content="AI trading &amp; fintech apps built by Muneeb Arshad — chart-vision analysis, real-time UX, subscriptions and user acquisition. SnapTrader (4.7★) and Tradvio AI (4.8★) live on the App Store.">
+<meta name="author" content="Muneeb Arshad">
+<meta name="theme-color" content="#7856ff">
+<link rel="canonical" href="https://muneebarshad.com/finance/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Trading &amp; Finance — Muneeb Arshad">
+<meta property="og:description" content="AI that reads the charts. Chart-vision trade analyzers, real-time analysis UX, subscriptions and finance-app growth — SnapTrader &amp; Tradvio AI live on the App Store.">
+<meta property="og:url" content="https://muneebarshad.com/finance/">
+<meta property="og:site_name" content="Muneeb Arshad">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Trading &amp; Finance — Muneeb Arshad">
+<meta name="twitter:description" content="AI that reads the charts — chart-vision trade analyzers, real-time UX, subscriptions &amp; finance-app growth.">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/icons/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;--bg-soft:#f7f5ff;--panel:#f0edff;--surface:#ffffff;
+  --border:#e9e6f5;--border-2:#d9d3ee;
+  --ink:#1f2023;--ink-2:#4a4757;--muted:#6f6b7e;--muted-2:#a7a2b6;
+  --accent:#7856ff;--accent-2:#6a48f0;--accent-lt:#f0edff;--accent-mid:#e2dbff;
+  --navy:#2a1270;--navy-2:#25105c;
+  --up:#34d399;--down:#fb7185;--mint:#7fe1d8;
+  --shadow-xs:0 1px 2px rgba(31,20,64,.05);
+  --shadow-sm:0 1px 2px rgba(31,20,64,.06),0 2px 6px rgba(31,20,64,.05);
+  --shadow-md:0 6px 20px rgba(31,20,64,.09);
+  --shadow-lg:0 18px 44px rgba(31,20,64,.14);
+  --radius:12px;--radius-lg:16px;--radius-xl:20px;
+  --maxw:1160px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink-2);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+ radial-gradient(55% 38% at 12% 5%,rgba(120,86,255,.10),transparent 60%),
+ radial-gradient(48% 32% at 88% 2%,rgba(255,168,138,.12),transparent 60%),
+ radial-gradient(45% 32% at 6% 55%,rgba(127,225,216,.08),transparent 60%),
+ radial-gradient(55% 40% at 90% 80%,rgba(150,120,255,.12),transparent 58%),
+ radial-gradient(85% 50% at 50% 100%,rgba(170,130,255,.14),transparent 60%),
+ radial-gradient(50% 40% at 8% 95%,rgba(255,196,160,.10),transparent 60%)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Hanken Grotesk',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.1;color:var(--ink)}
+.accent{color:var(--ink);background:linear-gradient(transparent 80%,var(--accent-mid) 80%)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.82);backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+nav.scrolled{border-bottom-color:var(--border);box-shadow:var(--shadow-xs)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 32px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Hanken Grotesk',sans-serif;font-size:16.5px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
+.logo-mark{width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;flex-shrink:0;overflow:hidden;position:relative}
+.logo-mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-links a{padding:8px 13px;border-radius:8px;font-size:14px;font-weight:500;color:var(--muted);transition:all .18s}
+.nav-links a:hover{color:var(--ink);background:var(--panel)}
+.nav-links a[aria-current="page"]{color:var(--ink);font-weight:600}
+.nav-right{display:flex;align-items:center;gap:12px}
+.btn-cta{padding:10px 20px;border-radius:100px;background:var(--ink);color:#fff;font-family:'Inter',sans-serif;font-size:13.5px;font-weight:600;border:none;cursor:pointer;transition:all .2s;white-space:nowrap}
+.btn-cta:hover{background:var(--accent)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:66px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:14px 24px 22px;z-index:199;box-shadow:var(--shadow-md);flex-direction:column;gap:2px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:12px 14px;border-radius:9px;font-size:15px;font-weight:500;color:var(--ink-2);transition:all .18s}
+.mobile-menu a:hover{background:var(--panel)}
+.mobile-menu .btn-cta{margin-top:10px;text-align:center;padding:13px}
+
+/* HERO (base) */
+.hero{position:relative;overflow:hidden;padding:140px 32px 76px;background:transparent}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.5;mask-image:radial-gradient(ellipse 70% 55% at 50% 0%,#000,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 55% at 50% 0%,#000,transparent 75%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:900px;margin:0 auto;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 15px;background:var(--surface);border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-2);box-shadow:var(--shadow-xs);margin-bottom:28px}
+.pdot{width:7px;height:7px;border-radius:50%;background:#16a34a;position:relative}
+.pdot::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1px solid rgba(22,163,74,.4);animation:ping 2.2s ease-out infinite}
+@keyframes ping{0%{transform:scale(.8);opacity:1}100%{transform:scale(2);opacity:0}}
+.hero h1{font-size:clamp(34px,5vw,58px);letter-spacing:-.035em;line-height:1.04}
+.hero-sub{max-width:620px;margin:22px auto 0;font-size:clamp(16px,2vw,18px);color:var(--muted);line-height:1.65}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.btn-lg{padding:14px 28px;border-radius:100px;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;border:1px solid transparent}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:var(--shadow-sm)}
+.btn-primary:hover{background:#000;transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.btn-ghost{background:var(--surface);color:var(--ink);border-color:var(--border-2)}
+.btn-ghost:hover{border-color:var(--ink);color:var(--ink)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);max-width:600px;margin:56px auto 0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden}
+.hstat{padding:24px 14px;border-right:1px solid var(--border)}
+.hstat:last-child{border-right:none}
+.hstat-n{font-family:'Hanken Grotesk',sans-serif;font-size:clamp(24px,3.6vw,32px);font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+.hstat-l{font-size:12.5px;font-weight:500;color:var(--muted);margin-top:5px}
+
+/* HERO (finance dark, terminal) */
+.hero-fin{background:linear-gradient(160deg,#2e1266 0%,#3f1f8f 55%,#241058 100%);color:#cbd5e1;padding-bottom:96px}
+.hero-fin::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 62% 52% at 50% -6%,rgba(120,86,255,.28),transparent 70%),radial-gradient(ellipse 40% 40% at 88% 30%,rgba(127,225,216,.10),transparent 70%);pointer-events:none}
+.hero-fin .hero-inner{position:relative;z-index:1}
+.hero-fin .hero-grid{background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);opacity:1;z-index:0}
+.hero-fin .badge{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#d6ccff;box-shadow:none}
+.hero-fin h1{color:#fff}
+.hero-fin .hero-sub{color:#a29ec2}
+.hero-fin .btn-ghost{background:rgba(255,255,255,.05);color:#fff;border-color:rgba(255,255,255,.18)}
+.hero-fin .btn-ghost:hover{border-color:rgba(255,255,255,.55);color:#fff}
+.hero-fin .hero-stats{background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.1);box-shadow:0 10px 40px rgba(0,0,0,.28)}
+.hero-fin .hstat{border-right-color:rgba(255,255,255,.1)}
+.hero-fin .hstat-n{color:#fff}
+.hero-fin .hstat-l{color:#8f8bad}
+.hl{position:relative;color:#fff;white-space:nowrap}
+.hl::after{content:'';position:absolute;left:-2px;right:-2px;bottom:.02em;height:.16em;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--mint));transform:scaleX(0);transform-origin:left;animation:hlIn 1s .55s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes hlIn{to{transform:scaleX(1)}}
+
+/* TERMINAL / CHART */
+.term{max-width:900px;margin:54px auto 0;background:linear-gradient(180deg,#1c0b47,#100029);border:1px solid rgba(255,255,255,.12);border-radius:18px;box-shadow:0 34px 90px rgba(0,0,0,.55);overflow:hidden;text-align:left;position:relative;z-index:1}
+.term-bar{display:flex;align-items:center;gap:7px;padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02)}
+.term-bar i{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.16);display:block}
+.term-bar i:nth-child(1){background:#fb7185}.term-bar i:nth-child(2){background:#fbbf24}.term-bar i:nth-child(3){background:#34d399}
+.term-ticker{margin-left:auto;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;letter-spacing:.08em;color:#8f8bad;display:flex;align-items:center;gap:8px}
+.term-ticker b{color:#c9bcff;font-weight:600}
+.term-body{position:relative;padding:6px 8px 8px}
+.term-body svg{width:100%;height:auto;display:block}
+.cndl{opacity:0;animation:candleGrow .5s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes candleGrow{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.draw{stroke-dasharray:1100;stroke-dashoffset:1100;animation:drawLine 1.2s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes drawLine{to{stroke-dashoffset:0}}
+.svgfade{opacity:0;animation:svgFade .6s ease forwards}
+@keyframes svgFade{to{opacity:1}}
+.term-ai{position:absolute;right:18px;bottom:20px;width:236px;background:rgba(20,8,52,.72);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);border:1px solid rgba(255,255,255,.16);border-radius:13px;padding:13px 15px;box-shadow:0 12px 30px rgba(0,0,0,.4);opacity:0;transform:translateY(10px);animation:aiIn .7s 1.75s cubic-bezier(.2,.7,.2,1) forwards}
+.term-ai-h{display:flex;align-items:center;gap:8px;font-size:10.5px;font-weight:700;letter-spacing:.13em;color:#7fe1d8;text-transform:uppercase;margin-bottom:10px}
+.term-ai-h .dot{width:6px;height:6px;border-radius:50%;background:#7fe1d8;box-shadow:0 0 0 0 rgba(127,225,216,.6);animation:beat 2.4s ease-out infinite}
+@keyframes beat{0%{box-shadow:0 0 0 0 rgba(127,225,216,.55)}70%{box-shadow:0 0 0 7px rgba(127,225,216,0)}100%{box-shadow:0 0 0 0 rgba(127,225,216,0)}}
+.term-ai-row{display:flex;justify-content:space-between;gap:10px;font-size:12px;padding:5px 0;border-top:1px solid rgba(255,255,255,.07)}
+.term-ai-row:first-of-type{border-top:none}
+.term-ai-row span{color:#8f8bad}
+.term-ai-row b{color:#fff;font-weight:600}
+.term-ai-row b.pos{color:#34d399}
+.term-ai-note{margin-top:9px;font-size:10px;color:#736f92;line-height:1.4}
+@keyframes aiIn{to{opacity:1;transform:translateY(0)}}
+
+/* SECTIONS */
+.sec{max-width:var(--maxw);margin:0 auto;padding:80px 32px}
+.sec-head{max-width:660px;margin:0 auto 46px;text-align:center}
+.sec-tag{display:inline-block;padding:6px 13px;border-radius:100px;background:var(--accent-lt);color:var(--accent);font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:16px;border:1px solid var(--accent-mid)}
+.sec-title{font-size:clamp(28px,3.8vw,44px);letter-spacing:-.03em}
+.rev-sec{background:transparent;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.rev{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;box-shadow:var(--shadow-xs)}
+.rev-stars{color:var(--accent);font-size:13px;letter-spacing:3px;margin-bottom:12px}
+.rev-q{color:var(--ink-2);font-size:14.5px;line-height:1.62;flex:1}
+.rev-by{display:flex;align-items:center;gap:11px;margin-top:18px;padding-top:15px;border-top:1px solid var(--border)}
+.rev-av{width:34px;height:34px;border-radius:50%;background:var(--panel);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Hanken Grotesk',sans-serif;color:var(--ink-2);font-size:13px;flex-shrink:0}
+.rev-meta{min-width:0}.rev-name{font-size:13.5px;font-weight:700;color:var(--ink)}.rev-loc{font-size:12px;color:var(--muted)}
+.rev-repeat{margin-left:auto;font-size:10px;font-weight:700;color:var(--ink-2);background:var(--panel);border:1px solid var(--border);padding:3px 9px;border-radius:100px;white-space:nowrap}
+.rev-carousel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;height:640px;overflow:hidden;position:relative;-webkit-mask:linear-gradient(180deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask:linear-gradient(180deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+.rev-col{display:flex;flex-direction:column;gap:16px;will-change:transform;animation:revscroll 120s linear infinite}
+.rev-col.rev-down{animation-direction:reverse}.rev-carousel:hover .rev-col,.rev-carousel:focus-within .rev-col{animation-play-state:paused}
+@keyframes revscroll{to{transform:translateY(-50%)}}
+@media(max-width:760px){.rev-carousel{grid-template-columns:1fr 1fr;height:560px}.rev-col:nth-child(3){display:none}}
+@media(max-width:480px){.rev-carousel{grid-template-columns:1fr}.rev-col:nth-child(2){display:none}}
+@media(prefers-reduced-motion:reduce){.rev-carousel{height:auto;overflow:visible;-webkit-mask:none;mask:none}.rev-col{animation:none}}
+.sec-sub{color:var(--muted);font-size:16.5px;margin-top:14px;line-height:1.6}
+
+/* FLAGSHIPS */
+.flags-sec{border-top:1px solid var(--border)}
+.flags{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.flag{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);padding:30px;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:transform .25s,box-shadow .25s,border-color .25s}
+.flag:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--border-2)}
+.flag-head{display:flex;gap:16px;align-items:center}
+.flag-icon{width:66px;height:66px;flex-shrink:0;border-radius:16px;overflow:hidden;box-shadow:var(--shadow-xs);background:var(--panel);border:1px solid var(--border)}
+.flag-icon img{width:100%;height:100%;object-fit:cover}
+.flag-meta{min-width:0}
+.flag-name{font-size:21px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.flag-tag{font-size:13.5px;color:var(--muted);margin-top:3px}
+.bdg{padding:3px 9px;border-radius:6px;font-size:10.5px;font-weight:700;letter-spacing:.02em;display:inline-flex;align-items:center;gap:4px;background:var(--panel);color:var(--ink-2)}
+.flag-rating{display:flex;align-items:stretch;gap:2px;margin:22px 0 6px;background:var(--accent-lt);border:1px solid var(--accent-mid);border-radius:14px;overflow:hidden}
+.fr-item{flex:1;padding:16px 18px}
+.fr-item+.fr-item{border-left:1px solid var(--accent-mid)}
+.fr-n{font-family:'Hanken Grotesk',sans-serif;font-size:34px;font-weight:800;letter-spacing:-.03em;color:var(--accent);line-height:1;display:flex;align-items:baseline;gap:3px}
+.fr-star{color:var(--accent);font-size:20px}
+.fr-l{font-size:11.5px;font-weight:600;color:var(--muted);margin-top:8px;text-transform:uppercase;letter-spacing:.04em}
+.flag-desc{color:var(--muted);font-size:14.5px;line-height:1.62;margin-top:12px;flex:1}
+.flag-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px;padding-top:18px;border-top:1px solid var(--border)}
+.flag-genre{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted-2)}
+.store-link{display:inline-flex;align-items:center;gap:7px;padding:9px 17px;border-radius:100px;background:var(--ink);color:#fff;font-size:12.5px;font-weight:600;transition:all .18s;white-space:nowrap}
+.store-link:hover{background:var(--accent)}
+.store-link svg{width:14px;height:14px;flex-shrink:0}
+/* Coming soon */
+.soon{margin-top:20px;display:flex;align-items:center;gap:20px;padding:26px 30px;border:1.6px dashed var(--border-2);border-radius:var(--radius-xl);background:linear-gradient(120deg,rgba(240,237,255,.5),rgba(255,255,255,.2))}
+.soon-mono{width:60px;height:60px;flex-shrink:0;border-radius:15px;background:var(--panel);border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:26px;color:var(--accent)}
+.soon-body{min-width:0;flex:1}
+.soon-name{font-family:'Hanken Grotesk',sans-serif;font-size:18px;font-weight:800;color:var(--ink);letter-spacing:-.01em;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.soon-badge{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-lt);border:1px solid var(--accent-mid);padding:3px 9px;border-radius:100px}
+.soon-desc{color:var(--muted);font-size:13.5px;line-height:1.55;margin-top:6px}
+.flags-note{text-align:center;color:var(--muted-2);font-size:12.5px;margin-top:26px}
+
+/* CARDS (capabilities) */
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 26px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-2)}
+.icon-tile{width:46px;height:46px;border-radius:13px;background:var(--accent-lt);border:1px solid var(--accent-mid);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.icon-tile svg{width:23px;height:23px;stroke:var(--accent);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:18px;margin-bottom:8px;letter-spacing:-.02em}
+.card p{color:var(--muted);font-size:14.5px;line-height:1.6}
+.card-link{display:inline-flex;align-items:center;gap:6px;margin-top:15px;font-size:13.5px;font-weight:600;color:var(--accent)}
+.card-link svg{width:14px;height:14px;transition:transform .2s}
+.card:hover .card-link svg{transform:translateX(3px)}
+
+/* DARK (workflow band) */
+.dark{background:linear-gradient(160deg,#2e1266 0%,#3f1f8f 55%,#241058 100%);color:#e5ddff;position:relative;overflow:hidden}
+.dark::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(120,86,255,.16),transparent 70%);pointer-events:none}
+.dark .sec{position:relative;z-index:1}
+.dark .sec-tag{background:rgba(120,86,255,.28);color:#d6ccff;border-color:rgba(120,86,255,.5)}
+.dark .sec-title{color:#fff}
+.dark .sec-sub{color:#a29ec2}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{position:relative;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius-lg);padding:28px 26px;transition:all .25s}
+.step:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2)}
+.step-n{font-family:'Hanken Grotesk',sans-serif;font-size:12px;font-weight:800;letter-spacing:.14em;color:#7fe1d8}
+.step-ic{width:46px;height:46px;border-radius:13px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;margin:14px 0 18px}
+.step-ic svg{width:23px;height:23px;stroke:#e2e8f0;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.step h3{color:#fff;font-size:18px;margin-bottom:8px;letter-spacing:-.02em}
+.step p{color:#a29ec2;font-size:14.5px;line-height:1.6}
+.step-arrow{position:absolute;top:50%;right:-20px;transform:translateY(-50%);z-index:2;color:rgba(255,255,255,.25)}
+.step-arrow svg{width:18px;height:18px}
+.dark-note{margin-top:34px;text-align:center;color:#8f8bad;font-size:13px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.6}
+.dark-note b{color:#d6ccff;font-weight:600}
+
+/* CTA BAND */
+.cta-band{position:relative;padding:104px 32px 116px;text-align:center;background:radial-gradient(ellipse 55% 45% at 50% 0%,#ffe6d6 0%,transparent 55%),linear-gradient(180deg,#ffffff 0%,#f3eeff 42%,#d8caff 78%,#c2b1f2 100%)}
+.cta-band h2{font-size:clamp(30px,4.6vw,52px);letter-spacing:-.03em;max-width:680px;margin:0 auto;color:var(--ink)}
+.cta-band p{color:var(--ink-2);font-size:17px;line-height:1.6;margin:16px auto 0;max-width:540px}
+.cta-band .hero-actions{margin-top:34px}
+
+/* FOOTER */
+footer{background:linear-gradient(180deg,#e8e0ff 0%,#f3eeff 100%);color:var(--ink-2);border-radius:36px 36px 0 0;position:relative}
+.foot-top{max-width:var(--maxw);margin:0 auto;padding:64px 32px 42px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px}
+.foot-logo{display:flex;align-items:center;gap:10px;font-family:'Hanken Grotesk',sans-serif;font-size:17px;font-weight:800;color:var(--ink);margin-bottom:14px}
+.foot-desc{color:var(--muted);font-size:14px;line-height:1.7;max-width:330px}
+.foot-col-t{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);margin-bottom:16px}
+.foot-links{display:flex;flex-direction:column;gap:11px}
+.foot-links a{font-size:14px;font-weight:500;color:var(--ink-2);transition:color .18s}
+.foot-links a:hover{color:var(--accent)}
+.foot-bottom{border-top:1px solid var(--border);max-width:var(--maxw);margin:0 auto;padding:22px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.foot-bottom p{font-size:12.5px;color:var(--muted-2)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.06s}.d2{transition-delay:.12s}.d3{transition-delay:.18s}.d4{transition-delay:.24s}.d5{transition-delay:.3s}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .cards-3{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  .step-arrow{display:none}
+  .foot-top{grid-template-columns:1fr 1fr;gap:36px}
+  .foot-top>:first-child{grid-column:1/-1}
+}
+@media(max-width:760px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .nav-inner,.wrap{padding-left:20px;padding-right:20px}
+  .hero{padding:118px 20px 68px}
+  .hero-fin{padding-bottom:74px}
+  .hero-stats{grid-template-columns:1fr}
+  .hstat{border-right:none;border-bottom:1px solid var(--border)}
+  .hstat:last-child{border-bottom:none}
+  .hero-fin .hstat{border-bottom-color:rgba(255,255,255,.1)}
+  .sec{padding:68px 20px}
+  .flags{grid-template-columns:1fr}
+  .cards-3{grid-template-columns:1fr}
+  .term-ai{position:static;width:auto;margin:12px 8px 4px;transform:none;animation-delay:1.4s}
+  .soon{flex-direction:column;text-align:center;align-items:center}
+  .foot-top{grid-template-columns:1fr;gap:30px;padding:44px 20px 30px}
+  .foot-top>:first-child{grid-column:1}
+  .foot-bottom{flex-direction:column;text-align:center;gap:6px}
+}
+@media(max-width:440px){
+  .fr-n{font-size:29px}
+  .flag{padding:24px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  .cndl,.svgfade,.term-ai{opacity:1}
+  .draw{stroke-dashoffset:0}
+  .hl::after{transform:scaleX(1)}
+}
+
+/* ── reviews v3: designed cards, no pricing ── */
+.rev-carousel{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;height:720px;overflow:hidden;position:relative;-webkit-mask:linear-gradient(180deg,transparent 0,#000 6%,#000 94%,transparent 100%);mask:linear-gradient(180deg,transparent 0,#000 6%,#000 94%,transparent 100%)}
+.rev-col{display:flex;flex-direction:column;gap:18px;will-change:transform;animation:revscroll 120s linear infinite}
+.rev-col.rev-down{animation-direction:reverse}
+.rev-carousel:hover .rev-col,.rev-carousel:focus-within .rev-col{animation-play-state:paused}
+@keyframes revscroll{to{transform:translateY(-50%)}}
+.rev{position:relative;background:linear-gradient(180deg,#ffffff 0%,#fcfbff 100%);border:1px solid var(--border);border-radius:18px;padding:24px 24px 20px;box-shadow:0 1px 2px rgba(31,20,64,.04),0 14px 34px -20px rgba(31,20,64,.16);display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.rev:hover{transform:translateY(-4px);border-color:var(--accent-mid);box-shadow:0 2px 5px rgba(31,20,64,.05),0 26px 52px -22px rgba(120,86,255,.32)}
+.rev-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:13px}
+.rev-stars{color:var(--accent);font-size:14px;letter-spacing:2.5px;text-shadow:0 1px 0 rgba(120,86,255,.15)}
+.rev-plat{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.02em;padding:4px 11px;border-radius:100px;border:1px solid var(--border);background:#fff;color:var(--ink-2)}
+.rev-plat i{width:7px;height:7px;border-radius:50%}
+.rev-plat-fv i{background:#1dbf73}
+.rev-plat-uw i{background:#14a800}
+.rev-role{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted-2);margin:-4px 0 8px}
+.rev-q{color:var(--ink-2);font-size:15.5px;line-height:1.68;flex:1;font-weight:450}
+.rev-by{display:flex;align-items:center;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--border)}
+.rev-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#b39dff);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Hanken Grotesk',sans-serif;font-size:15px;flex-shrink:0;box-shadow:0 4px 10px rgba(120,86,255,.3)}
+.rev-meta{min-width:0}
+.rev-name{font-size:14px;font-weight:700;color:var(--ink)}
+.rev-loc{font-size:12px;color:var(--muted);margin-top:1px}
+.rev-repeat{margin-left:auto;font-size:10px;font-weight:700;color:var(--accent);background:var(--accent-lt);border:1px solid var(--accent-mid);padding:4px 10px;border-radius:100px;white-space:nowrap}
+@media(max-width:760px){.rev-carousel{grid-template-columns:1fr 1fr;height:600px}.rev-col:nth-child(3){display:none}}
+@media(max-width:480px){.rev-carousel{grid-template-columns:1fr}.rev-col:nth-child(2){display:none}}
+@media(prefers-reduced-motion:reduce){.rev-carousel{height:auto;overflow:visible;-webkit-mask:none;mask:none}.rev-col{animation:none}}
+/* ── micro-polish ── */
+::selection{background:var(--accent);color:#fff}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}
+.btn-lg svg,.btn-cta svg,.card-link svg,.spot-link svg,.cta-pill svg{transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+.btn-lg:hover svg,.spot-link:hover svg,.cta-pill:hover svg{transform:translateX(3px)}
+.nav-links a{position:relative}
+.nav-links a::after{content:'';position:absolute;left:13px;right:13px;bottom:5px;height:2px;border-radius:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.7,.2,1)}
+.nav-links a:hover::after{transform:scaleX(1)}
+
+/* ── v4: light bands + seamless colored bottom ── */
+.dark,.hero-fin{background:linear-gradient(180deg,#f1ebff 0%,#e2d5ff 100%)!important;color:var(--ink-2)!important}
+.dark::before{display:none!important}
+.dark .sec-tag,.hero-fin .sec-tag{background:#fff!important;color:var(--accent)!important;border:1px solid var(--accent-mid)!important}
+.dark .sec-title,.hero-fin .sec-title,.dark h2,.dark h3,.hero-fin h1{color:var(--ink)!important}
+.dark .sec-sub,.dark p,.hero-fin .hero-sub{color:var(--muted)!important}
+.dark .card{background:var(--surface)!important;border-color:var(--border)!important;backdrop-filter:none!important}
+.dark .card:hover{border-color:var(--accent-mid)!important}
+.dark .icon-tile{background:var(--accent-lt)!important;border-color:var(--accent-mid)!important}
+.dark .icon-tile svg{stroke:var(--accent)!important}
+.dark .tpill{background:#fff!important;border-color:var(--border)!important;color:var(--ink-2)!important}
+.dark .rstat{background:#fff!important;border-color:var(--border)!important}
+.dark .rstat-n{color:var(--accent)!important}
+.dark .rstat-l{color:var(--muted)!important}
+.dark .cta-pill{border-color:var(--border-2)!important;color:var(--ink)!important;background:#fff!important}
+.dark .cta-pill:hover{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+.hero-fin .btn-ghost{background:#fff!important;color:var(--ink)!important;border-color:var(--border-2)!important}
+/* timeline light + animated numbering */
+.tl-track{background:var(--accent-mid)!important}
+.tl-fill{background:linear-gradient(90deg,var(--accent),#b39dff)!important}
+.tl-dot{background:#fff!important;border:2px solid var(--accent)!important;color:var(--accent)!important;font-weight:800}
+.tl-body h3{color:var(--ink)!important}
+.tl-body p{color:var(--muted)!important}
+@keyframes stepPop{0%{transform:scale(.3);opacity:0}55%{transform:scale(1.18)}100%{transform:scale(1);opacity:1}}
+@keyframes stepRing{0%{box-shadow:0 0 0 0 rgba(120,86,255,.4)}100%{box-shadow:0 0 0 22px rgba(120,86,255,0)}}
+.reveal.in .tl-dot{animation:stepPop .6s cubic-bezier(.34,1.56,.64,1) both,stepRing 1.1s ease-out both}
+.tl-step:nth-child(1) .tl-dot{animation-delay:.05s,.45s}
+.tl-step:nth-child(2) .tl-dot{animation-delay:.17s,.57s}
+.tl-step:nth-child(3) .tl-dot{animation-delay:.29s,.69s}
+.tl-step:nth-child(4) .tl-dot{animation-delay:.41s,.81s}
+.tl-step:nth-child(5) .tl-dot{animation-delay:.53s,.93s}
+.tl-step:nth-child(6) .tl-dot{animation-delay:.65s,1.05s}
+/* seamless: cta-band flows into footer, color runs to the very end */
+.cta-band{background:radial-gradient(ellipse 55% 45% at 50% 0%,#ffe6d6 0%,transparent 55%),linear-gradient(180deg,#ffffff 0%,#f0e8ff 34%,#d9c8ff 68%,#c3aaff 100%)!important}
+footer{background:linear-gradient(180deg,#c3aaff 0%,#b193f8 60%,#a486f0 100%)!important;border-radius:0!important;color:#3b2f66!important}
+.foot-desc{color:#4a3f75!important}
+.foot-col-t{color:#5c4d8f!important}
+.foot-links a{color:#3b2f66!important}
+.foot-links a:hover{color:var(--ink)!important}
+.foot-logo{color:var(--ink)!important}
+.foot-bottom{border-top:1px solid rgba(36,16,88,.16)!important}
+.foot-bottom p{color:#5c4d8f!important}
+
+.dark h4,.hero-fin h4,.tl-body h4{color:var(--ink)!important}
+.dark h5,.dark strong,.dark b{color:var(--ink)!important}
+
+/* ── v5: real review screenshots, zoomed wide ── */
+.rev-carousel{width:min(1340px,calc(100vw - 48px));position:relative;left:50%;transform:translateX(-50%);grid-template-columns:repeat(3,1fr);height:800px}
+.rev-shot{margin:0;background:#fff;border:1px solid var(--border);border-radius:16px;padding:8px;box-shadow:0 1px 2px rgba(31,20,64,.05),0 14px 34px -20px rgba(31,20,64,.16);transition:transform .3s,box-shadow .3s}
+.rev-shot:hover{transform:translateY(-3px);box-shadow:0 20px 44px -18px rgba(120,86,255,.3)}
+.rev-shot img{width:100%;height:auto;display:block;border-radius:10px}
+@media(max-width:760px){.rev-carousel{grid-template-columns:1fr 1fr;height:640px;width:calc(100vw - 40px)}}
+@media(max-width:480px){.rev-carousel{grid-template-columns:1fr}}
+
+.hero-fin .badge{background:#fff!important;color:var(--ink-2)!important;border-color:var(--border)!important}
+.hero-fin .hl{color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important;background:linear-gradient(transparent 78%,var(--accent-mid) 78%)!important;background-clip:border-box!important}
+
+.hero-fin .hero-stats{background:#fff!important;border-color:var(--border)!important}
+.hero-fin .hstat{border-color:var(--border)!important}
+.hero-fin .hstat-n,.hero-fin .hstat-n .count{color:var(--ink)!important}
+.hero-fin .hstat-l{color:var(--muted)!important}
+
+.dark .checks li,.hero-fin .checks li{color:var(--ink-2)!important}
+.dark li{color:var(--ink-2)!important}
+
+/* v4c-li-accent-fix */
+.dark .checks li,.hero-fin .checks li,.dark li{color:var(--ink-2)!important}
+.dark .sec-title .accent,.dark .accent{color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important;background:linear-gradient(transparent 78%,var(--accent-mid) 78%)!important}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Muneeb Arshad","url":"https://muneebarshad.com","jobTitle":"Mobile App Developer & Growth Marketer","description":"Builds AI-powered trading and fintech apps — chart-vision analysis, real-time UX, subscriptions and user acquisition. 100+ apps shipped.","knowsAbout":["Mobile App Development","iOS","Android","React Native","Flutter","AI Integration","Computer Vision","Trading App Development","Fintech","Chart Analysis","RevenueCat","AppsFlyer","Meta Ads","TikTok Ads","Apple Search Ads","App Store Optimization"]}
+</script>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/"><span class="logo-mark"><img src="/assets/muneeb-avatar.jpg" alt="Muneeb Arshad" onerror="this.remove()">M</span>Muneeb Arshad</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/apps/">All Apps</a></li>
+      <li><a href="/ai-apps/">AI Development</a></li>
+      <li><a href="/growth/">Growth</a></li>
+      <li><a href="/revenuecat/">Subscriptions</a></li>
+      <li><a href="/appsflyer/">Attribution</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/apps/" class="btn-cta">View All Apps</a>
+      <button class="hamburger" id="hb" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mm">
+  <a href="/" onclick="closeMenu()">Home</a>
+  <a href="/apps/" onclick="closeMenu()">All Apps</a>
+  <a href="/ai-apps/" onclick="closeMenu()">AI Development</a>
+  <a href="/growth/" onclick="closeMenu()">Growth</a>
+  <a href="/revenuecat/" onclick="closeMenu()">Subscriptions</a>
+  <a href="/appsflyer/" onclick="closeMenu()">Attribution</a>
+  <a href="/apps/" class="btn-cta" onclick="closeMenu()">View All Apps</a>
+</div>
+
+<!-- HERO -->
+<section class="hero hero-fin">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="badge"><span class="pdot"></span>Trading &amp; Fintech AI</div>
+    <h1>AI that reads the <span class="hl">charts</span>.</h1>
+    <p class="hero-sub">I build AI trading tools that turn a raw chart into a structured read — patterns, levels, and market structure, in seconds. Two are live on the App Store, and they earn their ratings.</p>
+    <div class="hero-actions">
+      <a href="#flagships" class="btn-lg btn-primary">See the trading apps <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="/ai-apps/" class="btn-lg btn-ghost">AI Development</a>
+    </div>
+
+    <!-- TERMINAL / animated chart -->
+    <div class="term" aria-hidden="true">
+      <div class="term-bar">
+        <i></i><i></i><i></i>
+        <span class="term-ticker"><b>BTC / USD</b> · 4H · <span>vision analysis</span></span>
+      </div>
+      <div class="term-body">
+        <svg viewBox="0 0 820 360" role="img">
+          <!-- grid -->
+          <g stroke="rgba(255,255,255,.05)" stroke-width="1">
+            <line x1="48" y1="70" x2="800" y2="70"/><line x1="48" y1="130" x2="800" y2="130"/>
+            <line x1="48" y1="190" x2="800" y2="190"/><line x1="48" y1="250" x2="800" y2="250"/>
+            <line x1="48" y1="310" x2="800" y2="310"/>
+          </g>
+          <!-- resistance -->
+          <line class="draw" x1="60" y1="76" x2="800" y2="76" stroke="rgba(251,113,133,.6)" stroke-width="1.6" stroke-dasharray="7 6" style="animation-delay:.95s"/>
+          <text class="svgfade" x="694" y="68" fill="rgba(251,113,133,.9)" font-family="ui-monospace,monospace" font-size="11" letter-spacing="1.5" style="animation-delay:1.4s">RESISTANCE</text>
+          <!-- support trend -->
+          <line class="draw" x1="72" y1="292" x2="762" y2="150" stroke="rgba(52,211,153,.7)" stroke-width="1.8" stroke-dasharray="7 6" style="animation-delay:1.15s"/>
+          <text class="svgfade" x="118" y="308" fill="rgba(52,211,153,.9)" font-family="ui-monospace,monospace" font-size="11" letter-spacing="1.5" style="animation-delay:1.5s">SUPPORT &#8599;</text>
+          <!-- AI trend overlay -->
+          <polyline class="draw" points="96,264 156,248 216,258 276,229 336,211 396,219 456,190 516,168 576,176 636,146 696,121 756,102" fill="none" stroke="#7856ff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" opacity=".6" style="animation-delay:1.3s"/>
+          <!-- candles -->
+          <g stroke-linecap="round">
+            <g class="cndl" style="animation-delay:.30s"><line x1="96"  y1="240" x2="96"  y2="288" stroke="#fb7185" stroke-width="1.6"/><rect x="86"  y="250" width="20" height="28" rx="2" fill="#fb7185"/></g>
+            <g class="cndl" style="animation-delay:.37s"><line x1="156" y1="226" x2="156" y2="270" stroke="#34d399" stroke-width="1.6"/><rect x="146" y="236" width="20" height="24" rx="2" fill="#34d399"/></g>
+            <g class="cndl" style="animation-delay:.44s"><line x1="216" y1="240" x2="216" y2="274" stroke="#fb7185" stroke-width="1.6"/><rect x="206" y="248" width="20" height="20" rx="2" fill="#fb7185"/></g>
+            <g class="cndl" style="animation-delay:.51s"><line x1="276" y1="204" x2="276" y2="252" stroke="#34d399" stroke-width="1.6"/><rect x="266" y="214" width="20" height="30" rx="2" fill="#34d399"/></g>
+            <g class="cndl" style="animation-delay:.58s"><line x1="336" y1="190" x2="336" y2="232" stroke="#34d399" stroke-width="1.6"/><rect x="326" y="200" width="20" height="22" rx="2" fill="#34d399"/></g>
+            <g class="cndl" style="animation-delay:.65s"><line x1="396" y1="202" x2="396" y2="238" stroke="#fb7185" stroke-width="1.6"/><rect x="386" y="210" width="20" height="18" rx="2" fill="#fb7185"/></g>
+            <g class="cndl" style="animation-delay:.72s"><line x1="456" y1="166" x2="456" y2="212" stroke="#34d399" stroke-width="1.6"/><rect x="446" y="176" width="20" height="28" rx="2" fill="#34d399"/></g>
+            <g class="cndl" style="animation-delay:.79s"><line x1="516" y1="146" x2="516" y2="190" stroke="#34d399" stroke-width="1.6"/><rect x="506" y="156" width="20" height="24" rx="2" fill="#34d399"/></g>
+            <g class="cndl" style="animation-delay:.86s"><line x1="576" y1="160" x2="576" y2="196" stroke="#fb7185" stroke-width="1.6"/><rect x="566" y="168" width="20" height="16" rx="2" fill="#fb7185"/></g>
+            <g class="cndl" style="animation-delay:.93s"><line x1="636" y1="122" x2="636" y2="166" stroke="#34d399" stroke-width="1.6"/><rect x="626" y="132" width="20" height="28" rx="2" fill="#34d399"/></g>
+            <g class="cndl" style="animation-delay:1.00s"><line x1="696" y1="100" x2="696" y2="142" stroke="#34d399" stroke-width="1.6"/><rect x="686" y="110" width="20" height="22" rx="2" fill="#34d399"/></g>
+            <g class="cndl" style="animation-delay:1.07s"><line x1="756" y1="84" x2="756" y2="124" stroke="#34d399" stroke-width="1.6"/><rect x="746" y="92" width="20" height="20" rx="2" fill="#34d399"/></g>
+          </g>
+          <!-- last-close marker -->
+          <circle class="svgfade" cx="756" cy="92" r="11" fill="rgba(52,211,153,.18)" style="animation-delay:1.55s"/>
+          <circle class="svgfade" cx="756" cy="92" r="4.5" fill="#34d399" style="animation-delay:1.55s"/>
+          <!-- structure chip -->
+          <g class="svgfade" style="animation-delay:1.45s">
+            <rect x="56" y="42" width="196" height="26" rx="13" fill="rgba(52,211,153,.12)" stroke="rgba(52,211,153,.35)"/>
+            <text x="72" y="59" fill="#7fe1d8" font-family="'Hanken Grotesk',sans-serif" font-size="12.5" font-weight="700">Higher highs &#183; HH / HL detected</text>
+          </g>
+        </svg>
+        <div class="term-ai">
+          <div class="term-ai-h"><span class="dot"></span>AI Analysis</div>
+          <div class="term-ai-row"><span>Structure</span><b>Uptrend</b></div>
+          <div class="term-ai-row"><span>Key level</span><b>Prior swing high</b></div>
+          <div class="term-ai-row"><span>Bias</span><b class="pos">Bullish</b></div>
+          <div class="term-ai-note">Educational analysis only — not financial advice.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-n"><span class="count" data-count="4.8" data-decimals="1">0</span><span style="color:#7fe1d8">★</span></div><div class="hstat-l">Top App Store rating</div></div>
+      <div class="hstat"><div class="hstat-n"><span class="count" data-count="210" data-suffix="+">0</span></div><div class="hstat-l">Combined store ratings</div></div>
+      <div class="hstat"><div class="hstat-n"><span class="count" data-count="100" data-suffix="+">0</span></div><div class="hstat-l">Apps shipped, all niches</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FLAGSHIPS -->
+<section id="flagships" class="flags-sec">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Flagship Trading Apps</span>
+      <h2 class="sec-title">Two chart-vision analyzers, <span class="accent">live and rated</span></h2>
+      <p class="sec-sub">Both built and shipped by me, live on the U.S. App Store. Every rating below comes from real traders.</p>
+    </div>
+    <div class="flags">
+      <article class="flag reveal">
+        <div class="flag-head">
+          <div class="flag-icon"><img loading="lazy" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/90/d8/73/90d8734d-0dd2-9b8a-8027-6de272766796/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" alt="SnapTrader app icon"></div>
+          <div class="flag-meta">
+            <div class="flag-name">SnapTrader</div>
+            <div class="flag-tag">AI trade analyzer</div>
+          </div>
+        </div>
+        <div class="flag-rating">
+          <div class="fr-item"><div class="fr-n"><span class="count" data-count="4.7" data-decimals="1">0</span><span class="fr-star">&#9733;</span></div><div class="fr-l">App Store rating</div></div>
+          <div class="fr-item"><div class="fr-n"><span class="count" data-count="141">0</span></div><div class="fr-l">Ratings</div></div>
+        </div>
+        <p class="flag-desc">Snap a chart, get AI-driven trade analysis — entries, risk levels, and market structure, instantly. Built for traders who want a fast second opinion on what they're looking at.</p>
+        <div class="flag-foot">
+          <span class="bdg">iOS</span>
+          <a class="store-link" href="https://apps.apple.com/us/app/snaptrader-ai-trade-analyzer/id6757448151" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>App Store</a>
+        </div>
+      </article>
+
+      <article class="flag reveal d1">
+        <div class="flag-head">
+          <div class="flag-icon"><img loading="lazy" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d2/6d/df/d26ddfe0-0546-82f7-8df4-5d653eae96ff/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" alt="Tradvio AI app icon"></div>
+          <div class="flag-meta">
+            <div class="flag-name">Tradvio AI</div>
+            <div class="flag-tag">AI chart analysis</div>
+          </div>
+        </div>
+        <div class="flag-rating">
+          <div class="fr-item"><div class="fr-n"><span class="count" data-count="4.8" data-decimals="1">0</span><span class="fr-star">&#9733;</span></div><div class="fr-l">App Store rating</div></div>
+          <div class="fr-item"><div class="fr-n"><span class="count" data-count="69">0</span></div><div class="fr-l">Ratings</div></div>
+        </div>
+        <p class="flag-desc">Upload any trading chart and get instant AI analysis — patterns, levels, and structured insights in seconds. A clean, upload-first flow built around a vision model that actually reads the image.</p>
+        <div class="flag-foot">
+          <span class="bdg">iOS</span>
+          <a class="store-link" href="https://apps.apple.com/us/app/tradvio-ai-analyze-charts/id6757087047" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>App Store</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Coming soon -->
+    <div class="soon reveal d1">
+      <div class="soon-mono">T</div>
+      <div class="soon-body">
+        <div class="soon-name">TrackIQ <span class="soon-badge">Coming soon</span></div>
+        <p class="soon-desc">Log trades, analyze performance, and sharpen your edge with intelligent trading analytics — the journaling and analytics companion to the chart-vision apps.</p>
+      </div>
+    </div>
+    <p class="flags-note reveal">Part of 100+ apps I've shipped across the App Store and Play Store.</p>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">What I Build</span>
+      <h2 class="sec-title">The trading-app toolkit, <span class="accent">end to end</span></h2>
+      <p class="sec-sub">From the vision model that reads a chart to the paywall and the campaigns that grow it — I've shipped every layer of a finance app.</p>
+    </div>
+    <div class="cards-3">
+      <div class="card reveal">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M7 14l3-3 2 2 4-4"/></svg></div>
+        <h3>Chart Vision AI</h3>
+        <p>Upload or snap any trading chart and get back structured analysis — the vision-model pipeline behind SnapTrader and Tradvio AI, tuned to read candles, levels, and structure from an image.</p>
+      </div>
+      <div class="card reveal d1">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-2 8 9-12h-7z"/></svg></div>
+        <h3>Real-Time Analysis UX</h3>
+        <p>Fast feedback loops. Streamed results, considered loading states, and interactions tuned so a chart read feels instant — not like waiting on a form to submit.</p>
+      </div>
+      <div class="card reveal d2">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M3 15l4-4 3 3 4-6 3 3 4-5"/><path d="M3 20h18"/></svg></div>
+        <h3>Pattern &amp; Level Detection</h3>
+        <p>Clean presentation of detected patterns, support and resistance zones, and market structure — turned into a readable breakdown a trader can act on, not a wall of numbers.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div>
+        <h3>Subscription Monetization</h3>
+        <p>RevenueCat paywalls, trials, and entitlement logic built for trading tools — the same revenue engine proven across 20+ live subscription apps.</p>
+        <a href="/revenuecat/" class="card-link">Subscription setup <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="card reveal d1">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Compliant, Careful Framing</h3>
+        <p>I ship trading tools as educational analysis, not financial advice — with disclaimers and wording written to keep that line clear. No invented regulatory claims, no promises the app can't back up.</p>
+      </div>
+      <div class="card reveal d2">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M3 17l5-5 4 3 6-7"/><path d="M15 8h4v4"/><path d="M3 21h18"/></svg></div>
+        <h3>Finance-App User Acquisition</h3>
+        <p>Meta, TikTok &amp; Apple Search Ads campaigns plus AppsFlyer attribution — the growth stack to reach traders at a cost that keeps the unit economics working.</p>
+        <a href="/growth/" class="card-link">Performance marketing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW (dark) -->
+<section class="dark">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">How Chart-Vision Works</span>
+      <h2 class="sec-title">Chart in, structured read out</h2>
+      <p class="sec-sub">The flow that powers both live analyzers — designed to feel effortless for the trader and honest about what the analysis is.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-n">STEP 01</div>
+        <div class="step-ic"><svg viewBox="0 0 24 24"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Snap or upload</h3>
+        <p>Capture a chart or drop in a screenshot from any platform. No account gymnastics, no manual data entry — just the image.</p>
+        <div class="step-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </div>
+      <div class="step reveal d1">
+        <div class="step-n">STEP 02</div>
+        <div class="step-ic"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/><path d="M10 11.5l1.5 2 2.5-3"/></svg></div>
+        <h3>AI reads the structure</h3>
+        <p>A vision model interprets candles, trend, and key zones — extracting the patterns and levels a trader would look for.</p>
+        <div class="step-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </div>
+      <div class="step reveal d2">
+        <div class="step-n">STEP 03</div>
+        <div class="step-ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+        <h3>Structured read out</h3>
+        <p>A clean, readable breakdown returns in seconds — framed as educational analysis, never a directive to trade.</p>
+      </div>
+    </div>
+    <p class="dark-note">Every screen ships with the wording that matters: <b>this is educational analysis, not financial advice.</b> I build the disclaimers in from the start — no invented regulatory approvals, no guarantees a trading app has no business making.</p>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="rev-sec">
+  <div class="sec">
+    <div class="sec-head reveal" style="max-width:640px;margin:0 auto 52px;text-align:center">
+      <span class="sec-tag">Testimonials</span>
+      <h2 class="sec-title">What clients say</h2>
+      <p class="sec-sub">Real, verified 5.0★ reviews from Fiverr &amp; Upwork — repeat clients across the US, Europe &amp; Asia.</p>
+    </div>
+    <div class="rev-carousel">
+      <div class="rev-col"><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-01.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-04.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-07.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-10.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-13.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-16.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-19.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-01.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-04.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-07.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-10.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-13.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-16.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-19.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure></div>
+      <div class="rev-col rev-down"><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-02.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-05.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-08.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-11.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-14.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-17.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-20.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-02.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-05.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-08.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-11.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-14.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-17.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-20.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure></div>
+      <div class="rev-col"><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-03.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-06.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-09.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-12.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-15.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-18.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-21.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-03.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-06.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-09.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-12.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-15.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-18.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-21.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="reveal">
+    <span class="sec-tag">Let's build</span>
+    <h2>Building a trading or fintech <span class="accent">AI product?</span></h2>
+    <p>From chart-vision analysis to subscriptions and user acquisition — see the apps behind the work, or the AI development that powers them.</p>
+    <div class="hero-actions">
+      <a href="/apps/" class="btn-lg btn-primary">View All Apps <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="/ai-apps/" class="btn-lg btn-ghost">AI Development</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-top">
+    <div>
+      <a class="foot-logo" href="/"><span class="logo-mark"><img src="/assets/muneeb-avatar.jpg" alt="Muneeb Arshad" onerror="this.remove()">M</span>Muneeb Arshad</a>
+      <p class="foot-desc">Mobile app developer &amp; growth marketer — building AI-powered apps and scaling them with performance marketing. 100+ apps shipped worldwide.</p>
+    </div>
+    <div>
+      <p class="foot-col-t">Pages</p>
+      <div class="foot-links">
+        <a href="/">Home</a>
+        <a href="/apps/">All Apps</a>
+        <a href="/ai-apps/">AI Development</a>
+        <a href="/growth/">Growth Marketing</a>
+        <a href="/revenuecat/">Subscriptions &amp; RevenueCat</a>
+        <a href="/appsflyer/">Attribution &amp; AppsFlyer</a>
+      </div>
+    </div>
+    <div>
+      <p class="foot-col-t">Solutions</p>
+      <div class="foot-links">
+        <a href="/beauty/">Beauty &amp; Style AI</a>
+        <a href="/wellness/">Health &amp; Wellness</a>
+        <a href="/finance/">Trading &amp; Finance</a>
+        <a href="/productivity/">Productivity &amp; Lifestyle</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p>© 2026 Muneeb Arshad. All rights reserved.</p>
+    <p>Mobile App Developer · Growth Marketer</p>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30),{passive:true});
+const hb=document.getElementById('hb'),mm=document.getElementById('mm');
+hb.addEventListener('click',()=>{hb.classList.toggle('open');mm.classList.toggle('open')});
+function closeMenu(){hb.classList.remove('open');mm.classList.remove('open')}
+document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!mm.contains(e.target))closeMenu()});
+
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const easeOut=t=>1-Math.pow(1-t,4);
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function finalVal(el){const d=+(el.dataset.decimals||0);return (el.dataset.prefix||'')+(d?parseFloat(el.dataset.count).toFixed(d):Math.round(el.dataset.count).toLocaleString('en-US'))+(el.dataset.suffix||'')}
+function runCount(el){
+ const target=parseFloat(el.dataset.count),dec=+(el.dataset.decimals||0),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';
+ const dur=1500,t0=performance.now();let done=false;
+ function step(now){if(done)return;const p=Math.min((now-t0)/dur,1),v=target*easeOut(p);
+  el.textContent=pre+(dec?v.toFixed(dec):Math.round(v).toLocaleString('en-US'))+suf;
+  if(p<1)requestAnimationFrame(step); else{done=true;el.textContent=finalVal(el);}}
+ requestAnimationFrame(step);
+ setTimeout(()=>{if(!done){done=true;el.textContent=finalVal(el);}},dur+400);
+}
+const cio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){reduce?e.target.textContent=finalVal(e.target):runCount(e.target);cio.unobserve(e.target)}})},{threshold:.5});
+document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+</script>
+</body>
+</html>

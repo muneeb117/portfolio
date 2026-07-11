@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subscriptions &amp; RevenueCat — Muneeb Arshad</title>
+<meta name="description" content="RevenueCat expert. I architect and ship the full subscription stack — SDK integration, paywalls & A/B experiments, offerings, entitlements, and server-side webhook sync — live across 50+ app projects generating real recurring revenue.">
+<meta name="author" content="Muneeb Arshad">
+<meta name="theme-color" content="#7856ff">
+<link rel="canonical" href="https://muneebarshad.com/revenuecat/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Subscriptions &amp; RevenueCat — Muneeb Arshad">
+<meta property="og:description" content="Subscription revenue, engineered. RevenueCat expert setup across 50+ apps — paywalls, offerings, entitlements, and server-side sync.">
+<meta property="og:url" content="https://muneebarshad.com/revenuecat/">
+<meta property="og:site_name" content="Muneeb Arshad">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Subscriptions &amp; RevenueCat — Muneeb Arshad">
+<meta name="twitter:description" content="Subscription revenue, engineered. RevenueCat expert setup across 50+ apps — the revenue engine behind a 100+ app portfolio.">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/icons/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;--bg-soft:#f7f5ff;--panel:#f0edff;--surface:#ffffff;
+  --border:#e9e6f5;--border-2:#d9d3ee;
+  --ink:#1f2023;--ink-2:#4a4757;--muted:#6f6b7e;--muted-2:#a7a2b6;
+  --accent:#7856ff;--accent-2:#6a48f0;--accent-lt:#f0edff;--accent-mid:#e2dbff;
+  --navy:#2a1270;--navy-2:#25105c;
+  --teal:#2dd4bf;--green:#34d399;--rc:#f25a5a;
+  --shadow-xs:0 1px 2px rgba(31,20,64,.05);
+  --shadow-sm:0 1px 2px rgba(31,20,64,.06),0 2px 6px rgba(31,20,64,.05);
+  --shadow-md:0 6px 20px rgba(31,20,64,.09);
+  --shadow-lg:0 18px 44px rgba(31,20,64,.14);
+  --radius:12px;--radius-lg:16px;--radius-xl:20px;
+  --maxw:1160px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink-2);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+ radial-gradient(55% 38% at 12% 5%,rgba(120,86,255,.10),transparent 60%),
+ radial-gradient(48% 32% at 88% 2%,rgba(255,168,138,.12),transparent 60%),
+ radial-gradient(45% 32% at 6% 55%,rgba(127,225,216,.08),transparent 60%),
+ radial-gradient(55% 40% at 90% 80%,rgba(150,120,255,.12),transparent 58%),
+ radial-gradient(85% 50% at 50% 100%,rgba(170,130,255,.14),transparent 60%),
+ radial-gradient(50% 40% at 8% 95%,rgba(255,196,160,.10),transparent 60%)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Hanken Grotesk',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.1;color:var(--ink)}
+.accent{color:var(--ink);background:linear-gradient(transparent 80%,var(--accent-mid) 80%)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.82);backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+nav.scrolled{border-bottom-color:var(--border);box-shadow:var(--shadow-xs)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 32px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Hanken Grotesk',sans-serif;font-size:16.5px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
+.logo-mark{width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;flex-shrink:0;overflow:hidden;position:relative}
+.logo-mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-links a{padding:8px 13px;border-radius:8px;font-size:14px;font-weight:500;color:var(--muted);transition:all .18s}
+.nav-links a:hover{color:var(--ink);background:var(--panel)}
+.nav-links a[aria-current="page"]{color:var(--ink);font-weight:600}
+.nav-right{display:flex;align-items:center;gap:12px}
+.btn-cta{padding:10px 20px;border-radius:100px;background:var(--ink);color:#fff;font-family:'Inter',sans-serif;font-size:13.5px;font-weight:600;border:none;cursor:pointer;transition:all .2s;white-space:nowrap}
+.btn-cta:hover{background:var(--accent)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:66px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:14px 24px 22px;z-index:199;box-shadow:var(--shadow-md);flex-direction:column;gap:2px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:12px 14px;border-radius:9px;font-size:15px;font-weight:500;color:var(--ink-2);transition:all .18s}
+.mobile-menu a:hover{background:var(--panel)}
+.mobile-menu .btn-cta{margin-top:10px;text-align:center;padding:13px}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:140px 32px 40px;background:transparent}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.5;mask-image:radial-gradient(ellipse 70% 55% at 50% 0%,#000,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 55% at 50% 0%,#000,transparent 75%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:820px;margin:0 auto;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 15px;background:var(--surface);border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-2);box-shadow:var(--shadow-xs);margin-bottom:28px}
+.badge img{width:15px;height:15px;object-fit:contain}
+.pdot{width:7px;height:7px;border-radius:50%;background:#16a34a;position:relative}
+.pdot::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1px solid rgba(22,163,74,.4);animation:ping 2.2s ease-out infinite}
+@keyframes ping{0%{transform:scale(.8);opacity:1}100%{transform:scale(2);opacity:0}}
+.hero h1{font-size:clamp(34px,5vw,56px);letter-spacing:-.035em;line-height:1.05}
+.hero-sub{max-width:620px;margin:22px auto 0;font-size:clamp(16px,2vw,18px);color:var(--muted);line-height:1.65}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.btn-lg{padding:14px 28px;border-radius:100px;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;border:1px solid transparent}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:var(--shadow-sm)}
+.btn-primary:hover{background:#000;transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.btn-ghost{background:var(--surface);color:var(--ink);border-color:var(--border-2)}
+.btn-ghost:hover{border-color:var(--ink);color:var(--ink)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);max-width:600px;margin:52px auto 0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden}
+.hstat{padding:24px 14px;border-right:1px solid var(--border)}
+.hstat:last-child{border-right:none}
+.hstat-n{font-family:'Hanken Grotesk',sans-serif;font-size:clamp(24px,3.6vw,32px);font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+.hstat-l{font-size:12.5px;font-weight:500;color:var(--muted);margin-top:5px}
+
+/* SECTIONS */
+.sec{max-width:var(--maxw);margin:0 auto;padding:80px 32px}
+.sec-sm{padding-top:52px}
+.sec-head{max-width:660px;margin:0 auto 46px;text-align:center}
+.sec-tag{display:inline-block;padding:6px 13px;border-radius:100px;background:var(--accent-lt);color:var(--accent);font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:16px;border:1px solid var(--accent-mid)}
+.sec-title{font-size:clamp(28px,3.8vw,44px);letter-spacing:-.03em}
+.sec-sub{color:var(--muted);font-size:16.5px;margin-top:14px;line-height:1.6}
+
+/* CARDS */
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 26px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-2)}
+.icon-tile{width:46px;height:46px;border-radius:13px;background:var(--accent-lt);border:1px solid var(--accent-mid);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.icon-tile svg{width:23px;height:23px;stroke:var(--accent);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:18px;margin-bottom:8px;letter-spacing:-.02em}
+.card p{color:var(--muted);font-size:14.5px;line-height:1.6}
+.card-tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:15px}
+.ctag{font-size:11px;font-weight:600;color:var(--ink-2);background:var(--panel);border:1px solid var(--border);border-radius:100px;padding:4px 10px}
+.card-link{display:inline-flex;align-items:center;gap:6px;margin-top:15px;font-size:13.5px;font-weight:600;color:var(--accent)}
+.card-link svg{width:14px;height:14px;transition:transform .2s}
+.card:hover .card-link svg{transform:translateX(3px)}
+
+/* DASHBOARD SHOT (real screenshot in browser frame, with animated fallback) */
+.shot-wrap{max-width:1000px;margin:0 auto}
+.shot{border-radius:18px;overflow:hidden;border:1px solid var(--border-2);box-shadow:var(--shadow-lg);background:#fff}
+.shot-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#f4f1ff;border-bottom:1px solid var(--border)}
+.shot-bar>span{width:11px;height:11px;border-radius:50%;background:#d9d3ee;flex-shrink:0}
+.shot-bar>span:nth-child(1){background:#ff6159}
+.shot-bar>span:nth-child(2){background:#ffbd2e}
+.shot-bar>span:nth-child(3){background:#28c840}
+.shot-bar i{margin-left:10px;font-style:normal;font-size:12.5px;color:var(--muted);background:#fff;border:1px solid var(--border);border-radius:100px;padding:6px 16px;flex:1;max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.shot>img{width:100%;display:block}
+.shot-fallback{display:none}
+.shot.noshot>img{display:none}
+.shot.noshot .shot-fallback{display:block}
+.shot-cap{text-align:center;color:var(--muted);font-size:13.5px;margin-top:20px;max-width:620px;margin-left:auto;margin-right:auto}
+
+/* RevenueCat-style dashboard (fallback UI) */
+.rc-dash{background:linear-gradient(180deg,#1c0a45 0%,#12002f 100%);padding:24px;color:#ece8ff}
+.rc-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:20px;flex-wrap:wrap}
+.rc-brand{display:flex;align-items:center;gap:9px;font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:16px;color:#fff}
+.rc-brand img{width:20px;height:20px;object-fit:contain}
+.rc-top-right{display:flex;align-items:center;gap:8px}
+.rc-tab{font-size:12px;font-weight:600;color:#c9bcff;background:rgba(120,86,255,.22);border:1px solid rgba(120,86,255,.4);border-radius:100px;padding:5px 13px}
+.rc-range{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:#a99fd6;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:5px 13px}
+.rc-live{width:7px;height:7px;border-radius:50%;background:var(--green);position:relative}
+.rc-live::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1px solid rgba(52,211,153,.45);animation:ping 2.2s ease-out infinite}
+.rc-panels{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.rc-panel{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:18px 18px 8px}
+.rc-panel .ph{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.rc-lbl{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#a99fd6}
+.rc-val{font-family:'Hanken Grotesk',sans-serif;font-size:clamp(26px,3.6vw,34px);font-weight:800;letter-spacing:-.02em;color:#fff;margin-top:7px;line-height:1}
+.rc-chip{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:700;color:var(--green);background:rgba(52,211,153,.13);border:1px solid rgba(52,211,153,.3);border-radius:100px;padding:3px 9px;white-space:nowrap}
+.rc-chip svg{width:11px;height:11px;stroke:var(--green);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.rc-axis{display:flex;justify-content:space-between;font-size:10.5px;color:#7d73aa;margin-top:6px}
+.rc-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.rc-tile{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:16px}
+.rc-tile .rc-val{font-size:clamp(20px,2.6vw,25px);margin-top:8px}
+.rc-tile-spark{margin-top:10px}
+
+/* Sparklines + draw animation */
+.spark{display:block;width:100%;overflow:visible}
+.spark .line{fill:none;stroke:var(--teal);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}
+.spark.g .line{stroke:var(--green)}
+.spark .area{stroke:none}
+.spark-lg{height:76px;margin-top:12px}
+.spark-sm{height:30px}
+.reveal.in .spark .line{animation:draw 1.5s cubic-bezier(.45,0,.2,1) .3s forwards}
+.reveal.in .spark .area{animation:fadearea .9s ease .7s forwards;opacity:0}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fadearea{to{opacity:1}}
+
+/* CROSS-PLATFORM */
+.xplat{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative}
+.xcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px 22px;text-align:center;transition:transform .25s,box-shadow .25s,border-color .25s;box-shadow:var(--shadow-xs)}
+.xcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-2)}
+.xlogo{width:52px;height:52px;margin:0 auto 14px;border-radius:14px;background:var(--panel);border:1px solid var(--border);display:flex;align-items:center;justify-content:center}
+.xlogo img{width:28px;height:28px;object-fit:contain}
+.xcard h3{font-size:17px;letter-spacing:-.02em}
+.xcard p{color:var(--muted);font-size:13px;margin-top:6px;line-height:1.5}
+.xhub{display:flex;justify-content:center;margin:26px 0 0}
+.xhub-pill{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;background:var(--ink);color:#fff;border-radius:100px;font-size:14px;font-weight:600;box-shadow:var(--shadow-sm)}
+.xhub-pill img{width:18px;height:18px;object-fit:contain}
+.xfeat{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.xf{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 18px;transition:all .22s}
+.xf:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm);border-color:var(--border-2)}
+.xf-ic{width:34px;height:34px;border-radius:9px;background:var(--accent-lt);border:1px solid var(--accent-mid);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.xf-ic svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.xf h4{font-size:14px;letter-spacing:-.01em}
+.xf p{color:var(--muted);font-size:12.5px;margin-top:5px;line-height:1.5}
+
+/* PROOF PILLS */
+.proof-band{text-align:center}
+.proof-lead{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);margin-bottom:22px}
+.proof-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.app-pill{display:inline-flex;align-items:center;gap:10px;padding:8px 18px 8px 8px;background:var(--surface);border:1px solid var(--border);border-radius:100px;box-shadow:var(--shadow-xs);font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:14px;color:var(--ink);transition:transform .2s,box-shadow .2s,border-color .2s}
+.app-pill:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm);border-color:var(--border-2)}
+.app-pill img{width:28px;height:28px;border-radius:8px;object-fit:cover;box-shadow:var(--shadow-xs)}
+.app-pill.more{padding:8px 18px;color:var(--muted);font-family:'Inter',sans-serif;font-weight:600;font-size:13px}
+
+/* DARK (attribution tie-in) */
+.dark{background:linear-gradient(160deg,#2e1266 0%,#3f1f8f 55%,#241058 100%);color:#e5ddff;position:relative;overflow:hidden}
+.dark::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(150,120,255,.2),transparent 70%);pointer-events:none}
+.dark .sec{position:relative;z-index:1}
+.dark .sec-tag{background:rgba(120,86,255,.28);color:#d6ccff;border-color:rgba(120,86,255,.5)}
+.dark .sec-title{color:#fff}
+.dark .sec-sub{color:#94a3b8}
+.tie-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+.tie-lead{color:#a9a4c4;font-size:16px;line-height:1.7;margin-top:16px}
+.checks{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:13px}
+.checks li{display:flex;align-items:flex-start;gap:12px;font-size:14.5px;color:#e2e0f0;line-height:1.5}
+.chk{width:22px;height:22px;border-radius:6px;flex-shrink:0;background:var(--accent);border:1px solid var(--accent);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.chk svg{width:12px;height:12px;stroke:#fff;stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.tie-cta{margin-top:30px}
+.cta-pill{padding:13px 22px;border-radius:100px;border:1px solid rgba(255,255,255,.18);color:#e2e8f0;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.cta-pill:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.1);color:#fff}
+.cta-pill svg{width:15px;height:15px}
+.flow{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-xl);padding:26px}
+.flow-step{display:flex;align-items:center;gap:14px;padding:15px 16px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);transition:all .22s}
+.flow-step:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2)}
+.flow-ic{width:40px;height:40px;border-radius:11px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.flow-ic img{width:22px;height:22px;object-fit:contain}
+.flow-ic svg{width:20px;height:20px;stroke:#c9bcff;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.flow-tx b{display:block;color:#fff;font-size:14px;font-family:'Hanken Grotesk',sans-serif;font-weight:700;letter-spacing:-.01em}
+.flow-tx span{font-size:12.5px;color:#8f88ad}
+.flow-arrow{display:flex;justify-content:center;padding:6px 0;color:#6a6194}
+.flow-arrow svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow-step.win{background:linear-gradient(90deg,rgba(52,211,153,.14),rgba(45,212,191,.08));border-color:rgba(52,211,153,.34)}
+.flow-win-n{margin-left:auto;font-family:'Hanken Grotesk',sans-serif;font-size:26px;font-weight:800;color:var(--green);letter-spacing:-.02em}
+
+/* REVIEWS */
+.rev-sec{background:transparent;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev-carousel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;height:640px;overflow:hidden;position:relative;-webkit-mask:linear-gradient(180deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask:linear-gradient(180deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+.rev-col{display:flex;flex-direction:column;gap:16px;will-change:transform;animation:revscroll 120s linear infinite}
+.rev-col.rev-down{animation-direction:reverse}
+.rev-carousel:hover .rev-col,.rev-carousel:focus-within .rev-col{animation-play-state:paused}
+@keyframes revscroll{to{transform:translateY(-50%)}}
+@media(max-width:760px){.rev-carousel{grid-template-columns:1fr 1fr;height:560px}.rev-col:nth-child(3){display:none}}
+@media(max-width:480px){.rev-carousel{grid-template-columns:1fr}.rev-col:nth-child(2){display:none}}
+@media(prefers-reduced-motion:reduce){.rev-carousel{height:auto;overflow:visible;-webkit-mask:none;mask:none}.rev-col{animation:none}}
+.rev{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;box-shadow:var(--shadow-xs);transition:transform .25s,box-shadow .25s,border-color .25s}
+.rev:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-2)}
+.rev-stars{color:var(--accent);font-size:13px;letter-spacing:3px;margin-bottom:12px}
+.rev-q{color:var(--ink-2);font-size:14.5px;line-height:1.62;flex:1}
+.rev-by{display:flex;align-items:center;gap:11px;margin-top:18px;padding-top:15px;border-top:1px solid var(--border)}
+.rev-av{width:34px;height:34px;border-radius:50%;background:var(--panel);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Hanken Grotesk',sans-serif;color:var(--ink-2);font-size:13px;flex-shrink:0}
+.rev-meta{min-width:0}
+.rev-name{font-size:13.5px;font-weight:700;color:var(--ink)}
+.rev-loc{font-size:12px;color:var(--muted)}
+.rev-repeat{margin-left:auto;font-size:10px;font-weight:700;letter-spacing:.03em;color:var(--ink-2);background:var(--panel);border:1px solid var(--border);padding:3px 9px;border-radius:100px;white-space:nowrap}
+.rev-proof{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:36px}
+.rev-chip{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;background:var(--surface);border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-2);box-shadow:var(--shadow-xs)}
+.rev-chip b{color:var(--ink);font-family:'Hanken Grotesk',sans-serif}
+.rev-chip .st{color:var(--accent);letter-spacing:1px}
+
+/* CTA BAND */
+.cta-band{position:relative;padding:104px 32px 116px;text-align:center;background:radial-gradient(ellipse 55% 45% at 50% 0%,#ffe6d6 0%,transparent 55%),linear-gradient(180deg,#ffffff 0%,#f3eeff 42%,#d8caff 78%,#c2b1f2 100%)}
+.cta-band h2{font-size:clamp(30px,4.6vw,52px);letter-spacing:-.03em;max-width:660px;margin:0 auto;color:var(--ink)}
+.cta-band p{color:var(--ink-2);font-size:17px;line-height:1.6;margin:16px auto 0;max-width:520px}
+.cta-band .hero-actions{margin-top:34px}
+
+/* FOOTER */
+footer{background:linear-gradient(180deg,#e8e0ff 0%,#f3eeff 100%);color:var(--ink-2);border-radius:36px 36px 0 0;position:relative}
+.foot-top{max-width:var(--maxw);margin:0 auto;padding:64px 32px 42px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px}
+.foot-logo{display:flex;align-items:center;gap:10px;font-family:'Hanken Grotesk',sans-serif;font-size:17px;font-weight:800;color:var(--ink);margin-bottom:14px}
+.foot-desc{color:var(--muted);font-size:14px;line-height:1.7;max-width:330px}
+.foot-col-t{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);margin-bottom:16px}
+.foot-links{display:flex;flex-direction:column;gap:11px}
+.foot-links a{font-size:14px;font-weight:500;color:var(--ink-2);transition:color .18s}
+.foot-links a:hover{color:var(--accent)}
+.foot-bottom{border-top:1px solid var(--border);max-width:var(--maxw);margin:0 auto;padding:22px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.foot-bottom p{font-size:12.5px;color:var(--muted-2)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.06s}.d2{transition-delay:.12s}.d3{transition-delay:.18s}.d4{transition-delay:.24s}.d5{transition-delay:.3s}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .cards-3{grid-template-columns:repeat(2,1fr)}
+  .rev-grid{grid-template-columns:repeat(2,1fr)}
+  .xfeat{grid-template-columns:repeat(2,1fr)}
+  .tie-grid{grid-template-columns:1fr;gap:40px}
+  .foot-top{grid-template-columns:1fr 1fr;gap:36px}
+  .foot-top>:first-child{grid-column:1/-1}
+}
+@media(max-width:760px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .nav-inner,.wrap{padding-left:20px;padding-right:20px}
+  .hero{padding:118px 20px 36px}
+  .hero-stats{grid-template-columns:1fr}
+  .hstat{border-right:none;border-bottom:1px solid var(--border)}
+  .hstat:last-child{border-bottom:none}
+  .sec{padding:68px 20px}
+  .cards-3{grid-template-columns:1fr}
+  .rev-grid{grid-template-columns:1fr}
+  .xplat{grid-template-columns:1fr}
+  .rc-panels{grid-template-columns:1fr}
+  .rc-tiles{grid-template-columns:repeat(2,1fr)}
+  .foot-top{grid-template-columns:1fr;gap:30px;padding:44px 20px 30px}
+  .foot-top>:first-child{grid-column:1}
+  .foot-bottom{flex-direction:column;text-align:center;gap:6px}
+}
+@media(max-width:440px){
+  .xfeat{grid-template-columns:1fr}
+  .rc-tiles{grid-template-columns:1fr}
+  .shot-bar i{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  .spark .line{stroke-dashoffset:0!important}
+  .spark .area{opacity:1!important}
+}
+
+/* ── reviews v3: designed cards, no pricing ── */
+.rev-carousel{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;height:720px;overflow:hidden;position:relative;-webkit-mask:linear-gradient(180deg,transparent 0,#000 6%,#000 94%,transparent 100%);mask:linear-gradient(180deg,transparent 0,#000 6%,#000 94%,transparent 100%)}
+.rev-col{display:flex;flex-direction:column;gap:18px;will-change:transform;animation:revscroll 120s linear infinite}
+.rev-col.rev-down{animation-direction:reverse}
+.rev-carousel:hover .rev-col,.rev-carousel:focus-within .rev-col{animation-play-state:paused}
+@keyframes revscroll{to{transform:translateY(-50%)}}
+.rev{position:relative;background:linear-gradient(180deg,#ffffff 0%,#fcfbff 100%);border:1px solid var(--border);border-radius:18px;padding:24px 24px 20px;box-shadow:0 1px 2px rgba(31,20,64,.04),0 14px 34px -20px rgba(31,20,64,.16);display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.rev:hover{transform:translateY(-4px);border-color:var(--accent-mid);box-shadow:0 2px 5px rgba(31,20,64,.05),0 26px 52px -22px rgba(120,86,255,.32)}
+.rev-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:13px}
+.rev-stars{color:var(--accent);font-size:14px;letter-spacing:2.5px;text-shadow:0 1px 0 rgba(120,86,255,.15)}
+.rev-plat{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.02em;padding:4px 11px;border-radius:100px;border:1px solid var(--border);background:#fff;color:var(--ink-2)}
+.rev-plat i{width:7px;height:7px;border-radius:50%}
+.rev-plat-fv i{background:#1dbf73}
+.rev-plat-uw i{background:#14a800}
+.rev-role{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted-2);margin:-4px 0 8px}
+.rev-q{color:var(--ink-2);font-size:15.5px;line-height:1.68;flex:1;font-weight:450}
+.rev-by{display:flex;align-items:center;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--border)}
+.rev-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#b39dff);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Hanken Grotesk',sans-serif;font-size:15px;flex-shrink:0;box-shadow:0 4px 10px rgba(120,86,255,.3)}
+.rev-meta{min-width:0}
+.rev-name{font-size:14px;font-weight:700;color:var(--ink)}
+.rev-loc{font-size:12px;color:var(--muted);margin-top:1px}
+.rev-repeat{margin-left:auto;font-size:10px;font-weight:700;color:var(--accent);background:var(--accent-lt);border:1px solid var(--accent-mid);padding:4px 10px;border-radius:100px;white-space:nowrap}
+@media(max-width:760px){.rev-carousel{grid-template-columns:1fr 1fr;height:600px}.rev-col:nth-child(3){display:none}}
+@media(max-width:480px){.rev-carousel{grid-template-columns:1fr}.rev-col:nth-child(2){display:none}}
+@media(prefers-reduced-motion:reduce){.rev-carousel{height:auto;overflow:visible;-webkit-mask:none;mask:none}.rev-col{animation:none}}
+/* ── micro-polish ── */
+::selection{background:var(--accent);color:#fff}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}
+.btn-lg svg,.btn-cta svg,.card-link svg,.spot-link svg,.cta-pill svg{transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+.btn-lg:hover svg,.spot-link:hover svg,.cta-pill:hover svg{transform:translateX(3px)}
+.nav-links a{position:relative}
+.nav-links a::after{content:'';position:absolute;left:13px;right:13px;bottom:5px;height:2px;border-radius:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.7,.2,1)}
+.nav-links a:hover::after{transform:scaleX(1)}
+
+/* ── v4: light bands + seamless colored bottom ── */
+.dark,.hero-fin{background:linear-gradient(180deg,#f1ebff 0%,#e2d5ff 100%)!important;color:var(--ink-2)!important}
+.dark::before{display:none!important}
+.dark .sec-tag,.hero-fin .sec-tag{background:#fff!important;color:var(--accent)!important;border:1px solid var(--accent-mid)!important}
+.dark .sec-title,.hero-fin .sec-title,.dark h2,.dark h3,.hero-fin h1{color:var(--ink)!important}
+.dark .sec-sub,.dark p,.hero-fin .hero-sub{color:var(--muted)!important}
+.dark .card{background:var(--surface)!important;border-color:var(--border)!important;backdrop-filter:none!important}
+.dark .card:hover{border-color:var(--accent-mid)!important}
+.dark .icon-tile{background:var(--accent-lt)!important;border-color:var(--accent-mid)!important}
+.dark .icon-tile svg{stroke:var(--accent)!important}
+.dark .tpill{background:#fff!important;border-color:var(--border)!important;color:var(--ink-2)!important}
+.dark .rstat{background:#fff!important;border-color:var(--border)!important}
+.dark .rstat-n{color:var(--accent)!important}
+.dark .rstat-l{color:var(--muted)!important}
+.dark .cta-pill{border-color:var(--border-2)!important;color:var(--ink)!important;background:#fff!important}
+.dark .cta-pill:hover{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+.hero-fin .btn-ghost{background:#fff!important;color:var(--ink)!important;border-color:var(--border-2)!important}
+/* timeline light + animated numbering */
+.tl-track{background:var(--accent-mid)!important}
+.tl-fill{background:linear-gradient(90deg,var(--accent),#b39dff)!important}
+.tl-dot{background:#fff!important;border:2px solid var(--accent)!important;color:var(--accent)!important;font-weight:800}
+.tl-body h3{color:var(--ink)!important}
+.tl-body p{color:var(--muted)!important}
+@keyframes stepPop{0%{transform:scale(.3);opacity:0}55%{transform:scale(1.18)}100%{transform:scale(1);opacity:1}}
+@keyframes stepRing{0%{box-shadow:0 0 0 0 rgba(120,86,255,.4)}100%{box-shadow:0 0 0 22px rgba(120,86,255,0)}}
+.reveal.in .tl-dot{animation:stepPop .6s cubic-bezier(.34,1.56,.64,1) both,stepRing 1.1s ease-out both}
+.tl-step:nth-child(1) .tl-dot{animation-delay:.05s,.45s}
+.tl-step:nth-child(2) .tl-dot{animation-delay:.17s,.57s}
+.tl-step:nth-child(3) .tl-dot{animation-delay:.29s,.69s}
+.tl-step:nth-child(4) .tl-dot{animation-delay:.41s,.81s}
+.tl-step:nth-child(5) .tl-dot{animation-delay:.53s,.93s}
+.tl-step:nth-child(6) .tl-dot{animation-delay:.65s,1.05s}
+/* seamless: cta-band flows into footer, color runs to the very end */
+.cta-band{background:radial-gradient(ellipse 55% 45% at 50% 0%,#ffe6d6 0%,transparent 55%),linear-gradient(180deg,#ffffff 0%,#f0e8ff 34%,#d9c8ff 68%,#c3aaff 100%)!important}
+footer{background:linear-gradient(180deg,#c3aaff 0%,#b193f8 60%,#a486f0 100%)!important;border-radius:0!important;color:#3b2f66!important}
+.foot-desc{color:#4a3f75!important}
+.foot-col-t{color:#5c4d8f!important}
+.foot-links a{color:#3b2f66!important}
+.foot-links a:hover{color:var(--ink)!important}
+.foot-logo{color:var(--ink)!important}
+.foot-bottom{border-top:1px solid rgba(36,16,88,.16)!important}
+.foot-bottom p{color:#5c4d8f!important}
+
+.dark h4,.hero-fin h4,.tl-body h4{color:var(--ink)!important}
+.dark h5,.dark strong,.dark b{color:var(--ink)!important}
+
+/* ── v5: real review screenshots, zoomed wide ── */
+.rev-carousel{width:min(1340px,calc(100vw - 48px));position:relative;left:50%;transform:translateX(-50%);grid-template-columns:repeat(3,1fr);height:800px}
+.rev-shot{margin:0;background:#fff;border:1px solid var(--border);border-radius:16px;padding:8px;box-shadow:0 1px 2px rgba(31,20,64,.05),0 14px 34px -20px rgba(31,20,64,.16);transition:transform .3s,box-shadow .3s}
+.rev-shot:hover{transform:translateY(-3px);box-shadow:0 20px 44px -18px rgba(120,86,255,.3)}
+.rev-shot img{width:100%;height:auto;display:block;border-radius:10px}
+@media(max-width:760px){.rev-carousel{grid-template-columns:1fr 1fr;height:640px;width:calc(100vw - 40px)}}
+@media(max-width:480px){.rev-carousel{grid-template-columns:1fr}}
+
+.dark .checks li,.hero-fin .checks li{color:var(--ink-2)!important}
+.dark li{color:var(--ink-2)!important}
+
+/* v4c-li-accent-fix */
+.dark .checks li,.hero-fin .checks li,.dark li{color:var(--ink-2)!important}
+.dark .sec-title .accent,.dark .accent{color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important;background:linear-gradient(transparent 78%,var(--accent-mid) 78%)!important}
+
+/* v6: RevenueCat attribution flow — restore contrast + brand color on light band */
+.dark .flow{background:var(--surface)!important;border-color:var(--border)!important;box-shadow:var(--shadow-sm)!important}
+.dark .flow-step{background:var(--bg-soft)!important;border-color:var(--border)!important}
+.dark .flow-step:hover{background:var(--accent-lt)!important;border-color:var(--border-2)!important}
+.dark .flow-ic{background:var(--accent-lt)!important;border-color:var(--border-2)!important}
+.dark .flow-ic svg{stroke:var(--accent)!important}
+.dark .flow-tx span{color:var(--muted)!important}
+.dark .flow-arrow{color:var(--accent)!important}
+.dark .flow-step.win{background:linear-gradient(90deg,rgba(52,211,153,.16),rgba(45,212,191,.09))!important;border-color:rgba(52,211,153,.45)!important}
+.dark .flow-step.win .flow-ic{background:rgba(52,211,153,.16)!important;border-color:rgba(52,211,153,.4)!important}
+.dark .flow-step.win .flow-ic svg{stroke:var(--green)!important}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Muneeb Arshad","url":"https://muneebarshad.com","jobTitle":"Mobile App Developer & Growth Marketer","description":"RevenueCat subscription specialist and mobile app developer. 100+ apps shipped, subscription infrastructure live across 50+ app projects.","knowsAbout":["Mobile App Development","iOS","Android","React Native","Flutter","Capacitor","RevenueCat","In-App Purchases","Subscription Paywalls","Entitlements","Webhooks","AppsFlyer","App Store Optimization","Growth Marketing"]}
+</script>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/"><span class="logo-mark"><img src="/assets/muneeb-avatar.jpg" alt="Muneeb Arshad" onerror="this.remove()">M</span>Muneeb Arshad</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/apps/">All Apps</a></li>
+      <li><a href="/ai-apps/">AI Development</a></li>
+      <li><a href="/growth/">Growth</a></li>
+      <li><a href="/revenuecat/" aria-current="page">Subscriptions</a></li>
+      <li><a href="/appsflyer/">Attribution</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/apps/" class="btn-cta">View All Apps</a>
+      <button class="hamburger" id="hb" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mm">
+  <a href="/" onclick="closeMenu()">Home</a>
+  <a href="/apps/" onclick="closeMenu()">All Apps</a>
+  <a href="/ai-apps/" onclick="closeMenu()">AI Development</a>
+  <a href="/growth/" onclick="closeMenu()">Growth</a>
+  <a href="/revenuecat/" onclick="closeMenu()">Subscriptions</a>
+  <a href="/appsflyer/" onclick="closeMenu()">Attribution</a>
+  <a href="/apps/" class="btn-cta" onclick="closeMenu()">View All Apps</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="badge reveal"><img src="https://cdn.simpleicons.org/revenuecat/f25a5a" alt="">RevenueCat subscription expert</div>
+    <h1 class="reveal d1">Subscription revenue, <span class="accent">engineered.</span></h1>
+    <p class="hero-sub reveal d2">I architect and ship the full subscription stack with RevenueCat — paywalls, offerings, entitlements, and server-side sync — live across 50+ app projects and turning free installs into long-term, loyal subscribers.</p>
+    <div class="hero-actions reveal d3">
+      <a href="/apps/" class="btn-lg btn-primary">See the apps <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="/appsflyer/" class="btn-lg btn-ghost">Attribution &amp; ROAS</a>
+    </div>
+    <div class="hero-stats reveal d3">
+      <div class="hstat"><div class="hstat-n"><span class="count" data-count="50" data-suffix="+">0</span></div><div class="hstat-l">Apps monetized</div></div>
+      <div class="hstat"><div class="hstat-n"><span class="count" data-count="2389">0</span></div><div class="hstat-l">Active subscriptions</div></div>
+      <div class="hstat"><div class="hstat-n"><span class="count" data-count="130">0</span></div><div class="hstat-l">Active trials</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CENTERPIECE: DASHBOARD -->
+<section class="sec sec-sm">
+  <div class="shot-wrap reveal">
+    <div class="shot">
+      <div class="shot-bar"><span></span><span></span><span></span><i>app.revenuecat.com/overview</i></div>
+      <img src="/assets/screenshots/revenuecat.png" alt="RevenueCat dashboard — MRR, active subscriptions and revenue across the app portfolio" loading="lazy" onerror="this.closest('.shot').classList.add('noshot')" onload="this.closest('.shot').classList.remove('noshot')">
+      <div class="shot-fallback">
+        <div class="rc-dash">
+          <div class="rc-top">
+            <div class="rc-brand"><img src="https://cdn.simpleicons.org/revenuecat/ffffff" alt="">RevenueCat · Overview</div>
+            <div class="rc-top-right">
+              <span class="rc-tab">Portfolio</span>
+              <span class="rc-range"><span class="rc-live"></span>Last 28 days</span>
+            </div>
+          </div>
+          <div class="rc-panels">
+            <div class="rc-panel">
+              <div class="ph">
+                <div><div class="rc-lbl">Monthly Recurring Revenue</div><div class="rc-val">$<span class="count" data-count="15829">0</span></div></div>
+                <span class="rc-chip"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>Trending up</span>
+              </div>
+              <svg class="spark spark-lg" viewBox="0 0 560 76" preserveAspectRatio="none" aria-hidden="true">
+                <defs><linearGradient id="gMrr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2dd4bf" stop-opacity=".34"/><stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/></linearGradient></defs>
+                <path class="area" fill="url(#gMrr)" d="M0,60 L46,56 L93,58 L140,46 L186,49 L233,38 L280,40 L326,30 L373,33 L420,20 L466,22 L513,12 L560,8 L560,76 L0,76 Z"/>
+                <path class="line" pathLength="1" d="M0,60 L46,56 L93,58 L140,46 L186,49 L233,38 L280,40 L326,30 L373,33 L420,20 L466,22 L513,12 L560,8"/>
+              </svg>
+              <div class="rc-axis"><span>Jun 13</span><span>Jul 11</span></div>
+            </div>
+            <div class="rc-panel">
+              <div class="ph">
+                <div><div class="rc-lbl">Revenue · 28 days</div><div class="rc-val">$<span class="count" data-count="13068">0</span></div></div>
+                <span class="rc-chip"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>Net</span>
+              </div>
+              <svg class="spark spark-lg g" viewBox="0 0 560 76" preserveAspectRatio="none" aria-hidden="true">
+                <defs><linearGradient id="gRev" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34d399" stop-opacity=".32"/><stop offset="1" stop-color="#34d399" stop-opacity="0"/></linearGradient></defs>
+                <path class="area" fill="url(#gRev)" d="M0,64 L46,52 L93,58 L140,50 L186,42 L233,46 L280,34 L326,38 L373,26 L420,30 L466,18 L513,22 L560,10 L560,76 L0,76 Z"/>
+                <path class="line" pathLength="1" d="M0,64 L46,52 L93,58 L140,50 L186,42 L233,46 L280,34 L326,38 L373,26 L420,30 L466,18 L513,22 L560,10"/>
+              </svg>
+              <div class="rc-axis"><span>Jun 13</span><span>Jul 11</span></div>
+            </div>
+          </div>
+          <div class="rc-tiles">
+            <div class="rc-tile">
+              <div class="rc-lbl">Active Subscriptions</div><div class="rc-val"><span class="count" data-count="2389">0</span></div>
+              <svg class="spark spark-sm rc-tile-spark" viewBox="0 0 120 30" preserveAspectRatio="none" aria-hidden="true"><path class="line" pathLength="1" d="M0,24 L20,22 L40,23 L60,16 L80,18 L100,10 L120,7"/></svg>
+            </div>
+            <div class="rc-tile"><div class="rc-lbl">Active Trials</div><div class="rc-val"><span class="count" data-count="130">0</span></div></div>
+            <div class="rc-tile"><div class="rc-lbl">New Customers</div><div class="rc-val"><span class="count" data-count="11297">0</span></div></div>
+            <div class="rc-tile"><div class="rc-lbl">Active Customers</div><div class="rc-val"><span class="count" data-count="14652">0</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="shot-cap">Live RevenueCat data across my app portfolio — 50+ app projects. Numbers count up as you scroll; the real dashboard export drops straight into this frame.</p>
+  </div>
+</section>
+
+<!-- PROOF PILLS -->
+<section class="sec sec-sm">
+  <div class="proof-band reveal">
+    <p class="proof-lead">Powering subscriptions in</p>
+    <div class="proof-pills">
+      <span class="app-pill"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/18/c8/d1/18c8d1c1-b82f-69e7-afc9-33b0c2128b5b/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg" alt="Freed app icon" loading="lazy" onerror="this.remove()">Freed</span>
+      <span class="app-pill"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/3a/bd/1c/3abd1c42-2ef4-d45d-1569-bb0cc7736894/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/200x200bb.png" alt="Sculpted app icon" loading="lazy" onerror="this.remove()">Sculpted</span>
+      <span class="app-pill"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/3e/80/06/3e8006d4-3af4-99cb-5de1-b0b5d48022c4/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" alt="FashAI app icon" loading="lazy" onerror="this.remove()">FashAI</span>
+      <span class="app-pill"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/59/57/63/595763a8-cdfb-663c-6789-6f2508519dfc/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" alt="QuizMe app icon" loading="lazy" onerror="this.remove()">QuizMe</span>
+      <span class="app-pill"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3f/64/e6/3f64e655-4753-57b2-f9ec-4c00241072eb/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg" alt="AG Fence Pro app icon" loading="lazy" onerror="this.remove()">AG Fence Pro</span>
+      <span class="app-pill"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d2/6d/df/d26ddfe0-0546-82f7-8df4-5d653eae96ff/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" alt="Tradvio AI app icon" loading="lazy" onerror="this.remove()">Tradvio</span>
+      <span class="app-pill"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/90/d8/73/90d8734d-0dd2-9b8a-8027-6de272766796/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" alt="SnapTrader app icon" loading="lazy" onerror="this.remove()">SnapTrader</span>
+      <span class="app-pill more">and 15+ more projects</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section>
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">What I set up</span>
+      <h2 class="sec-title">The complete <span class="accent">subscription stack</span></h2>
+      <p class="sec-sub">From the first SDK line to server-verified entitlements and A/B-tested paywalls — everything your app needs to charge, retain, and grow.</p>
+    </div>
+    <div class="cards-3">
+      <div class="card reveal">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M3 16v3a2 2 0 0 0 2 2h3"/><path d="M8.5 12l2 2 4.5-4.5"/></svg></div>
+        <h3>SDK Integration</h3>
+        <p>RevenueCat wired into your app cleanly — purchases, restores, and entitlement checks that just work across every OS.</p>
+        <div class="card-tools"><span class="ctag">Flutter</span><span class="ctag">React Native</span><span class="ctag">Swift</span><span class="ctag">Kotlin</span><span class="ctag">Capacitor</span></div>
+      </div>
+      <div class="card reveal d1">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M12 3v18"/><path d="M6.5 8.5h2M6.5 12h2M15.5 12h2M15.5 15.5h2"/></svg></div>
+        <h3>Paywall Design &amp; A/B Experiments</h3>
+        <p>High-converting paywalls built and split-tested with RevenueCat Experiments — so pricing and layout are decided by data, not guesswork.</p>
+        <div class="card-tools"><span class="ctag">RevenueCat Experiments</span><span class="ctag">Remote paywalls</span></div>
+      </div>
+      <div class="card reveal d2">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M4 7l8-4 8 4v10l-8 4-8-4z"/><path d="M4 7l8 4 8-4"/><path d="M12 11v10"/></svg></div>
+        <h3>Products, Offerings &amp; Entitlements</h3>
+        <p>A clean product architecture — offerings, packages, and entitlements structured so plan changes and new tiers ship without a rewrite.</p>
+        <div class="card-tools"><span class="ctag">App Store Connect</span><span class="ctag">Play Console</span></div>
+      </div>
+      <div class="card reveal">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M4 7h11a3 3 0 0 1 3 3v0M20 17H9a3 3 0 0 1-3-3v0"/><path d="M2 7l2-2 2 2M22 17l-2 2-2-2"/></svg></div>
+        <h3>Webhooks → Backend Sync</h3>
+        <p>RevenueCat webhooks piped into your backend so subscription state lives server-side — the source of truth for access, not the client.</p>
+        <div class="card-tools"><span class="ctag">Supabase</span><span class="ctag">Firebase</span><span class="ctag">Edge functions</span></div>
+      </div>
+      <div class="card reveal d1">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4.5"/><path d="M9.5 12l1.6 1.6L14.5 10"/></svg></div>
+        <h3>Price Testing &amp; Trial Optimization</h3>
+        <p>Free-trial length, intro offers, and price points tuned per market to lift trial-to-paid conversion and long-term LTV.</p>
+        <div class="card-tools"><span class="ctag">Intro offers</span><span class="ctag">Regional pricing</span></div>
+      </div>
+      <div class="card reveal d2">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M2 9a9 9 0 0 1 15-4l3 3"/><path d="M22 15a9 9 0 0 1-15 4l-3-3"/><path d="M17 3v5h-5M7 21v-5h5"/></svg></div>
+        <h3>Churn, Winback &amp; Cancellation</h3>
+        <p>Billing-retry handling, grace periods, and winback offers that recover would-be churned subscribers instead of losing them silently.</p>
+        <div class="card-tools"><span class="ctag">Grace periods</span><span class="ctag">Winback offers</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CROSS-PLATFORM -->
+<section>
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Cross-platform</span>
+      <h2 class="sec-title">One subscription, <span class="accent">every platform</span></h2>
+      <p class="sec-sub">A user who subscribes on iPhone unlocks on their Android tablet and the web — one entitlement, honored everywhere, verified on the server.</p>
+    </div>
+    <div class="xplat reveal">
+      <div class="xcard">
+        <div class="xlogo"><img src="https://cdn.simpleicons.org/apple/1f2023" alt=""></div>
+        <h3>App Store</h3>
+        <p>StoreKit 2 in-app purchases &amp; auto-renewing subscriptions, receipts validated by RevenueCat.</p>
+      </div>
+      <div class="xcard">
+        <div class="xlogo"><img src="https://cdn.simpleicons.org/googleplay/34a853" alt=""></div>
+        <h3>Play Store</h3>
+        <p>Google Play Billing subscriptions and base-plan / offer handling, kept in sync automatically.</p>
+      </div>
+      <div class="xcard">
+        <div class="xlogo"><img src="https://cdn.simpleicons.org/stripe/6772e5" alt=""></div>
+        <h3>Stripe Web</h3>
+        <p>Stripe web checkout added where a browser plan is needed — same entitlement as the mobile apps.</p>
+      </div>
+    </div>
+    <div class="xhub reveal d1">
+      <span class="xhub-pill"><img src="https://cdn.simpleicons.org/revenuecat/ffffff" alt="">Unified by RevenueCat — one entitlement across all stores</span>
+    </div>
+    <div class="xfeat reveal d1">
+      <div class="xf">
+        <div class="xf-ic"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></svg></div>
+        <h4>Receipt validation</h4>
+        <p>Purchases verified server-side to block spoofed or shared receipts.</p>
+      </div>
+      <div class="xf">
+        <div class="xf-ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M15 11a3 3 0 1 0-2-5.2"/><path d="M3 20v-1a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v1"/><path d="M17 14a5 5 0 0 1 4 5v1"/></svg></div>
+        <h4>Family sharing</h4>
+        <p>Apple Family Sharing edge cases handled so shared plans grant the right access.</p>
+      </div>
+      <div class="xf">
+        <div class="xf-ic"><svg viewBox="0 0 24 24"><path d="M2 9a9 9 0 0 1 15-4l3 3"/><path d="M22 15a9 9 0 0 1-15 4l-3-3"/></svg></div>
+        <h4>Cross-device restore</h4>
+        <p>Restore purchases and identify users so entitlements follow the person, not the device.</p>
+      </div>
+      <div class="xf">
+        <div class="xf-ic"><svg viewBox="0 0 24 24"><path d="M4 7h11a3 3 0 0 1 3 3M20 17H9a3 3 0 0 1-3-3"/><path d="M2 7l2-2 2 2M22 17l-2 2-2-2"/></svg></div>
+        <h4>Billing retries</h4>
+        <p>Grace periods and dunning so a failed charge recovers instead of instantly churning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ATTRIBUTION TIE-IN (dark) -->
+<section class="dark">
+  <div class="sec">
+    <div class="tie-grid">
+      <div class="reveal">
+        <span class="sec-tag">Revenue meets attribution</span>
+        <h2 class="sec-title">Every dollar, tied back to the ad that earned it</h2>
+        <p class="tie-lead">Subscriptions only prove their worth when you know which campaign paid for them. I forward RevenueCat revenue events into AppsFlyer, so trials, conversions, and renewals map back to source — turning MRR into true, campaign-level ROAS.</p>
+        <ul class="checks">
+          <li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>RevenueCat → AppsFlyer revenue events wired end to end</li>
+          <li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Trial start, conversion &amp; renewal mapped to install source</li>
+          <li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>True ROAS per channel — Meta, TikTok &amp; Apple Search Ads</li>
+        </ul>
+        <div class="tie-cta">
+          <a class="cta-pill" href="/appsflyer/">See the attribution setup <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="flow reveal d1">
+        <div class="flow-step">
+          <div class="flow-ic"><img src="https://cdn.simpleicons.org/revenuecat/f25a5a" alt=""></div>
+          <div class="flow-tx"><b>RevenueCat</b><span>Subscription &amp; revenue events</span></div>
+        </div>
+        <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
+        <div class="flow-step">
+          <div class="flow-ic"><svg viewBox="0 0 24 24"><path d="M4 7h11a3 3 0 0 1 3 3M20 17H9a3 3 0 0 1-3-3"/><path d="M2 7l2-2 2 2M22 17l-2 2-2-2"/></svg></div>
+          <div class="flow-tx"><b>Webhook &amp; server postback</b><span>Verified, deduplicated events</span></div>
+        </div>
+        <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
+        <div class="flow-step">
+          <div class="flow-ic"><img src="https://www.appsflyer.com/favicon.ico" alt=""></div>
+          <div class="flow-tx"><b>AppsFlyer</b><span>Revenue attributed to source</span></div>
+        </div>
+        <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
+        <div class="flow-step win">
+          <div class="flow-ic"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+          <div class="flow-tx"><b>True ROAS</b><span>D7 on a live campaign</span></div>
+          <div class="flow-win-n"><span class="count" data-count="277" data-suffix="%">0</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="rev-sec">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Testimonials</span>
+      <h2 class="sec-title">What clients say</h2>
+      <p class="sec-sub">5.0★ across Fiverr &amp; Upwork — including founders who hired me specifically to get subscriptions and attribution working.</p>
+    </div>
+    <div class="rev-carousel">
+      <div class="rev-col"><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-01.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-04.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-07.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-10.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-13.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-16.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-19.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-01.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-04.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-07.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-10.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-13.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-16.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-19.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure></div>
+      <div class="rev-col rev-down"><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-02.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-05.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-08.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-11.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-14.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-17.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-20.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-02.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-05.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-08.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-11.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-14.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-17.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-20.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure></div>
+      <div class="rev-col"><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-03.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-06.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-09.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-12.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-15.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-18.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-21.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-03.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-06.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-09.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-12.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-15.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-18.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-21.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure></div>
+    </div>
+    <div class="rev-proof reveal">
+      <span class="rev-chip"><span class="st">★★★★★</span> <b>5.0</b> on Fiverr</span>
+      <span class="rev-chip"><b>Top Rated</b> seller</span>
+      <span class="rev-chip"><b>5.0</b> on Upwork</span>
+      <span class="rev-chip">Repeat clients across <b>US · Europe · Asia</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="reveal">
+    <span class="sec-tag">Let's monetize</span>
+    <h2>Ready to turn installs into <span class="accent">recurring revenue?</span></h2>
+    <p>See the apps already running on this stack — then let's scale the ones that convert.</p>
+    <div class="hero-actions">
+      <a href="/apps/" class="btn-lg btn-primary">View All Apps <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="/growth/" class="btn-lg btn-ghost">Growth Marketing</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-top">
+    <div>
+      <a class="foot-logo" href="/"><span class="logo-mark"><img src="/assets/muneeb-avatar.jpg" alt="Muneeb Arshad" onerror="this.remove()">M</span>Muneeb Arshad</a>
+      <p class="foot-desc">Mobile app developer &amp; growth marketer — building AI-powered apps and scaling them with performance marketing. 100+ apps shipped worldwide.</p>
+    </div>
+    <div>
+      <p class="foot-col-t">Pages</p>
+      <div class="foot-links">
+        <a href="/">Home</a>
+        <a href="/apps/">All Apps</a>
+        <a href="/ai-apps/">AI Development</a>
+        <a href="/growth/">Growth Marketing</a>
+        <a href="/revenuecat/">Subscriptions &amp; RevenueCat</a>
+        <a href="/appsflyer/">Attribution &amp; AppsFlyer</a>
+      </div>
+    </div>
+    <div>
+      <p class="foot-col-t">Solutions</p>
+      <div class="foot-links">
+        <a href="/beauty/">Beauty &amp; Style AI</a>
+        <a href="/wellness/">Health &amp; Wellness</a>
+        <a href="/finance/">Trading &amp; Finance</a>
+        <a href="/productivity/">Productivity &amp; Lifestyle</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p>© 2026 Muneeb Arshad. All rights reserved.</p>
+    <p>Mobile App Developer · Growth Marketer</p>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30),{passive:true});
+const hb=document.getElementById('hb'),mm=document.getElementById('mm');
+hb.addEventListener('click',()=>{hb.classList.toggle('open');mm.classList.toggle('open')});
+function closeMenu(){hb.classList.remove('open');mm.classList.remove('open')}
+document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!mm.contains(e.target))closeMenu()});
+
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const easeOut=t=>1-Math.pow(1-t,4);
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function finalVal(el){const d=+(el.dataset.decimals||0);return (el.dataset.prefix||'')+(d?parseFloat(el.dataset.count).toFixed(d):Math.round(el.dataset.count).toLocaleString('en-US'))+(el.dataset.suffix||'')}
+function runCount(el){
+ const target=parseFloat(el.dataset.count),dec=+(el.dataset.decimals||0),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';
+ const dur=1500,t0=performance.now();let done=false;
+ function step(now){if(done)return;const p=Math.min((now-t0)/dur,1),v=target*easeOut(p);
+  el.textContent=pre+(dec?v.toFixed(dec):Math.round(v).toLocaleString('en-US'))+suf;
+  if(p<1)requestAnimationFrame(step); else{done=true;el.textContent=finalVal(el);}}
+ requestAnimationFrame(step);
+ setTimeout(()=>{if(!done){done=true;el.textContent=finalVal(el);}},dur+400);
+}
+const cio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){reduce?e.target.textContent=finalVal(e.target):runCount(e.target);cio.unobserve(e.target)}})},{threshold:.5});
+document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+</script>
+</body>
+</html>
