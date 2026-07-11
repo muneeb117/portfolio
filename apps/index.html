@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muneeb Arshad — Mobile App Developer & Growth Marketer</title>
-<meta name="description" content="Mobile app developer & growth marketer. 100+ AI-powered iOS and Android apps shipped, 2,400+ ratings. React Native, Flutter, RevenueCat, AppsFlyer, Meta, TikTok & Apple Search Ads.">
+<title>All Apps — Muneeb Arshad</title>
+<meta name="description" content="The full portfolio — a selection of the 100+ AI-powered iOS &amp; Android apps Muneeb Arshad has shipped. Live on the App Store &amp; Play Store, with 20M+ downloads and 180K+ ratings.">
 <meta name="author" content="Muneeb Arshad">
 <meta name="theme-color" content="#7856ff">
-<link rel="canonical" href="https://muneebarshad.com/">
+<link rel="canonical" href="https://muneebarshad.com/apps/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Muneeb Arshad — Mobile App Developer & Growth Marketer">
-<meta property="og:description" content="100+ AI-powered iOS & Android apps shipped, 2,400+ ratings. Scaled with Meta, TikTok & Apple Search Ads.">
-<meta property="og:url" content="https://muneebarshad.com/">
+<meta property="og:title" content="All Apps — Muneeb Arshad">
+<meta property="og:description" content="A selection of the 100+ apps I've shipped — AI-powered iOS &amp; Android products, live on the stores. 20M+ downloads, 180K+ ratings.">
+<meta property="og:url" content="https://muneebarshad.com/apps/">
 <meta property="og:site_name" content="Muneeb Arshad">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Muneeb Arshad — Mobile App Developer & Growth Marketer">
-<meta name="twitter:description" content="100+ AI-powered iOS & Android apps shipped, 2,400+ ratings. Scaled with performance marketing.">
+<meta name="twitter:title" content="All Apps — Muneeb Arshad">
+<meta name="twitter:description" content="The full portfolio — AI-powered iOS &amp; Android apps live on the App Store &amp; Play Store.">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/icons/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,6 +74,7 @@ nav.scrolled{border-bottom-color:var(--border);box-shadow:var(--shadow-xs)}
 .mobile-menu.open{display:flex}
 .mobile-menu a{padding:12px 14px;border-radius:9px;font-size:15px;font-weight:500;color:var(--ink-2);transition:all .18s}
 .mobile-menu a:hover{background:var(--panel)}
+.mobile-menu a[aria-current="page"]{color:var(--ink);font-weight:600;background:var(--panel)}
 .mobile-menu .btn-cta{margin-top:10px;text-align:center;padding:13px}
 
 /* HERO */
@@ -85,7 +86,7 @@ nav.scrolled{border-bottom-color:var(--border);box-shadow:var(--shadow-xs)}
 .pdot::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1px solid rgba(22,163,74,.4);animation:ping 2.2s ease-out infinite}
 @keyframes ping{0%{transform:scale(.8);opacity:1}100%{transform:scale(2);opacity:0}}
 .hero h1{font-size:clamp(34px,5vw,56px);letter-spacing:-.035em;line-height:1.05}
-.hero-sub{max-width:600px;margin:22px auto 0;font-size:clamp(16px,2vw,18px);color:var(--muted);line-height:1.65}
+.hero-sub{max-width:620px;margin:22px auto 0;font-size:clamp(16px,2vw,18px);color:var(--muted);line-height:1.65}
 .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
 .btn-lg{padding:14px 28px;border-radius:100px;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;border:1px solid transparent}
 .btn-primary{background:var(--ink);color:#fff;box-shadow:var(--shadow-sm)}
@@ -111,23 +112,10 @@ nav.scrolled{border-bottom-color:var(--border);box-shadow:var(--shadow-xs)}
 
 /* SECTIONS */
 .sec{max-width:var(--maxw);margin:0 auto;padding:80px 32px}
-.sec-head{max-width:640px;margin:0 auto 46px;text-align:center}
+.sec-head{max-width:660px;margin:0 auto 46px;text-align:center}
 .sec-tag{display:inline-block;padding:6px 13px;border-radius:100px;background:var(--accent-lt);color:var(--accent);font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:16px;border:1px solid var(--accent-mid)}
 .sec-title{font-size:clamp(28px,3.8vw,44px);letter-spacing:-.03em}
 .sec-sub{color:var(--muted);font-size:16.5px;margin-top:14px;line-height:1.6}
-
-/* CARDS */
-.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 26px;transition:transform .25s,box-shadow .25s,border-color .25s}
-.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-2)}
-.icon-tile{width:46px;height:46px;border-radius:13px;background:var(--accent-lt);border:1px solid var(--accent-mid);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-.icon-tile svg{width:23px;height:23px;stroke:var(--accent);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-.icon-tile img{width:26px;height:26px;object-fit:contain}
-.card h3{font-size:18px;margin-bottom:8px;letter-spacing:-.02em}
-.card p{color:var(--muted);font-size:14.5px;line-height:1.6}
-.card-link{display:inline-flex;align-items:center;gap:6px;margin-top:15px;font-size:13.5px;font-weight:600;color:var(--accent)}
-.card-link svg{width:14px;height:14px;transition:transform .2s}
-.card:hover .card-link svg{transform:translateX(3px)}
 
 /* APPS */
 .apps-sec{background:transparent;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -158,63 +146,30 @@ nav.scrolled{border-bottom-color:var(--border);box-shadow:var(--shadow-xs)}
 .store-link{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:100px;background:var(--ink);color:#fff;font-size:12px;font-weight:600;transition:all .18s;white-space:nowrap}
 .store-link:hover{background:var(--accent)}
 .store-link svg{width:13px;height:13px;flex-shrink:0}
-.apps-more{text-align:center;margin-top:42px}
+.apps-note{text-align:center;margin-top:34px;font-size:13.5px;color:var(--muted-2)}
+/* coming-soon variant */
+.app-card.coming{border-style:dashed;border-color:var(--border-2);background:linear-gradient(180deg,var(--surface),#faf9ff)}
+.app-card.coming:hover{box-shadow:var(--shadow-sm)}
+.ac-mono{width:56px;height:56px;flex-shrink:0;border-radius:14px;display:flex;align-items:center;justify-content:center;background:var(--accent-lt);border:1px solid var(--accent-mid);color:var(--accent);font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:24px;box-shadow:var(--shadow-xs)}
+.bdg-soon{background:var(--accent-lt);color:var(--accent)}
+.soon-tag{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:100px;background:var(--panel);border:1px solid var(--border);color:var(--muted);font-size:12px;font-weight:600;white-space:nowrap}
+.soon-tag .sdot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
 
-/* GROWTH (dark) */
+/* EXPLORE (dark) */
 .dark{background:linear-gradient(160deg,#2e1266 0%,#3f1f8f 55%,#241058 100%);color:#e5ddff;position:relative;overflow:hidden}
 .dark::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(150,120,255,.2),transparent 70%);pointer-events:none}
 .dark .sec{position:relative;z-index:1}
 .dark .sec-tag{background:rgba(120,86,255,.28);color:#d6ccff;border-color:rgba(120,86,255,.5)}
 .dark .sec-title{color:#fff}
 .dark .sec-sub{color:#94a3b8}
-.dark .card{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.09)}
-.dark .card:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.2)}
-.dark .card h3{color:#fff}
-.dark .card p{color:#94a3b8}
-.dark .icon-tile{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
-.dark .icon-tile svg{stroke:#e2e8f0}
-.tool-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:42px}
-.tpill{display:flex;align-items:center;gap:8px;padding:9px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;font-size:13px;font-weight:600;color:#cbd5e1;transition:all .18s}
-.tpill:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);color:#fff}
-.tpill img{width:16px;height:16px;object-fit:contain}
-.results{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:42px}
-.rstat{padding:26px 18px;text-align:center;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);transition:all .2s}
-.rstat:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)}
-.rstat-n{font-family:'Hanken Grotesk',sans-serif;font-size:30px;font-weight:800;letter-spacing:-.03em;color:#c9bcff}
-.rstat-l{font-size:12px;color:#94a3b8;margin-top:6px}
-.cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:42px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 .cta-pill{padding:13px 22px;border-radius:10px;border:1px solid rgba(255,255,255,.16);color:#e2e8f0;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-.cta-pill:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.1);color:#fff}
-.cta-pill svg{width:15px;height:15px}
-
-/* ABOUT */
-.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
-.about-lead{color:var(--muted);font-size:16.5px;line-height:1.72;margin-top:18px}
-.about-person{display:flex;align-items:center;gap:14px;margin-bottom:22px}
-.about-avatar{width:66px;height:66px;border-radius:50%;overflow:hidden;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:26px;flex-shrink:0;position:relative;box-shadow:var(--shadow-sm)}
-.about-avatar img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.about-person-name{font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:18px;color:var(--ink);letter-spacing:-.01em}
-.about-person-role{font-size:13.5px;color:var(--muted);margin-top:2px}
-.checks{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:13px}
-.checks li{display:flex;align-items:flex-start;gap:12px;font-size:14.5px;color:var(--ink-2);line-height:1.5}
-.chk{width:22px;height:22px;border-radius:6px;flex-shrink:0;background:var(--ink);border:1px solid var(--ink);display:flex;align-items:center;justify-content:center;margin-top:1px}
-.chk svg{width:12px;height:12px;stroke:#fff;stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.about-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.acard{padding:26px 22px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);transition:all .25s;box-shadow:var(--shadow-xs)}
-.acard:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-2)}
-.acard-n{font-family:'Hanken Grotesk',sans-serif;font-size:36px;font-weight:800;letter-spacing:-.03em;color:var(--ink)}
-.acard-l{color:var(--muted);font-size:13px;margin-top:8px;line-height:1.5}
-
-/* TECH */
-.tech-sec{background:transparent;border-top:1px solid var(--border)}
-.tech-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.tech-card{padding:20px 12px;text-align:center;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);transition:all .22s}
-.tech-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm);border-color:var(--border-2)}
-.tech-logo{width:40px;height:40px;margin:0 auto 11px;display:flex;align-items:center;justify-content:center}
-.tech-logo img{width:32px;height:32px;object-fit:contain}
-.tech-mono{font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:18px;color:var(--ink)}
-.tech-n{font-size:13px;font-weight:700;letter-spacing:-.01em;color:var(--ink)}
-.tech-t{color:var(--muted-2);font-size:11px;margin-top:2px;font-weight:500}
+.cta-pill:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.1);color:#fff;transform:translateY(-1px)}
+.cta-pill svg{width:15px;height:15px;transition:transform .2s}
+.cta-pill:hover svg{transform:translateX(3px)}
+.explore-group{max-width:860px;margin:0 auto}
+.explore-group+.explore-group{margin-top:38px}
+.explore-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9a90c8;margin-bottom:18px}
 
 /* CTA BAND (Mixpanel-style gradient) */
 .cta-band{position:relative;padding:104px 32px 116px;text-align:center;background:radial-gradient(ellipse 55% 45% at 50% 0%,#ffe6d6 0%,transparent 55%),linear-gradient(180deg,#ffffff 0%,#f3eeff 42%,#d8caff 78%,#c2b1f2 100%)}
@@ -237,6 +192,14 @@ footer{background:linear-gradient(180deg,#e8e0ff 0%,#f3eeff 100%);color:var(--in
 /* REVIEWS */
 .rev-sec{background:transparent;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev-carousel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;height:640px;overflow:hidden;position:relative;-webkit-mask:linear-gradient(180deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask:linear-gradient(180deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+.rev-col{display:flex;flex-direction:column;gap:16px;will-change:transform;animation:revscroll 120s linear infinite}
+.rev-col.rev-down{animation-direction:reverse}
+.rev-carousel:hover .rev-col,.rev-carousel:focus-within .rev-col{animation-play-state:paused}
+@keyframes revscroll{to{transform:translateY(-50%)}}
+@media(max-width:760px){.rev-carousel{grid-template-columns:1fr 1fr;height:560px}.rev-col:nth-child(3){display:none}}
+@media(max-width:480px){.rev-carousel{grid-template-columns:1fr}.rev-col:nth-child(2){display:none}}
+@media(prefers-reduced-motion:reduce){.rev-carousel{height:auto;overflow:visible;-webkit-mask:none;mask:none}.rev-col{animation:none}}
 .rev{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;box-shadow:var(--shadow-xs);transition:transform .25s,box-shadow .25s,border-color .25s}
 .rev:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-2)}
 .rev-stars{color:var(--accent);font-size:13px;letter-spacing:3px;margin-bottom:12px}
@@ -251,14 +214,7 @@ footer{background:linear-gradient(180deg,#e8e0ff 0%,#f3eeff 100%);color:var(--in
 .rev-chip{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;background:var(--surface);border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-2);box-shadow:var(--shadow-xs)}
 .rev-chip b{color:var(--ink);font-family:'Hanken Grotesk',sans-serif}
 .rev-chip .st{color:var(--accent);letter-spacing:1px}
-.rev-carousel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;height:700px;overflow:hidden;position:relative;margin-top:8px;-webkit-mask:linear-gradient(180deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask:linear-gradient(180deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
-.rev-col{display:flex;flex-direction:column;gap:16px;will-change:transform;animation:revscroll 120s linear infinite}
-.rev-col.rev-down{animation-direction:reverse}
-.rev-carousel:hover .rev-col,.rev-carousel:focus-within .rev-col{animation-play-state:paused}
-@keyframes revscroll{to{transform:translateY(-50%)}}
-.rev-shot{break-inside:avoid;margin:0 0 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:8px;box-shadow:var(--shadow-xs);overflow:hidden;transition:transform .25s,box-shadow .25s}
-.rev-shot:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
-.rev-shot img{width:100%;height:auto;display:block;border-radius:10px}
+
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
@@ -266,13 +222,8 @@ footer{background:linear-gradient(180deg,#e8e0ff 0%,#f3eeff 100%);color:var(--in
 
 /* RESPONSIVE */
 @media(max-width:960px){
-  .cards-3{grid-template-columns:repeat(2,1fr)}
   .apps-grid{grid-template-columns:repeat(2,1fr)}
   .rev-grid{grid-template-columns:repeat(2,1fr)}
-  .rev-shots{column-count:2}
-  .tech-grid{grid-template-columns:repeat(3,1fr)}
-  .about-grid{grid-template-columns:1fr;gap:44px}
-  .results{grid-template-columns:repeat(2,1fr)}
   .foot-top{grid-template-columns:1fr 1fr;gap:36px}
   .foot-top>:first-child{grid-column:1/-1}
 }
@@ -285,18 +236,13 @@ footer{background:linear-gradient(180deg,#e8e0ff 0%,#f3eeff 100%);color:var(--in
   .hstat{border-right:none;border-bottom:1px solid var(--border)}
   .hstat:last-child{border-bottom:none}
   .sec{padding:68px 20px}
-  .cards-3{grid-template-columns:1fr}
   .apps-grid{grid-template-columns:1fr}
   .rev-grid{grid-template-columns:1fr}
-  .rev-shots{column-count:1}
-  .about-cards{grid-template-columns:1fr 1fr}
-  .results{grid-template-columns:1fr 1fr}
   .foot-top{grid-template-columns:1fr;gap:30px;padding:44px 20px 30px}
   .foot-top>:first-child{grid-column:1}
   .foot-bottom{flex-direction:column;text-align:center;gap:6px}
 }
-@media(max-width:440px){ .tech-grid{grid-template-columns:repeat(2,1fr)} }
-@media(prefers-reduced-motion:reduce){.rev-carousel{height:auto;overflow:visible;-webkit-mask:none;mask:none}.rev-col{animation:none}
+@media(prefers-reduced-motion:reduce){
   *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
 }
@@ -397,7 +343,7 @@ footer{background:linear-gradient(180deg,#c3aaff 0%,#b193f8 60%,#a486f0 100%)!im
 .dark .sec-title .accent,.dark .accent{color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important;background:linear-gradient(transparent 78%,var(--accent-mid) 78%)!important}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Muneeb Arshad","url":"https://muneebarshad.com","jobTitle":"Mobile App Developer & Growth Marketer","description":"100+ AI-powered iOS and Android apps shipped, 2,400+ ratings. Performance marketing specialist.","knowsAbout":["Mobile App Development","iOS","Android","React Native","Flutter","AI Integration","OpenAI","Growth Marketing","AppsFlyer","RevenueCat","Meta Ads","TikTok Ads","Apple Search Ads","Google Ads","App Store Optimization","Base44"]}
+{"@context":"https://schema.org","@type":"Person","name":"Muneeb Arshad","url":"https://muneebarshad.com","jobTitle":"Mobile App Developer & Growth Marketer","description":"100+ AI-powered iOS and Android apps shipped, 180K+ ratings, 20M+ downloads. Performance marketing specialist.","knowsAbout":["Mobile App Development","iOS","Android","React Native","Flutter","AI Integration","OpenAI","Growth Marketing","AppsFlyer","RevenueCat","Meta Ads","TikTok Ads","Apple Search Ads","Google Ads","App Store Optimization","Base44"]}
 </script>
 </head>
 <body>
@@ -406,39 +352,39 @@ footer{background:linear-gradient(180deg,#c3aaff 0%,#b193f8 60%,#a486f0 100%)!im
   <div class="nav-inner">
     <a class="nav-logo" href="/"><span class="logo-mark"><img src="/assets/muneeb-avatar.jpg" alt="Muneeb Arshad" onerror="this.remove()">M</span>Muneeb Arshad</a>
     <ul class="nav-links">
-      <li><a href="/" aria-current="page">Home</a></li>
-      <li><a href="/apps/">All Apps</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/apps/" aria-current="page">All Apps</a></li>
       <li><a href="/ai-apps/">AI Development</a></li>
       <li><a href="/growth/">Growth</a></li>
       <li><a href="/revenuecat/">Subscriptions</a></li>
       <li><a href="/appsflyer/">Attribution</a></li>
     </ul>
     <div class="nav-right">
-      <a href="/apps/" class="btn-cta">View All Apps</a>
+      <a href="/ai-apps/" class="btn-cta">View All Apps</a>
       <button class="hamburger" id="hb" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
 <div class="mobile-menu" id="mm">
   <a href="/" onclick="closeMenu()">Home</a>
-  <a href="/apps/" onclick="closeMenu()">All Apps</a>
+  <a href="/apps/" aria-current="page" onclick="closeMenu()">All Apps</a>
   <a href="/ai-apps/" onclick="closeMenu()">AI Development</a>
   <a href="/growth/" onclick="closeMenu()">Growth</a>
   <a href="/revenuecat/" onclick="closeMenu()">Subscriptions</a>
   <a href="/appsflyer/" onclick="closeMenu()">Attribution</a>
-  <a href="/apps/" class="btn-cta" onclick="closeMenu()">View All Apps</a>
+  <a href="/ai-apps/" class="btn-cta" onclick="closeMenu()">View All Apps</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-grid"></div>
   <div class="hero-inner">
-    <div class="badge"><span class="pdot"></span>Available for new projects</div>
-    <h1>I build and scale <span class="accent">mobile apps</span>.</h1>
-    <p class="hero-sub">Mobile app developer &amp; growth marketer. I take AI-powered iOS and Android apps from wireframe to launch — then grow them with performance marketing. 100+ apps shipped, 20M+ downloads, 180K+ ratings.</p>
+    <div class="badge"><span class="pdot"></span>Live on the App Store &amp; Play Store</div>
+    <h1>Every app. <span class="accent">Live on the stores.</span></h1>
+    <p class="hero-sub">A selection of the 100+ apps I've shipped — AI-powered iOS and Android products, launched and maintained end to end, with real users and real ratings behind every one.</p>
     <div class="hero-actions">
-      <a href="/apps/" class="btn-lg btn-primary">View My Apps <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a href="/growth/" class="btn-lg btn-ghost">Growth Marketing</a>
+      <a href="#portfolio" class="btn-lg btn-primary">Browse the apps <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+      <a href="/growth/" class="btn-lg btn-ghost">How I scale them</a>
     </div>
     <div class="hero-stats">
       <div class="hstat"><div class="hstat-n"><span class="count" data-count="100" data-suffix="+">0</span></div><div class="hstat-l">Apps Shipped</div></div>
@@ -468,58 +414,13 @@ footer{background:linear-gradient(180deg,#c3aaff 0%,#b193f8 60%,#a486f0 100%)!im
   </div>
 </div>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="sec">
-    <div class="sec-head reveal">
-      <span class="sec-tag">What I Do</span>
-      <h2 class="sec-title">From first wireframe to <span class="accent">thousands of installs</span></h2>
-      <p class="sec-sub">I handle the full lifecycle — design, development, launch, and the growth that follows.</p>
-    </div>
-    <div class="cards-3">
-      <div class="card reveal">
-        <div class="icon-tile"><img src="https://cdn.simpleicons.org/swift/F05138" alt="Swift"></div>
-        <h3>Mobile App Development</h3>
-        <p>Native-feel iOS &amp; Android apps built for performance and polish. Full App Store &amp; Play Store submission included.</p>
-      </div>
-      <div class="card reveal d1">
-        <div class="icon-tile"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/120px-OpenAI_Logo.svg.png" alt="OpenAI"></div>
-        <h3>AI Feature Integration</h3>
-        <p>OpenAI, vision models, and NLP integrated into real product flows — recommendations, scanning, and coaching that ship.</p>
-      </div>
-      <div class="card reveal d2">
-        <div class="icon-tile"><img src="https://cdn.simpleicons.org/flutter/02569B" alt="Flutter"></div>
-        <h3>Cross-Platform Builds</h3>
-        <p>React Native &amp; Flutter — one codebase, both stores, native feel. Fast to build and straightforward to maintain.</p>
-      </div>
-      <div class="card reveal">
-        <div class="icon-tile"><img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma"></div>
-        <h3>UI / UX &amp; Design</h3>
-        <p>Figma to pixel-perfect code. Onboarding, paywalls, and flows designed to convert — not just to look good.</p>
-      </div>
-      <div class="card reveal d1">
-        <div class="icon-tile"><img src="https://cdn.simpleicons.org/revenuecat/F25A5A" alt="RevenueCat"></div>
-        <h3>Subscriptions &amp; Revenue</h3>
-        <p>RevenueCat paywalls, trials, and in-app purchase infrastructure — the subscription engine behind 50+ live apps.</p>
-        <a href="/revenuecat/" class="card-link">Subscription setup <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-      <div class="card reveal d2">
-        <div class="icon-tile"><img src="https://www.appsflyer.com/favicon.ico" alt="AppsFlyer"></div>
-        <h3>Growth &amp; Attribution</h3>
-        <p>AppsFlyer attribution plus Meta, TikTok &amp; Apple Search Ads campaigns that lower CPA and scale installs.</p>
-        <a href="/growth/" class="card-link">Performance marketing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- APPS -->
-<section id="apps" class="apps-sec">
+<section id="portfolio" class="apps-sec">
   <div class="sec">
     <div class="sec-head reveal">
-      <span class="sec-tag">Portfolio</span>
-      <h2 class="sec-title">Apps live on the stores</h2>
-      <p class="sec-sub">A selection of the 100+ apps I've shipped — real users, real ratings, all built by me.</p>
+      <span class="sec-tag">The Portfolio</span>
+      <h2 class="sec-title">Every app, in <span class="accent">one place</span></h2>
+      <p class="sec-sub">Real products, live on the stores — including apps with 10M+ downloads and 100K+ ratings. Filter by category to explore what I build.</p>
     </div>
     <div class="tabs reveal d1">
       <button class="tab active" data-f="all">All Apps</button>
@@ -530,104 +431,7 @@ footer{background:linear-gradient(180deg,#c3aaff 0%,#b193f8 60%,#a486f0 100%)!im
       <button class="tab" data-f="productivity">Productivity</button>
     </div>
     <div class="apps-grid" id="appsGrid"></div>
-    <div class="apps-more reveal">
-      <a href="/apps/" class="btn-lg btn-ghost">See the full portfolio <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
-  </div>
-</section>
-
-<!-- GROWTH -->
-<section id="growth" class="dark">
-  <div class="sec">
-    <div class="sec-head reveal">
-      <span class="sec-tag">Growth Marketing</span>
-      <h2 class="sec-title">I don't just build apps — I scale them</h2>
-      <p class="sec-sub">From attribution setup to paid campaigns across Meta, TikTok &amp; Apple Search Ads — the full growth stack that drives installs and revenue.</p>
-    </div>
-    <div class="cards-3">
-      <div class="card reveal">
-        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
-        <h3>Attribution &amp; Analytics</h3>
-        <p>Full AppsFlyer setup — SDK, deep linking, postbacks, cohort analysis, and SKAdNetwork for iOS privacy.</p>
-      </div>
-      <div class="card reveal d1">
-        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M22 3L11 14"/><path d="M22 3l-7 18-4-8-8-4z"/></svg></div>
-        <h3>Meta + TikTok Ads</h3>
-        <p>End-to-end paid user acquisition — campaign structure, creative testing, and disciplined budget scaling.</p>
-      </div>
-      <div class="card reveal d2">
-        <div class="icon-tile"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7.5"/><path d="M21 21l-4.3-4.3"/><path d="M8 11h6M11 8v6"/></svg></div>
-        <h3>Apple Search Ads</h3>
-        <p>Keyword research, bid management, and discovery/exact strategies that convert high-intent users.</p>
-      </div>
-      <div class="card reveal">
-        <div class="icon-tile"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></svg></div>
-        <h3>ASO &amp; Store CRO</h3>
-        <p>Keyword strategy, metadata, and screenshot A/B testing to boost organic installs and conversion rate.</p>
-      </div>
-      <div class="card reveal d1">
-        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M2 9a9 9 0 0 1 15-4l3 3"/><path d="M22 15a9 9 0 0 1-15 4l-3-3"/><path d="M17 3v5h-5M7 21v-5h5"/></svg></div>
-        <h3>Retargeting &amp; Winback</h3>
-        <p>Win back churned users with deep-link retargeting, push strategy, and segmented re-engagement funnels.</p>
-      </div>
-      <div class="card reveal d2">
-        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M21 12h-4l-3 8-6-16-3 8H1"/></svg></div>
-        <h3>Strategy &amp; Reporting</h3>
-        <p>Data-driven growth planning with dashboards and KPI tracking — from install to revenue, every dollar accounted for.</p>
-      </div>
-    </div>
-
-    <div class="tool-pills reveal">
-      <span class="tpill"><img src="https://www.appsflyer.com/favicon.ico" alt="">AppsFlyer</span>
-      <span class="tpill"><img src="https://cdn.simpleicons.org/revenuecat/F25A5A" alt="">RevenueCat</span>
-      <span class="tpill"><img src="https://cdn.simpleicons.org/meta/0081FB" alt="">Meta Ads</span>
-      <span class="tpill"><img src="https://cdn.simpleicons.org/tiktok/000000" alt="">TikTok Ads</span>
-      <span class="tpill"><img src="https://cdn.simpleicons.org/apple/000000" alt="">Apple Search Ads</span>
-      <span class="tpill"><img src="https://cdn.simpleicons.org/googleads/4285F4" alt="">Google Ads</span>
-      <span class="tpill"><img src="https://cdn.simpleicons.org/firebase/FFCA28" alt="">Firebase</span>
-    </div>
-
-    <div class="results reveal">
-      <div class="rstat"><div class="rstat-n"><span class="count" data-count="277" data-suffix="%">0</span></div><div class="rstat-l">ROAS D7 (live campaign)</div></div>
-      <div class="rstat"><div class="rstat-n">$<span class="count" data-count="2" data-suffix="M+">0</span></div><div class="rstat-l">Revenue driven</div></div>
-      <div class="rstat"><div class="rstat-n"><span class="count" data-count="2389">0</span></div><div class="rstat-l">Active subscriptions</div></div>
-      <div class="rstat"><div class="rstat-n"><span class="count" data-count="6.79" data-decimals="2" data-suffix="k">0</span></div><div class="rstat-l">Google Ads clicks</div></div>
-    </div>
-
-    <div class="cta-row reveal">
-      <a class="cta-pill" href="/growth/">Growth Marketing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="cta-pill" href="/appsflyer/">AppsFlyer Attribution <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="cta-pill" href="/revenuecat/">RevenueCat Subscriptions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="sec">
-    <div class="about-grid">
-      <div class="reveal">
-        <div class="about-person">
-          <span class="about-avatar"><img src="/assets/muneeb.jpg" alt="Muneeb Arshad" loading="lazy" onerror="this.remove()">M</span>
-          <div><div class="about-person-name">Muneeb Arshad</div><div class="about-person-role">Mobile App Developer &amp; Growth Marketer</div></div>
-        </div>
-        <span class="sec-tag">About Me</span>
-        <h2 class="sec-title" style="text-align:left">A developer who understands growth</h2>
-        <p class="about-lead">I'm Muneeb Arshad — a mobile app developer and growth marketer. I've shipped 100+ apps to the App Store and Play Store and scaled them with performance marketing across Meta, TikTok, and Apple Search Ads. I handle both sides: the product and the numbers.</p>
-        <ul class="checks">
-          <li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Full-cycle development — wireframe to live on stores</li>
-          <li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>AI integration specialist (OpenAI, vision, NLP)</li>
-          <li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Subscriptions &amp; growth — RevenueCat, AppsFlyer, Meta, TikTok, ASA</li>
-          <li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Clean code, pixel-perfect UI, scalable architecture</li>
-        </ul>
-      </div>
-      <div class="about-cards reveal d1">
-        <div class="acard"><div class="acard-n"><span class="count" data-count="100" data-suffix="+">0</span></div><div class="acard-l">Apps shipped to App Store &amp; Play Store</div></div>
-        <div class="acard"><div class="acard-n"><span class="count" data-count="180" data-suffix="K+">0</span></div><div class="acard-l">Ratings across published apps</div></div>
-        <div class="acard"><div class="acard-n"><span class="count" data-count="20" data-suffix="M+">0</span></div><div class="acard-l">Downloads across published apps</div></div>
-        <div class="acard"><div class="acard-n"><span class="count" data-count="5" data-decimals="1">0</span><span style="color:var(--accent)">★</span></div><div class="acard-l">Average client rating on Fiverr &amp; Upwork</div></div>
-      </div>
-    </div>
+    <p class="apps-note reveal">And 80+ more shipped for clients worldwide — from solo founders to funded teams.</p>
   </div>
 </section>
 
@@ -637,7 +441,7 @@ footer{background:linear-gradient(180deg,#c3aaff 0%,#b193f8 60%,#a486f0 100%)!im
     <div class="sec-head reveal">
       <span class="sec-tag">Testimonials</span>
       <h2 class="sec-title">What clients say</h2>
-      <p class="sec-sub">Real, verified 5.0★ reviews from Fiverr &amp; Upwork — repeat clients across the US, Europe &amp; Asia, from solo founders to funded teams.</p>
+      <p class="sec-sub">5.0★ across Fiverr &amp; Upwork — with repeat clients across the US, Europe &amp; Asia, from solo founders to funded teams.</p>
     </div>
     <div class="rev-carousel">
       <div class="rev-col"><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-01.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-04.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-07.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-10.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-13.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-16.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-19.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-01.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-04.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-07.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-10.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-13.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-16.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-19.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure></div>
@@ -653,30 +457,31 @@ footer{background:linear-gradient(180deg,#c3aaff 0%,#b193f8 60%,#a486f0 100%)!im
   </div>
 </section>
 
-<!-- TECH -->
-<section id="tech" class="tech-sec">
+<!-- EXPLORE -->
+<section id="explore" class="dark">
   <div class="sec">
     <div class="sec-head reveal">
-      <span class="sec-tag">Tech Stack</span>
-      <h2 class="sec-title">The tools I build &amp; grow with</h2>
-      <p class="sec-sub">A modern, proven stack — from code to monetization to attribution.</p>
+      <span class="sec-tag">Go Deeper</span>
+      <h2 class="sec-title">Explore by category &amp; service</h2>
+      <p class="sec-sub">Every app fits a focus area — and behind each is a capability you can hire for. Dive into a category, or into the work that ships and scales it.</p>
     </div>
-    <div class="tech-grid">
-      <div class="tech-card reveal"><div class="tech-logo"><img src="https://cdn.simpleicons.org/react/61DAFB" alt=""></div><div class="tech-n">React Native</div><div class="tech-t">Cross-Platform</div></div>
-      <div class="tech-card reveal"><div class="tech-logo"><img src="https://cdn.simpleicons.org/flutter/02569B" alt=""></div><div class="tech-n">Flutter</div><div class="tech-t">Cross-Platform</div></div>
-      <div class="tech-card reveal"><div class="tech-logo"><img src="https://cdn.simpleicons.org/swift/F05138" alt=""></div><div class="tech-n">Swift</div><div class="tech-t">iOS Native</div></div>
-      <div class="tech-card reveal"><div class="tech-logo"><img src="https://cdn.simpleicons.org/kotlin/7F52FF" alt=""></div><div class="tech-n">Kotlin</div><div class="tech-t">Android Native</div></div>
-      <div class="tech-card reveal"><div class="tech-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/120px-OpenAI_Logo.svg.png" alt=""></div><div class="tech-n">OpenAI</div><div class="tech-t">AI Integration</div></div>
-      <div class="tech-card reveal"><div class="tech-logo"><img src="https://cdn.simpleicons.org/firebase/FFCA28" alt=""></div><div class="tech-n">Firebase</div><div class="tech-t">Backend &amp; Auth</div></div>
-      <div class="tech-card reveal"><div class="tech-logo"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt=""></div><div class="tech-n">TypeScript</div><div class="tech-t">Language</div></div>
-      <div class="tech-card reveal"><div class="tech-logo"><img src="https://cdn.simpleicons.org/figma/F24E1E" alt=""></div><div class="tech-n">Figma</div><div class="tech-t">UI / UX Design</div></div>
-      <div class="tech-card reveal"><div class="tech-logo"><img src="https://cdn.simpleicons.org/expo/000020" alt=""></div><div class="tech-n">Expo</div><div class="tech-t">RN Toolkit</div></div>
-      <div class="tech-card reveal"><div class="tech-logo"><span class="tech-mono">44</span></div><div class="tech-n">Base44</div><div class="tech-t">AI App Builder</div></div>
-      <div class="tech-card reveal"><div class="tech-logo"><img src="https://cdn.simpleicons.org/revenuecat/F25A5A" alt=""></div><div class="tech-n">RevenueCat</div><div class="tech-t">Subscriptions</div></div>
-      <div class="tech-card reveal"><div class="tech-logo"><img src="https://www.appsflyer.com/favicon.ico" alt=""></div><div class="tech-n">AppsFlyer</div><div class="tech-t">Attribution</div></div>
-      <div class="tech-card reveal"><div class="tech-logo"><img src="https://cdn.simpleicons.org/googleads/4285F4" alt=""></div><div class="tech-n">Google Ads</div><div class="tech-t">Paid UA</div></div>
-      <div class="tech-card reveal"><div class="tech-logo"><img src="https://cdn.simpleicons.org/appstore/0D96F6" alt=""></div><div class="tech-n">App Store</div><div class="tech-t">iOS Distribution</div></div>
-      <div class="tech-card reveal"><div class="tech-logo"><img src="https://cdn.simpleicons.org/googleplay/34A853" alt=""></div><div class="tech-n">Play Console</div><div class="tech-t">Android Distribution</div></div>
+    <div class="explore-group reveal">
+      <p class="explore-label">By category</p>
+      <div class="cta-row">
+        <a class="cta-pill" href="/beauty/">Beauty &amp; Style AI <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="cta-pill" href="/wellness/">Health &amp; Wellness <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="cta-pill" href="/finance/">Trading &amp; Finance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="cta-pill" href="/productivity/">Productivity &amp; Lifestyle <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="explore-group reveal d1">
+      <p class="explore-label">Services</p>
+      <div class="cta-row">
+        <a class="cta-pill" href="/ai-apps/">AI App Development <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="cta-pill" href="/growth/">Growth Marketing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="cta-pill" href="/revenuecat/">Subscriptions &amp; RevenueCat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="cta-pill" href="/appsflyer/">Attribution &amp; AppsFlyer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
     </div>
   </div>
 </section>
@@ -686,9 +491,9 @@ footer{background:linear-gradient(180deg,#c3aaff 0%,#b193f8 60%,#a486f0 100%)!im
   <div class="reveal">
     <span class="sec-tag">Let's build</span>
     <h2>Have an app to build — or <span class="accent">scale?</span></h2>
-    <p>From first wireframe to thousands of installs. Take a look at the work and the growth behind it.</p>
+    <p>From first wireframe to thousands of installs — the product and the growth, handled end to end.</p>
     <div class="hero-actions">
-      <a href="/apps/" class="btn-lg btn-primary">View All Apps <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="/ai-apps/" class="btn-lg btn-primary">Start a build <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a href="/growth/" class="btn-lg btn-ghost">Growth Marketing</a>
     </div>
   </div>
@@ -758,7 +563,10 @@ const APPS=[
  {n:"Peps",t:"Peptide tracking made simple",d:"Track peptide protocols, dosing schedules, and progress — clean, precise, and private.",cat:"wellness",cl:"Health",p:"ios",u:"https://apps.apple.com/us/app/peps-peptide-tracker/id6767047762",i:"https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6b/e0/76/6be076e4-6c62-7db5-b781-d529b3bed650/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg"},
  {n:"Cake Day Gifts",t:"Birthday reminders & gift ideas",d:"Never miss a birthday again. Smart reminders, curated gift ideas, and celebration planning in one app.",cat:"productivity",cl:"Lifestyle",p:"ios",u:"https://apps.apple.com/us/app/cake-day-gifts/id6754992208",i:"https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/71/3d/d4/713dd451-723b-4b2b-e5a2-458f1bc849e9/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg"},
  {n:"FaceSwap AVA",t:"AI face swap & avatar creator",d:"Swap faces in photos instantly with AI. Create realistic and fun transformations in seconds.",cat:"beauty ai",cl:"Entertainment · AI",p:"android",u:"https://play.google.com/store/apps/details?id=ai.faceswap.avatar.age.gender.changer",i:"https://play-lh.googleusercontent.com/DhxuOZ2K9siN-6R-38tPUuqI2uk8tHsiiPiThrFuA_M_OZL4LtcFsB3sMn0oP8aavA=w480-h960-rw"},
- {n:"ToEmployment",t:"AI resume builder & career tool",d:"AI-driven resume builder and job prep tool. Tailored resumes, cover letters, and interview practice.",cat:"productivity ai",cl:"Career · AI",p:"web",u:"https://toemployment.com/",i:"https://toemployer.com/wp-content/uploads/2018/06/Toe-Logo-v2-1.jpg"}
+ {n:"ToEmployment",t:"AI resume builder & career tool",d:"AI-driven resume builder and job prep tool. Tailored resumes, cover letters, and interview practice.",cat:"productivity ai",cl:"Career · AI",p:"web",u:"https://toemployment.com/",i:"https://toemployer.com/wp-content/uploads/2018/06/Toe-Logo-v2-1.jpg"},
+ {n:"TrackIQ",t:"Trading performance tracker",d:"Log trades, analyze performance, and sharpen your edge with intelligent trading analytics.",cat:"finance",cl:"Finance",p:"ios",s:"coming"},
+ {n:"Slumber",t:"AI bedtime stories & sleep",d:"Personalized AI bedtime stories and calming audio for deeper, faster sleep.",cat:"wellness ai",cl:"Wellness · AI",p:"ios",s:"coming"},
+ {n:"Breath",t:"Guided breathing & calm",d:"Guided breathing exercises to reduce stress and restore focus — anywhere, anytime.",cat:"wellness",cl:"Wellness",p:"ios",s:"coming"}
 ];
 const SVG={
  ios:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>App Store',
@@ -766,10 +574,24 @@ const SVG={
  web:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>Website'};
 const LBL={ios:"App Store",android:"Play Store",web:"Website"};
 function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function tier(a){if(a.s==='coming')return 2;if(a.r&&a.rc&&+a.rc>=4)return 0;return 1;}
+APPS.sort((a,b)=>{const t=tier(a)-tier(b);if(t)return t;if(tier(a)===0)return (+b.rc)-(+a.rc);return 0;});
 function cardHTML(a,idx){
+ const d=['','d1','d2'][idx%3];
+ if(a.s==='coming'){
+  const mono=a.n.trim().charAt(0).toUpperCase();
+  return `<article class="app-card coming reveal ${d}" data-cat="${a.cat}">
+    <div class="ac-head">
+      <div class="ac-mono">${mono}</div>
+      <div class="ac-meta"><h3 class="ac-name">${esc(a.n)}</h3><p class="ac-tag">${esc(a.t)}</p>
+        <div class="ac-badges"><span class="bdg bdg-soon">Coming Soon</span></div></div>
+    </div>
+    <p class="ac-desc">${esc(a.d)}</p>
+    <div class="ac-foot"><span class="ac-cat">${esc(a.cl)}</span></div>
+  </article>`;
+ }
  const pill=a.p==='ios'?'bdg-ios':a.p==='android'?'bdg-android':'bdg-web';
  const rating=(a.r&&a.rc&&+a.rc>=4)?`<span class="bdg bdg-star">★ ${a.r} · ${(+a.rc).toLocaleString('en-US')}</span>`:'';
- const d=['','d1','d2'][idx%3];
  return `<article class="app-card reveal ${d}" data-cat="${a.cat}">
    <div class="ac-head">
      <div class="ac-icon"><img loading="lazy" src="${a.i}" alt="${esc(a.n)} app icon"></div>

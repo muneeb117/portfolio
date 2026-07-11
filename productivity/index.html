@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Productivity &amp; Lifestyle Apps — Muneeb Arshad</title>
+<meta name="description" content="Daily-use productivity, utility and lifestyle apps — built and shipped to iOS, Android and the web. AI study tools, writing assistants, pro estimation software and reminder engines by Muneeb Arshad.">
+<meta name="author" content="Muneeb Arshad">
+<meta name="theme-color" content="#7856ff">
+<link rel="canonical" href="https://muneebarshad.com/productivity/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Productivity &amp; Lifestyle Apps — Muneeb Arshad">
+<meta property="og:description" content="Tools people open every day. AI study & writing apps, reminder engines and pro estimation software — shipped to iOS, Android and the web.">
+<meta property="og:url" content="https://muneebarshad.com/productivity/">
+<meta property="og:site_name" content="Muneeb Arshad">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Productivity &amp; Lifestyle Apps — Muneeb Arshad">
+<meta name="twitter:description" content="Daily-use productivity & lifestyle apps built and scaled across iOS, Android and web.">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/icons/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;--bg-soft:#f7f5ff;--panel:#f0edff;--surface:#ffffff;
+  --border:#e9e6f5;--border-2:#d9d3ee;
+  --ink:#1f2023;--ink-2:#4a4757;--muted:#6f6b7e;--muted-2:#a7a2b6;
+  --accent:#7856ff;--accent-2:#6a48f0;--accent-lt:#f0edff;--accent-mid:#e2dbff;
+  --navy:#2a1270;--navy-2:#25105c;
+  --shadow-xs:0 1px 2px rgba(31,20,64,.05);
+  --shadow-sm:0 1px 2px rgba(31,20,64,.06),0 2px 6px rgba(31,20,64,.05);
+  --shadow-md:0 6px 20px rgba(31,20,64,.09);
+  --shadow-lg:0 18px 44px rgba(31,20,64,.14);
+  --radius:12px;--radius-lg:16px;--radius-xl:20px;
+  --maxw:1160px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink-2);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+ radial-gradient(55% 38% at 12% 5%,rgba(120,86,255,.10),transparent 60%),
+ radial-gradient(48% 32% at 88% 2%,rgba(255,168,138,.12),transparent 60%),
+ radial-gradient(45% 32% at 6% 55%,rgba(127,225,216,.08),transparent 60%),
+ radial-gradient(55% 40% at 90% 80%,rgba(150,120,255,.12),transparent 58%),
+ radial-gradient(85% 50% at 50% 100%,rgba(170,130,255,.14),transparent 60%),
+ radial-gradient(50% 40% at 8% 95%,rgba(255,196,160,.10),transparent 60%)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Hanken Grotesk',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.1;color:var(--ink)}
+.accent{color:var(--ink);background:linear-gradient(transparent 80%,var(--accent-mid) 80%)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.82);backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+nav.scrolled{border-bottom-color:var(--border);box-shadow:var(--shadow-xs)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 32px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Hanken Grotesk',sans-serif;font-size:16.5px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
+.logo-mark{width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;flex-shrink:0;overflow:hidden;position:relative}
+.logo-mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-links a{padding:8px 13px;border-radius:8px;font-size:14px;font-weight:500;color:var(--muted);transition:all .18s}
+.nav-links a:hover{color:var(--ink);background:var(--panel)}
+.nav-links a[aria-current="page"]{color:var(--ink);font-weight:600}
+.nav-right{display:flex;align-items:center;gap:12px}
+.btn-cta{padding:10px 20px;border-radius:100px;background:var(--ink);color:#fff;font-family:'Inter',sans-serif;font-size:13.5px;font-weight:600;border:none;cursor:pointer;transition:all .2s;white-space:nowrap}
+.btn-cta:hover{background:var(--accent)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:66px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:14px 24px 22px;z-index:199;box-shadow:var(--shadow-md);flex-direction:column;gap:2px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:12px 14px;border-radius:9px;font-size:15px;font-weight:500;color:var(--ink-2);transition:all .18s}
+.mobile-menu a:hover{background:var(--panel)}
+.mobile-menu .btn-cta{margin-top:10px;text-align:center;padding:13px}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:140px 32px 76px;background:transparent}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.5;mask-image:radial-gradient(ellipse 70% 55% at 50% 0%,#000,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 55% at 50% 0%,#000,transparent 75%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:820px;margin:0 auto;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 15px;background:var(--surface);border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-2);box-shadow:var(--shadow-xs);margin-bottom:28px}
+.pdot{width:7px;height:7px;border-radius:50%;background:#16a34a;position:relative}
+.pdot::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1px solid rgba(22,163,74,.4);animation:ping 2.2s ease-out infinite}
+@keyframes ping{0%{transform:scale(.8);opacity:1}100%{transform:scale(2);opacity:0}}
+.hero h1{font-size:clamp(34px,5vw,56px);letter-spacing:-.035em;line-height:1.05}
+.hero-sub{max-width:620px;margin:22px auto 0;font-size:clamp(16px,2vw,18px);color:var(--muted);line-height:1.65}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.btn-lg{padding:14px 28px;border-radius:100px;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;border:1px solid transparent}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:var(--shadow-sm)}
+.btn-primary:hover{background:#000;transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.btn-ghost{background:var(--surface);color:var(--ink);border-color:var(--border-2)}
+.btn-ghost:hover{border-color:var(--ink);color:var(--ink)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);max-width:600px;margin:56px auto 0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden}
+.hstat{padding:24px 14px;border-right:1px solid var(--border)}
+.hstat:last-child{border-right:none}
+.hstat-n{font-family:'Hanken Grotesk',sans-serif;font-size:clamp(24px,3.6vw,32px);font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+.hstat-l{font-size:12.5px;font-weight:500;color:var(--muted);margin-top:5px;line-height:1.4}
+
+/* PLATFORM STRIP */
+.plat-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-soft);padding:22px 0}
+.plat-inner{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.plat-lbl{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted-2)}
+.plat-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.plat{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;background:var(--surface);border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-2);box-shadow:var(--shadow-xs)}
+.plat img{width:16px;height:16px;object-fit:contain}
+.plat svg{width:16px;height:16px}
+
+/* SECTIONS */
+.sec{max-width:var(--maxw);margin:0 auto;padding:80px 32px}
+.sec-head{max-width:660px;margin:0 auto 46px;text-align:center}
+.sec-tag{display:inline-block;padding:6px 13px;border-radius:100px;background:var(--accent-lt);color:var(--accent);font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:16px;border:1px solid var(--accent-mid)}
+.sec-title{font-size:clamp(28px,3.8vw,44px);letter-spacing:-.03em}
+.sec-sub{color:var(--muted);font-size:16.5px;margin-top:14px;line-height:1.6}
+
+/* CARDS */
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 26px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-2)}
+.icon-tile{width:46px;height:46px;border-radius:13px;background:var(--accent-lt);border:1px solid var(--accent-mid);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.icon-tile svg{width:23px;height:23px;stroke:var(--accent);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:18px;margin-bottom:8px;letter-spacing:-.02em}
+.card p{color:var(--muted);font-size:14.5px;line-height:1.6}
+.card-link{display:inline-flex;align-items:center;gap:6px;margin-top:15px;font-size:13.5px;font-weight:600;color:var(--accent)}
+.card-link svg{width:14px;height:14px;transition:transform .2s}
+.card:hover .card-link svg{transform:translateX(3px)}
+
+/* APPS */
+.apps-sec{background:transparent;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.apps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.app-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s}
+.app-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-2)}
+.ac-head{display:flex;gap:14px;align-items:center}
+.ac-icon{width:56px;height:56px;flex-shrink:0;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-xs);background:var(--panel);border:1px solid var(--border)}
+.ac-icon img{width:100%;height:100%;object-fit:cover}
+.ac-meta{min-width:0;flex:1}
+.ac-name{font-size:16.5px;font-weight:800;letter-spacing:-.02em;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ac-tag{font-size:12.5px;color:var(--muted);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ac-badges{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.bdg{padding:3px 8px;border-radius:6px;font-size:10.5px;font-weight:700;letter-spacing:.02em;display:inline-flex;align-items:center;gap:3px}
+.bdg-ios{background:var(--panel);color:var(--ink-2)}
+.bdg-android{background:var(--panel);color:var(--ink-2)}
+.bdg-web{background:var(--panel);color:var(--ink-2)}
+.bdg-star{background:#fff5e1;color:#8a5b00;border:1px solid #f3dfa8}
+.ac-desc{color:var(--muted);font-size:13.5px;line-height:1.58;margin-top:15px;flex:1}
+.ac-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:16px;padding-top:15px;border-top:1px solid var(--border)}
+.ac-cat{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted-2)}
+.store-link{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:100px;background:var(--ink);color:#fff;font-size:12px;font-weight:600;transition:all .18s;white-space:nowrap}
+.store-link:hover{background:var(--accent)}
+.store-link svg{width:13px;height:13px;flex-shrink:0}
+.store-link.big{padding:12px 22px;font-size:13px}
+.store-link.big svg{width:15px;height:15px}
+.apps-more{text-align:center;margin-top:42px}
+
+/* SPOTLIGHT (AG Fence Pro) */
+.spot-sec{background:transparent;border-bottom:1px solid var(--border)}
+.spot-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center}
+.spot-copy .sec-title{text-align:left}
+.spot-copy .sec-sub{margin:16px 0 0}
+.spot-actions{display:flex;align-items:center;gap:14px;margin-top:30px;flex-wrap:wrap}
+.phones-stage{position:relative;background:radial-gradient(120% 90% at 50% 0%,#f4f0ff,#ffffff 72%);border:1px solid var(--border);border-radius:24px;padding:46px 18px;box-shadow:var(--shadow-sm);overflow:hidden}
+.phones{display:flex;justify-content:center;align-items:flex-start}
+.phone{width:clamp(118px,15.5vw,162px);background:#120733;border:3px solid #2a1656;border-radius:26px;padding:6px;box-shadow:var(--shadow-lg);position:relative;margin:0 clamp(-18px,-1.4vw,-10px)}
+.phone::before{content:'';position:absolute;top:11px;left:50%;transform:translateX(-50%);width:38%;height:5px;border-radius:4px;background:rgba(255,255,255,.24);z-index:3}
+.phone img{width:100%;display:block;border-radius:20px}
+.phone-1,.phone-3{margin-top:42px}
+.phone-2{z-index:2}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.phone-1{animation:floaty 5s ease-in-out infinite}
+.phone-2{animation:floaty 5.8s ease-in-out infinite .5s}
+.phone-3{animation:floaty 6.4s ease-in-out infinite 1s}
+.checks{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:13px}
+.checks li{display:flex;align-items:flex-start;gap:12px;font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.chk{width:22px;height:22px;border-radius:6px;flex-shrink:0;background:var(--ink);border:1px solid var(--ink);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.chk svg{width:12px;height:12px;stroke:#fff;stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* DARK PROOF BAND */
+.dark{background:linear-gradient(160deg,#2e1266 0%,#3f1f8f 55%,#241058 100%);color:#e5ddff;position:relative;overflow:hidden}
+.dark::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(150,120,255,.2),transparent 70%);pointer-events:none}
+.dark .sec{position:relative;z-index:1}
+.dark .sec-tag{background:rgba(120,86,255,.28);color:#d6ccff;border-color:rgba(120,86,255,.5)}
+.dark .sec-title{color:#fff}
+.dark .sec-sub{color:#94a3b8}
+.pulse{margin:2px auto 0;max-width:920px}
+.pulse svg{width:100%;height:70px;display:block}
+.draw-line{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.9s ease .3s}
+.reveal.in .draw-line{stroke-dashoffset:0}
+.tool-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:40px}
+.tpill{display:flex;align-items:center;gap:8px;padding:9px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;font-size:13px;font-weight:600;color:#cbd5e1;transition:all .18s}
+.tpill:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);color:#fff}
+.tpill img{width:16px;height:16px;object-fit:contain}
+.results{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.rstat{padding:26px 18px;text-align:center;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);transition:all .2s}
+.rstat:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)}
+.rstat-n{font-family:'Hanken Grotesk',sans-serif;font-size:30px;font-weight:800;letter-spacing:-.03em;color:#c9bcff}
+.rstat-l{font-size:12px;color:#94a3b8;margin-top:6px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:42px}
+.cta-pill{padding:13px 22px;border-radius:10px;border:1px solid rgba(255,255,255,.16);color:#e2e8f0;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.cta-pill:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.1);color:#fff}
+.cta-pill svg{width:15px;height:15px}
+
+/* REVIEWS */
+.rev-sec{background:transparent;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev-carousel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;height:640px;overflow:hidden;position:relative;-webkit-mask:linear-gradient(180deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask:linear-gradient(180deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+.rev-col{display:flex;flex-direction:column;gap:16px;will-change:transform;animation:revscroll 120s linear infinite}
+.rev-col.rev-down{animation-direction:reverse}
+.rev-carousel:hover .rev-col,.rev-carousel:focus-within .rev-col{animation-play-state:paused}
+@keyframes revscroll{to{transform:translateY(-50%)}}
+@media(max-width:760px){.rev-carousel{grid-template-columns:1fr 1fr;height:560px}.rev-col:nth-child(3){display:none}}
+@media(max-width:480px){.rev-carousel{grid-template-columns:1fr}.rev-col:nth-child(2){display:none}}
+@media(prefers-reduced-motion:reduce){.rev-carousel{height:auto;overflow:visible;-webkit-mask:none;mask:none}.rev-col{animation:none}}
+.rev{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;box-shadow:var(--shadow-xs);transition:transform .25s,box-shadow .25s,border-color .25s}
+.rev:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-2)}
+.rev-stars{color:var(--accent);font-size:13px;letter-spacing:3px;margin-bottom:12px}
+.rev-q{color:var(--ink-2);font-size:14.5px;line-height:1.62;flex:1}
+.rev-by{display:flex;align-items:center;gap:11px;margin-top:18px;padding-top:15px;border-top:1px solid var(--border)}
+.rev-av{width:34px;height:34px;border-radius:50%;background:var(--panel);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Hanken Grotesk',sans-serif;color:var(--ink-2);font-size:13px;flex-shrink:0}
+.rev-meta{min-width:0}
+.rev-name{font-size:13.5px;font-weight:700;color:var(--ink)}
+.rev-loc{font-size:12px;color:var(--muted)}
+.rev-repeat{margin-left:auto;font-size:10px;font-weight:700;letter-spacing:.03em;color:var(--ink-2);background:var(--panel);border:1px solid var(--border);padding:3px 9px;border-radius:100px;white-space:nowrap}
+.rev-proof{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:36px}
+.rev-chip{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;background:var(--surface);border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-2);box-shadow:var(--shadow-xs)}
+.rev-chip b{color:var(--ink);font-family:'Hanken Grotesk',sans-serif}
+.rev-chip .st{color:var(--accent);letter-spacing:1px}
+
+/* CTA BAND */
+.cta-band{position:relative;padding:104px 32px 116px;text-align:center;background:radial-gradient(ellipse 55% 45% at 50% 0%,#ffe6d6 0%,transparent 55%),linear-gradient(180deg,#ffffff 0%,#f3eeff 42%,#d8caff 78%,#c2b1f2 100%)}
+.cta-band h2{font-size:clamp(30px,4.6vw,52px);letter-spacing:-.03em;max-width:660px;margin:0 auto;color:var(--ink)}
+.cta-band p{color:var(--ink-2);font-size:17px;line-height:1.6;margin:16px auto 0;max-width:520px}
+.cta-band .hero-actions{margin-top:34px}
+
+/* FOOTER */
+footer{background:linear-gradient(180deg,#e8e0ff 0%,#f3eeff 100%);color:var(--ink-2);border-radius:36px 36px 0 0;position:relative}
+.foot-top{max-width:var(--maxw);margin:0 auto;padding:64px 32px 42px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px}
+.foot-logo{display:flex;align-items:center;gap:10px;font-family:'Hanken Grotesk',sans-serif;font-size:17px;font-weight:800;color:var(--ink);margin-bottom:14px}
+.foot-desc{color:var(--muted);font-size:14px;line-height:1.7;max-width:330px}
+.foot-col-t{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);margin-bottom:16px}
+.foot-links{display:flex;flex-direction:column;gap:11px}
+.foot-links a{font-size:14px;font-weight:500;color:var(--ink-2);transition:color .18s}
+.foot-links a:hover{color:var(--accent)}
+.foot-bottom{border-top:1px solid var(--border);max-width:var(--maxw);margin:0 auto;padding:22px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.foot-bottom p{font-size:12.5px;color:var(--muted-2)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.06s}.d2{transition-delay:.12s}.d3{transition-delay:.18s}.d4{transition-delay:.24s}.d5{transition-delay:.3s}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .cards-3{grid-template-columns:repeat(2,1fr)}
+  .apps-grid{grid-template-columns:repeat(2,1fr)}
+  .rev-grid{grid-template-columns:repeat(2,1fr)}
+  .results{grid-template-columns:repeat(2,1fr)}
+  .spot-grid{grid-template-columns:1fr;gap:44px}
+  .spot-copy .sec-title{text-align:left}
+  .foot-top{grid-template-columns:1fr 1fr;gap:36px}
+  .foot-top>:first-child{grid-column:1/-1}
+}
+@media(max-width:760px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .nav-inner,.wrap{padding-left:20px;padding-right:20px}
+  .hero{padding:118px 20px 68px}
+  .hero-stats{grid-template-columns:1fr}
+  .hstat{border-right:none;border-bottom:1px solid var(--border)}
+  .hstat:last-child{border-bottom:none}
+  .sec{padding:68px 20px}
+  .cards-3{grid-template-columns:1fr}
+  .apps-grid{grid-template-columns:1fr}
+  .rev-grid{grid-template-columns:1fr}
+  .results{grid-template-columns:1fr 1fr}
+  .phones-stage{padding:36px 12px}
+  .phone{width:clamp(104px,29vw,140px)}
+  .foot-top{grid-template-columns:1fr;gap:30px;padding:44px 20px 30px}
+  .foot-top>:first-child{grid-column:1}
+  .foot-bottom{flex-direction:column;text-align:center;gap:6px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  .draw-line{stroke-dashoffset:0}
+}
+
+/* ── reviews v3: designed cards, no pricing ── */
+.rev-carousel{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;height:720px;overflow:hidden;position:relative;-webkit-mask:linear-gradient(180deg,transparent 0,#000 6%,#000 94%,transparent 100%);mask:linear-gradient(180deg,transparent 0,#000 6%,#000 94%,transparent 100%)}
+.rev-col{display:flex;flex-direction:column;gap:18px;will-change:transform;animation:revscroll 120s linear infinite}
+.rev-col.rev-down{animation-direction:reverse}
+.rev-carousel:hover .rev-col,.rev-carousel:focus-within .rev-col{animation-play-state:paused}
+@keyframes revscroll{to{transform:translateY(-50%)}}
+.rev{position:relative;background:linear-gradient(180deg,#ffffff 0%,#fcfbff 100%);border:1px solid var(--border);border-radius:18px;padding:24px 24px 20px;box-shadow:0 1px 2px rgba(31,20,64,.04),0 14px 34px -20px rgba(31,20,64,.16);display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.rev:hover{transform:translateY(-4px);border-color:var(--accent-mid);box-shadow:0 2px 5px rgba(31,20,64,.05),0 26px 52px -22px rgba(120,86,255,.32)}
+.rev-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:13px}
+.rev-stars{color:var(--accent);font-size:14px;letter-spacing:2.5px;text-shadow:0 1px 0 rgba(120,86,255,.15)}
+.rev-plat{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.02em;padding:4px 11px;border-radius:100px;border:1px solid var(--border);background:#fff;color:var(--ink-2)}
+.rev-plat i{width:7px;height:7px;border-radius:50%}
+.rev-plat-fv i{background:#1dbf73}
+.rev-plat-uw i{background:#14a800}
+.rev-role{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted-2);margin:-4px 0 8px}
+.rev-q{color:var(--ink-2);font-size:15.5px;line-height:1.68;flex:1;font-weight:450}
+.rev-by{display:flex;align-items:center;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--border)}
+.rev-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#b39dff);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Hanken Grotesk',sans-serif;font-size:15px;flex-shrink:0;box-shadow:0 4px 10px rgba(120,86,255,.3)}
+.rev-meta{min-width:0}
+.rev-name{font-size:14px;font-weight:700;color:var(--ink)}
+.rev-loc{font-size:12px;color:var(--muted);margin-top:1px}
+.rev-repeat{margin-left:auto;font-size:10px;font-weight:700;color:var(--accent);background:var(--accent-lt);border:1px solid var(--accent-mid);padding:4px 10px;border-radius:100px;white-space:nowrap}
+@media(max-width:760px){.rev-carousel{grid-template-columns:1fr 1fr;height:600px}.rev-col:nth-child(3){display:none}}
+@media(max-width:480px){.rev-carousel{grid-template-columns:1fr}.rev-col:nth-child(2){display:none}}
+@media(prefers-reduced-motion:reduce){.rev-carousel{height:auto;overflow:visible;-webkit-mask:none;mask:none}.rev-col{animation:none}}
+/* ── micro-polish ── */
+::selection{background:var(--accent);color:#fff}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}
+.btn-lg svg,.btn-cta svg,.card-link svg,.spot-link svg,.cta-pill svg{transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+.btn-lg:hover svg,.spot-link:hover svg,.cta-pill:hover svg{transform:translateX(3px)}
+.nav-links a{position:relative}
+.nav-links a::after{content:'';position:absolute;left:13px;right:13px;bottom:5px;height:2px;border-radius:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.7,.2,1)}
+.nav-links a:hover::after{transform:scaleX(1)}
+
+/* ── v4: light bands + seamless colored bottom ── */
+.dark,.hero-fin{background:linear-gradient(180deg,#f1ebff 0%,#e2d5ff 100%)!important;color:var(--ink-2)!important}
+.dark::before{display:none!important}
+.dark .sec-tag,.hero-fin .sec-tag{background:#fff!important;color:var(--accent)!important;border:1px solid var(--accent-mid)!important}
+.dark .sec-title,.hero-fin .sec-title,.dark h2,.dark h3,.hero-fin h1{color:var(--ink)!important}
+.dark .sec-sub,.dark p,.hero-fin .hero-sub{color:var(--muted)!important}
+.dark .card{background:var(--surface)!important;border-color:var(--border)!important;backdrop-filter:none!important}
+.dark .card:hover{border-color:var(--accent-mid)!important}
+.dark .icon-tile{background:var(--accent-lt)!important;border-color:var(--accent-mid)!important}
+.dark .icon-tile svg{stroke:var(--accent)!important}
+.dark .tpill{background:#fff!important;border-color:var(--border)!important;color:var(--ink-2)!important}
+.dark .rstat{background:#fff!important;border-color:var(--border)!important}
+.dark .rstat-n{color:var(--accent)!important}
+.dark .rstat-l{color:var(--muted)!important}
+.dark .cta-pill{border-color:var(--border-2)!important;color:var(--ink)!important;background:#fff!important}
+.dark .cta-pill:hover{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+.hero-fin .btn-ghost{background:#fff!important;color:var(--ink)!important;border-color:var(--border-2)!important}
+/* timeline light + animated numbering */
+.tl-track{background:var(--accent-mid)!important}
+.tl-fill{background:linear-gradient(90deg,var(--accent),#b39dff)!important}
+.tl-dot{background:#fff!important;border:2px solid var(--accent)!important;color:var(--accent)!important;font-weight:800}
+.tl-body h3{color:var(--ink)!important}
+.tl-body p{color:var(--muted)!important}
+@keyframes stepPop{0%{transform:scale(.3);opacity:0}55%{transform:scale(1.18)}100%{transform:scale(1);opacity:1}}
+@keyframes stepRing{0%{box-shadow:0 0 0 0 rgba(120,86,255,.4)}100%{box-shadow:0 0 0 22px rgba(120,86,255,0)}}
+.reveal.in .tl-dot{animation:stepPop .6s cubic-bezier(.34,1.56,.64,1) both,stepRing 1.1s ease-out both}
+.tl-step:nth-child(1) .tl-dot{animation-delay:.05s,.45s}
+.tl-step:nth-child(2) .tl-dot{animation-delay:.17s,.57s}
+.tl-step:nth-child(3) .tl-dot{animation-delay:.29s,.69s}
+.tl-step:nth-child(4) .tl-dot{animation-delay:.41s,.81s}
+.tl-step:nth-child(5) .tl-dot{animation-delay:.53s,.93s}
+.tl-step:nth-child(6) .tl-dot{animation-delay:.65s,1.05s}
+/* seamless: cta-band flows into footer, color runs to the very end */
+.cta-band{background:radial-gradient(ellipse 55% 45% at 50% 0%,#ffe6d6 0%,transparent 55%),linear-gradient(180deg,#ffffff 0%,#f0e8ff 34%,#d9c8ff 68%,#c3aaff 100%)!important}
+footer{background:linear-gradient(180deg,#c3aaff 0%,#b193f8 60%,#a486f0 100%)!important;border-radius:0!important;color:#3b2f66!important}
+.foot-desc{color:#4a3f75!important}
+.foot-col-t{color:#5c4d8f!important}
+.foot-links a{color:#3b2f66!important}
+.foot-links a:hover{color:var(--ink)!important}
+.foot-logo{color:var(--ink)!important}
+.foot-bottom{border-top:1px solid rgba(36,16,88,.16)!important}
+.foot-bottom p{color:#5c4d8f!important}
+
+.dark h4,.hero-fin h4,.tl-body h4{color:var(--ink)!important}
+.dark h5,.dark strong,.dark b{color:var(--ink)!important}
+
+/* ── v5: real review screenshots, zoomed wide ── */
+.rev-carousel{width:min(1340px,calc(100vw - 48px));position:relative;left:50%;transform:translateX(-50%);grid-template-columns:repeat(3,1fr);height:800px}
+.rev-shot{margin:0;background:#fff;border:1px solid var(--border);border-radius:16px;padding:8px;box-shadow:0 1px 2px rgba(31,20,64,.05),0 14px 34px -20px rgba(31,20,64,.16);transition:transform .3s,box-shadow .3s}
+.rev-shot:hover{transform:translateY(-3px);box-shadow:0 20px 44px -18px rgba(120,86,255,.3)}
+.rev-shot img{width:100%;height:auto;display:block;border-radius:10px}
+@media(max-width:760px){.rev-carousel{grid-template-columns:1fr 1fr;height:640px;width:calc(100vw - 40px)}}
+@media(max-width:480px){.rev-carousel{grid-template-columns:1fr}}
+
+.dark .checks li,.hero-fin .checks li{color:var(--ink-2)!important}
+.dark li{color:var(--ink-2)!important}
+
+/* v4c-li-accent-fix */
+.dark .checks li,.hero-fin .checks li,.dark li{color:var(--ink-2)!important}
+.dark .sec-title .accent,.dark .accent{color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important;background:linear-gradient(transparent 78%,var(--accent-mid) 78%)!important}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Muneeb Arshad","url":"https://muneebarshad.com","jobTitle":"Mobile App Developer & Growth Marketer","description":"Builds daily-use productivity, utility and lifestyle apps across iOS, Android and web. 100+ apps shipped.","knowsAbout":["Mobile App Development","iOS","Android","React Native","Flutter","AI Integration","OpenAI","Productivity Apps","Utility Apps","Push Notifications","App Store Submission","RevenueCat","Growth Marketing"]}
+</script>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/"><span class="logo-mark"><img src="/assets/muneeb-avatar.jpg" alt="Muneeb Arshad" onerror="this.remove()">M</span>Muneeb Arshad</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/apps/">All Apps</a></li>
+      <li><a href="/ai-apps/">AI Development</a></li>
+      <li><a href="/growth/">Growth</a></li>
+      <li><a href="/revenuecat/">Subscriptions</a></li>
+      <li><a href="/appsflyer/">Attribution</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/apps/" class="btn-cta">View All Apps</a>
+      <button class="hamburger" id="hb" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mm">
+  <a href="/" onclick="closeMenu()">Home</a>
+  <a href="/apps/" onclick="closeMenu()">All Apps</a>
+  <a href="/ai-apps/" onclick="closeMenu()">AI Development</a>
+  <a href="/growth/" onclick="closeMenu()">Growth</a>
+  <a href="/revenuecat/" onclick="closeMenu()">Subscriptions</a>
+  <a href="/appsflyer/" onclick="closeMenu()">Attribution</a>
+  <a href="/apps/" class="btn-cta" onclick="closeMenu()">View All Apps</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="badge"><span class="pdot"></span>Productivity · Utility · Lifestyle</div>
+    <h1>Tools people open <span class="accent">every day.</span></h1>
+    <p class="hero-sub">I design and build the productivity, utility and lifestyle apps that earn a place on the home screen — AI study &amp; writing tools, pro estimation software, and reminder engines. Shipped to iOS, Android and the web.</p>
+    <div class="hero-actions">
+      <a href="/apps/" class="btn-lg btn-primary">View the apps <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="/ai-apps/" class="btn-lg btn-ghost">AI Development</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-n"><span class="count" data-count="100" data-suffix="+">0</span></div><div class="hstat-l">Apps shipped</div></div>
+      <div class="hstat"><div class="hstat-n"><span class="count" data-count="3">0</span></div><div class="hstat-l">Platforms<br>iOS · Android · Web</div></div>
+      <div class="hstat"><div class="hstat-n"><span class="count" data-count="5" data-decimals="1">0</span><span style="color:var(--accent)">★</span></div><div class="hstat-l">Top rating<br>AI Humanizer · 45 ratings</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM STRIP -->
+<div class="plat-wrap">
+  <div class="wrap plat-inner">
+    <span class="plat-lbl">Live on every platform</span>
+    <div class="plat-row">
+      <span class="plat"><img src="https://cdn.simpleicons.org/appstore/0D96F6" alt="">App Store</span>
+      <span class="plat"><img src="https://cdn.simpleicons.org/googleplay/34A853" alt="">Google Play</span>
+      <span class="plat"><svg viewBox="0 0 24 24" fill="none" stroke="#7856ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.7 3 2.7 15 0 18M12 3c-2.7 3-2.7 15 0 18"/></svg>Web app</span>
+    </div>
+  </div>
+</div>
+
+<!-- APPS SHOWCASE -->
+<section id="apps" class="apps-sec">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Portfolio</span>
+      <h2 class="sec-title">Productivity apps people <span class="accent">actually use</span></h2>
+      <p class="sec-sub">A selection of the daily-use tools I've designed, built and shipped — AI study and writing apps, reminder engines, and career software, all live on the stores.</p>
+    </div>
+    <div class="apps-grid">
+
+      <article class="app-card reveal" data-cat="productivity ai">
+        <div class="ac-head">
+          <div class="ac-icon"><img loading="lazy" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/59/57/63/595763a8-cdfb-663c-6789-6f2508519dfc/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" alt="QuizMe app icon"></div>
+          <div class="ac-meta"><h3 class="ac-name">QuizMe</h3><p class="ac-tag">AI study companion</p>
+            <div class="ac-badges"><span class="bdg bdg-ios">App Store</span><span class="bdg bdg-star">★ 4.6 · 10</span></div></div>
+        </div>
+        <p class="ac-desc">AI study companion for smarter learning. Generate quizzes, flashcards, and test prep in seconds.</p>
+        <div class="ac-foot"><span class="ac-cat">Education · AI</span>
+          <a class="store-link" href="https://apps.apple.com/us/app/quizme-ai-study-companion/id6740538959" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>App Store</a></div>
+      </article>
+
+      <article class="app-card reveal d1" data-cat="productivity ai">
+        <div class="ac-head">
+          <div class="ac-icon"><img loading="lazy" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/15/3d/28/153d28fe-b41c-b378-4df4-794c0504e8da/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/512x512bb.jpg" alt="AI Humanizer app icon"></div>
+          <div class="ac-meta"><h3 class="ac-name">AI Humanizer</h3><p class="ac-tag">Humanize AI text instantly</p>
+            <div class="ac-badges"><span class="bdg bdg-ios">App Store</span><span class="bdg bdg-star">★ 5.0 · 45</span></div></div>
+        </div>
+        <p class="ac-desc">Transform robotic AI text into natural, human-like writing. Perfect for emails, blogs, and social captions.</p>
+        <div class="ac-foot"><span class="ac-cat">Writing · AI</span>
+          <a class="store-link" href="https://apps.apple.com/us/app/ai-humanizer-mywordsai/id6745408419" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>App Store</a></div>
+      </article>
+
+      <article class="app-card reveal d2" data-cat="productivity ai">
+        <div class="ac-head">
+          <div class="ac-icon"><img loading="lazy" src="https://toemployer.com/wp-content/uploads/2018/06/Toe-Logo-v2-1.jpg" alt="ToEmployment app icon"></div>
+          <div class="ac-meta"><h3 class="ac-name">ToEmployment</h3><p class="ac-tag">AI resume builder &amp; career tool</p>
+            <div class="ac-badges"><span class="bdg bdg-web">Website</span></div></div>
+        </div>
+        <p class="ac-desc">AI-driven resume builder and job prep tool. Tailored resumes, cover letters, and interview practice.</p>
+        <div class="ac-foot"><span class="ac-cat">Career · AI</span>
+          <a class="store-link" href="https://toemployment.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>Website</a></div>
+      </article>
+
+      <article class="app-card reveal" data-cat="productivity">
+        <div class="ac-head">
+          <div class="ac-icon"><img loading="lazy" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/71/3d/d4/713dd451-723b-4b2b-e5a2-458f1bc849e9/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" alt="Cake Day Gifts app icon"></div>
+          <div class="ac-meta"><h3 class="ac-name">Cake Day Gifts</h3><p class="ac-tag">Birthday reminders &amp; gift ideas</p>
+            <div class="ac-badges"><span class="bdg bdg-ios">App Store</span></div></div>
+        </div>
+        <p class="ac-desc">Never miss a birthday again. Smart reminders, curated gift ideas, and celebration planning in one app.</p>
+        <div class="ac-foot"><span class="ac-cat">Lifestyle</span>
+          <a class="store-link" href="https://apps.apple.com/us/app/cake-day-gifts/id6754992208" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>App Store</a></div>
+      </article>
+
+      <article class="app-card reveal d1" data-cat="lifestyle">
+        <div class="ac-head">
+          <div class="ac-icon"><img loading="lazy" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/63/12/eb/6312eb1c-3dcb-ddfd-672e-cfa96fdd3354/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" alt="Islamify app icon"></div>
+          <div class="ac-meta"><h3 class="ac-name">Islamify</h3><p class="ac-tag">Hourly devotional companion</p>
+            <div class="ac-badges"><span class="bdg bdg-ios">App Store</span><span class="bdg bdg-star">★ 4.7 · 22</span></div></div>
+        </div>
+        <p class="ac-desc">Hourly Islamic devotional reminders, prayers, and spiritual guidance throughout your day.</p>
+        <div class="ac-foot"><span class="ac-cat">Lifestyle</span>
+          <a class="store-link" href="https://apps.apple.com/us/app/islamify-hourly-devotional/id6756274617" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>App Store</a></div>
+      </article>
+
+      <article class="app-card reveal d2" data-cat="productivity ai">
+        <div class="ac-head">
+          <div class="ac-icon"><img loading="lazy" src="https://play-lh.googleusercontent.com/-AREiWFMIJQUPVcXQJxtfgFsfn-4jXJLp_77A7XqlVcQ7C-WKT8wYPD8zncazqe6oLANj0q1XwEZL8QATQ32VvE=s512" alt="Retain Quran app icon"></div>
+          <div class="ac-meta"><h3 class="ac-name">Retain Quran</h3><p class="ac-tag">AI Quran memorization</p>
+            <div class="ac-badges"><span class="bdg bdg-android">Play Store</span><span class="bdg bdg-star">★ 4.4 · 2,025</span></div></div>
+        </div>
+        <p class="ac-desc">AI-powered Quran memorization with flashcards, translation, tafsir, and progress tracking.</p>
+        <div class="ac-foot"><span class="ac-cat">Education · AI</span>
+          <a class="store-link" href="https://play.google.com/store/apps/details?id=com.retainquranapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="#00D9FF" d="M3.6 2.1 13.7 12 3.6 21.9c-.37-.28-.6-.74-.6-1.32V3.42c0-.58.23-1.04.6-1.32z"/><path fill="#00F076" d="M17.6 8.2 5.3 1.7c-.5-.27-1.07-.24-1.5.1L13.7 12l3.9-3.8z"/><path fill="#FFC900" d="M17.6 15.8c1.6-.85 3.2-1.7 3.2-1.7 1.07-.57 1.07-2.03 0-2.6 0 0-1.6-.85-3.2-1.7L13.7 12l3.9 3.8z"/><path fill="#FF3A44" d="M3.8 22.2c.43.34 1 .37 1.5.1l12.3-6.5-3.9-3.8L3.8 22.2z"/></svg>Play Store</a></div>
+      </article>
+
+    </div>
+    <div class="apps-more reveal">
+      <a href="/apps/" class="btn-lg btn-ghost">See the full portfolio <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- SPOTLIGHT: AG FENCE PRO -->
+<section class="spot-sec">
+  <div class="sec">
+    <div class="spot-grid">
+      <div class="spot-copy reveal">
+        <span class="sec-tag">Consumer to pro</span>
+        <h2 class="sec-title">Not just apps — <span class="accent">real business tools</span></h2>
+        <p class="sec-sub">AG Fence Pro is a full estimation and project-planning app for fencing contractors — material and cost calculators, quoting, and job management, built for iPhone and iPad out in the field.</p>
+        <ul class="checks">
+          <li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Material &amp; cost calculators for accurate, on-site quotes</li>
+          <li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Project planning &amp; job management in one place</li>
+          <li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Designed for real fieldwork — fast, tactile, offline-friendly</li>
+          <li><span class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Live on the App Store for iPhone &amp; iPad</li>
+        </ul>
+        <div class="spot-actions">
+          <a class="store-link big" href="https://apps.apple.com/us/app/ag-fence-pro/id6450721415" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>View on App Store</a>
+          <span class="bdg bdg-star" style="font-size:12px;padding:6px 11px">★ 4.0 · 4</span>
+        </div>
+      </div>
+      <div class="phones-stage reveal d1">
+        <div class="phones">
+          <div class="phone phone-1"><img loading="lazy" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5a/c3/f6/5ac3f6de-79ed-1877-a9aa-4166a33c21c2/9f64a496-b59f-4bb4-b62f-8a213fc1042c_App_store_screenshots_1242_x_2208-1.png/392x696bb.png" alt="AG Fence Pro estimation screen"></div>
+          <div class="phone phone-2"><img loading="lazy" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/61/73/d0/6173d0c8-908b-3afe-9d0d-08a839014b7e/e62fb8fd-c635-42f7-93d9-deac8eebaaac_App_store_screenshots_1242_x_2208-2.png/392x696bb.png" alt="AG Fence Pro project planning screen"></div>
+          <div class="phone phone-3"><img loading="lazy" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a6/2f/c6/a62fc639-7841-5177-acad-ab83db6ea1aa/3f9cab5d-e786-4ba9-9788-5f2cef5bffac_App_store_screenshots_1242_x_2208-3.png/392x696bb.png" alt="AG Fence Pro materials calculator screen"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">What I can build</span>
+      <h2 class="sec-title">The engine behind a <span class="accent">daily-use product</span></h2>
+      <p class="sec-sub">Everything a productivity, utility or lifestyle app needs — from the AI that powers it to the notifications that bring people back and the paywall that funds it.</p>
+    </div>
+    <div class="cards-3">
+      <div class="card reveal">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M12 3l1.7 4.3L18 9l-4.3 1.7L12 15l-1.7-4.3L6 9l4.3-1.7z"/><path d="M18 15l.7 1.8L20.5 17.5l-1.8.7L18 20l-.7-1.8L15.5 17.5l1.8-.7z"/></svg></div>
+        <h3>AI content generation</h3>
+        <p>Quizzes, resumes, humanized text and study material generated on demand — the engine inside QuizMe, ToEmployment and AI Humanizer.</p>
+      </div>
+      <div class="card reveal d1">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><path d="M8 6.5h8"/><path d="M8 11h2M12 11h4M8 15h2M12 15h4M8 18.5h2M12 18.5h4"/></svg></div>
+        <h3>Business &amp; estimation tools</h3>
+        <p>Calculators, material and cost estimation, and project planning built for real fieldwork — like the pro workflows inside AG Fence Pro.</p>
+      </div>
+      <div class="card reveal d2">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div>
+        <h3>Notifications &amp; reminders</h3>
+        <p>Local and scheduled notifications, streaks and recurring reminders that bring people back — the backbone of Cake Day Gifts and Islamify.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><rect x="2.5" y="4" width="8" height="16" rx="1.6"/><rect x="13.5" y="4" width="8" height="16" rx="1.6"/><path d="M10.5 12h3"/></svg></div>
+        <h3>Web + mobile, one product</h3>
+        <p>A single product across iOS, Android and the browser, sharing one backend — the way ToEmployment ships to every platform at once.</p>
+      </div>
+      <div class="card reveal d1">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Store submission &amp; reviews</h3>
+        <p>Full App Store and Play Store submission, metadata, and the review back-and-forth handled end to end — 100+ apps approved and live.</p>
+      </div>
+      <div class="card reveal d2">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 18l9 5 9-5"/></svg></div>
+        <h3>Monetization &amp; subscriptions</h3>
+        <p>Paywalls, trials and in-app purchases wired through RevenueCat so daily-use tools turn into recurring revenue.</p>
+        <a href="/revenuecat/" class="card-link">Subscription setup <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DARK PROOF BAND -->
+<section class="dark">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Built to be opened daily</span>
+      <h2 class="sec-title">Tools that earn a spot on the home screen</h2>
+      <p class="sec-sub">The same production discipline behind 100+ shipped apps — clean code, fast launches, and the growth stack to keep users coming back day after day.</p>
+    </div>
+    <div class="pulse reveal">
+      <svg viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true">
+        <defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#7856ff" stop-opacity="0"/>
+          <stop offset="0.5" stop-color="#a48fff" stop-opacity="1"/>
+          <stop offset="1" stop-color="#7856ff" stop-opacity="0"/>
+        </linearGradient></defs>
+        <path class="draw-line" pathLength="1" fill="none" stroke="url(#pg)" stroke-width="2.5" stroke-linecap="round" d="M0 72 C 150 72 200 30 350 46 S 560 78 700 40 S 920 14 1050 50 S 1180 30 1200 40"/>
+      </svg>
+    </div>
+    <div class="results reveal">
+      <div class="rstat"><div class="rstat-n"><span class="count" data-count="100" data-suffix="+">0</span></div><div class="rstat-l">Apps shipped to stores</div></div>
+      <div class="rstat"><div class="rstat-n"><span class="count" data-count="20" data-suffix="M+">0</span></div><div class="rstat-l">Downloads across apps</div></div>
+      <div class="rstat"><div class="rstat-n"><span class="count" data-count="180" data-suffix="K+">0</span></div><div class="rstat-l">Store ratings</div></div>
+      <div class="rstat"><div class="rstat-n"><span class="count" data-count="3">0</span></div><div class="rstat-l">Platforms · iOS · Android · Web</div></div>
+    </div>
+    <div class="tool-pills reveal">
+      <span class="tpill"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/120px-OpenAI_Logo.svg.png" alt="">OpenAI</span>
+      <span class="tpill"><img src="https://cdn.simpleicons.org/swift/ffffff" alt="">Swift</span>
+      <span class="tpill"><img src="https://cdn.simpleicons.org/kotlin/ffffff" alt="">Kotlin</span>
+      <span class="tpill"><img src="https://cdn.simpleicons.org/react/ffffff" alt="">React Native</span>
+      <span class="tpill"><img src="https://cdn.simpleicons.org/flutter/ffffff" alt="">Flutter</span>
+      <span class="tpill"><img src="https://cdn.simpleicons.org/firebase/FFCA28" alt="">Firebase</span>
+      <span class="tpill"><img src="https://cdn.simpleicons.org/revenuecat/F25A5A" alt="">RevenueCat</span>
+    </div>
+    <div class="cta-row reveal">
+      <a class="cta-pill" href="/ai-apps/">AI Development <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="cta-pill" href="/revenuecat/">Monetization &amp; Subscriptions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="cta-pill" href="/growth/">Growth Marketing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="rev-sec">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Testimonials</span>
+      <h2 class="sec-title">What clients say</h2>
+      <p class="sec-sub">5.0★ across Fiverr &amp; Upwork — with repeat clients from solo founders to funded teams across the US, Europe &amp; Asia.</p>
+    </div>
+    <div class="rev-carousel">
+      <div class="rev-col"><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-01.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-04.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-07.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-10.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-13.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-16.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-19.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-01.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-04.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-07.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-10.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-13.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-16.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-19.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure></div>
+      <div class="rev-col rev-down"><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-02.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-05.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-08.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-11.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-14.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-17.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-20.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-02.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-05.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-08.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-11.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-14.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-17.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-20.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure></div>
+      <div class="rev-col"><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-03.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-06.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-09.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-12.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-15.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-18.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-21.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-03.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-06.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-09.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-12.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-15.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-18.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-21.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure></div>
+    </div>
+    <div class="rev-proof reveal">
+      <span class="rev-chip"><span class="st">★★★★★</span> <b>5.0</b> on Fiverr</span>
+      <span class="rev-chip"><b>Top Rated</b> seller</span>
+      <span class="rev-chip"><b>5.0</b> on Upwork</span>
+      <span class="rev-chip">Repeat clients across <b>US · Europe · Asia</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="reveal">
+    <span class="sec-tag">Let's build</span>
+    <h2>Have a daily-use app to <span class="accent">build?</span></h2>
+    <p>From first wireframe to a tool people open every day — see the apps and the AI behind them.</p>
+    <div class="hero-actions">
+      <a href="/apps/" class="btn-lg btn-primary">View All Apps <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="/ai-apps/" class="btn-lg btn-ghost">AI Development</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-top">
+    <div>
+      <a class="foot-logo" href="/"><span class="logo-mark"><img src="/assets/muneeb-avatar.jpg" alt="Muneeb Arshad" onerror="this.remove()">M</span>Muneeb Arshad</a>
+      <p class="foot-desc">Mobile app developer &amp; growth marketer — building AI-powered apps and scaling them with performance marketing. 100+ apps shipped worldwide.</p>
+    </div>
+    <div>
+      <p class="foot-col-t">Pages</p>
+      <div class="foot-links">
+        <a href="/">Home</a>
+        <a href="/apps/">All Apps</a>
+        <a href="/ai-apps/">AI Development</a>
+        <a href="/growth/">Growth Marketing</a>
+        <a href="/revenuecat/">Subscriptions &amp; RevenueCat</a>
+        <a href="/appsflyer/">Attribution &amp; AppsFlyer</a>
+      </div>
+    </div>
+    <div>
+      <p class="foot-col-t">Solutions</p>
+      <div class="foot-links">
+        <a href="/beauty/">Beauty &amp; Style AI</a>
+        <a href="/wellness/">Health &amp; Wellness</a>
+        <a href="/finance/">Trading &amp; Finance</a>
+        <a href="/productivity/">Productivity &amp; Lifestyle</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p>© 2026 Muneeb Arshad. All rights reserved.</p>
+    <p>Mobile App Developer · Growth Marketer</p>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30),{passive:true});
+const hb=document.getElementById('hb'),mm=document.getElementById('mm');
+hb.addEventListener('click',()=>{hb.classList.toggle('open');mm.classList.toggle('open')});
+function closeMenu(){hb.classList.remove('open');mm.classList.remove('open')}
+document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!mm.contains(e.target))closeMenu()});
+
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const easeOut=t=>1-Math.pow(1-t,4);
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function finalVal(el){const d=+(el.dataset.decimals||0);return (el.dataset.prefix||'')+(d?parseFloat(el.dataset.count).toFixed(d):Math.round(el.dataset.count).toLocaleString('en-US'))+(el.dataset.suffix||'')}
+function runCount(el){
+ const target=parseFloat(el.dataset.count),dec=+(el.dataset.decimals||0),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';
+ const dur=1500,t0=performance.now();let done=false;
+ function step(now){if(done)return;const p=Math.min((now-t0)/dur,1),v=target*easeOut(p);
+  el.textContent=pre+(dec?v.toFixed(dec):Math.round(v).toLocaleString('en-US'))+suf;
+  if(p<1)requestAnimationFrame(step); else{done=true;el.textContent=finalVal(el);}}
+ requestAnimationFrame(step);
+ setTimeout(()=>{if(!done){done=true;el.textContent=finalVal(el);}},dur+400);
+}
+const cio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){reduce?e.target.textContent=finalVal(e.target):runCount(e.target);cio.unobserve(e.target)}})},{threshold:.5});
+document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Growth Marketing — Muneeb Arshad</title>
+<meta name="description" content="Performance marketing that pays back. Meta, TikTok, Google & Apple Search Ads, plus AppsFlyer attribution and RevenueCat revenue truth — the full growth stack behind 20M+ downloads and $15,829 MRR.">
+<meta name="author" content="Muneeb Arshad">
+<meta name="theme-color" content="#7856ff">
+<link rel="canonical" href="https://muneebarshad.com/growth/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Growth Marketing — Muneeb Arshad">
+<meta property="og:description" content="I don't just build apps — I scale them. Meta, TikTok, Google & Apple Search Ads, AppsFlyer attribution, RevenueCat revenue truth, ASO & full-funnel measurement.">
+<meta property="og:url" content="https://muneebarshad.com/growth/">
+<meta property="og:site_name" content="Muneeb Arshad">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Growth Marketing — Muneeb Arshad">
+<meta name="twitter:description" content="Performance marketing across Meta, TikTok, Google & Apple Search Ads — measured end-to-end with AppsFlyer & RevenueCat.">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/icons/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;--bg-soft:#f7f5ff;--panel:#f0edff;--surface:#ffffff;
+  --border:#e9e6f5;--border-2:#d9d3ee;
+  --ink:#1f2023;--ink-2:#4a4757;--muted:#6f6b7e;--muted-2:#a7a2b6;
+  --accent:#7856ff;--accent-2:#6a48f0;--accent-lt:#f0edff;--accent-mid:#e2dbff;
+  --navy:#2a1270;--navy-2:#25105c;
+  --shadow-xs:0 1px 2px rgba(31,20,64,.05);
+  --shadow-sm:0 1px 2px rgba(31,20,64,.06),0 2px 6px rgba(31,20,64,.05);
+  --shadow-md:0 6px 20px rgba(31,20,64,.09);
+  --shadow-lg:0 18px 44px rgba(31,20,64,.14);
+  --radius:12px;--radius-lg:16px;--radius-xl:20px;
+  --maxw:1160px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink-2);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+ radial-gradient(55% 38% at 12% 5%,rgba(120,86,255,.10),transparent 60%),
+ radial-gradient(48% 32% at 88% 2%,rgba(255,168,138,.12),transparent 60%),
+ radial-gradient(45% 32% at 6% 55%,rgba(127,225,216,.08),transparent 60%),
+ radial-gradient(55% 40% at 90% 80%,rgba(150,120,255,.12),transparent 58%),
+ radial-gradient(85% 50% at 50% 100%,rgba(170,130,255,.14),transparent 60%),
+ radial-gradient(50% 40% at 8% 95%,rgba(255,196,160,.10),transparent 60%)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Hanken Grotesk',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.1;color:var(--ink)}
+.accent{color:var(--ink);background:linear-gradient(transparent 80%,var(--accent-mid) 80%)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.82);backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+nav.scrolled{border-bottom-color:var(--border);box-shadow:var(--shadow-xs)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 32px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Hanken Grotesk',sans-serif;font-size:16.5px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
+.logo-mark{width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;flex-shrink:0;overflow:hidden;position:relative}
+.logo-mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-links a{padding:8px 13px;border-radius:8px;font-size:14px;font-weight:500;color:var(--muted);transition:all .18s}
+.nav-links a:hover{color:var(--ink);background:var(--panel)}
+.nav-links a[aria-current="page"]{color:var(--ink);font-weight:600}
+.nav-right{display:flex;align-items:center;gap:12px}
+.btn-cta{padding:10px 20px;border-radius:100px;background:var(--ink);color:#fff;font-family:'Inter',sans-serif;font-size:13.5px;font-weight:600;border:none;cursor:pointer;transition:all .2s;white-space:nowrap}
+.btn-cta:hover{background:var(--accent)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:66px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:14px 24px 22px;z-index:199;box-shadow:var(--shadow-md);flex-direction:column;gap:2px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:12px 14px;border-radius:9px;font-size:15px;font-weight:500;color:var(--ink-2);transition:all .18s}
+.mobile-menu a:hover{background:var(--panel)}
+.mobile-menu a[aria-current="page"]{color:var(--ink);font-weight:700;background:var(--panel)}
+.mobile-menu .btn-cta{margin-top:10px;text-align:center;padding:13px}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:140px 32px 76px;background:transparent}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.5;mask-image:radial-gradient(ellipse 70% 55% at 50% 0%,#000,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 55% at 50% 0%,#000,transparent 75%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:840px;margin:0 auto;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 15px;background:var(--surface);border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-2);box-shadow:var(--shadow-xs);margin-bottom:28px}
+.pdot{width:7px;height:7px;border-radius:50%;background:#16a34a;position:relative}
+.pdot::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:1px solid rgba(22,163,74,.4);animation:ping 2.2s ease-out infinite}
+@keyframes ping{0%{transform:scale(.8);opacity:1}100%{transform:scale(2);opacity:0}}
+.hero h1{font-size:clamp(36px,5.4vw,60px);letter-spacing:-.035em;line-height:1.04}
+.hero h1 em{font-style:normal}
+.hero-sub{max-width:620px;margin:22px auto 0;font-size:clamp(16px,2vw,18px);color:var(--muted);line-height:1.65}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.btn-lg{padding:14px 28px;border-radius:100px;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;border:1px solid transparent}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:var(--shadow-sm)}
+.btn-primary:hover{background:#000;transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.btn-ghost{background:var(--surface);color:var(--ink);border-color:var(--border-2)}
+.btn-ghost:hover{border-color:var(--ink);color:var(--ink)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);max-width:620px;margin:56px auto 0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden}
+.hstat{padding:24px 14px;border-right:1px solid var(--border)}
+.hstat:last-child{border-right:none}
+.hstat-n{font-family:'Hanken Grotesk',sans-serif;font-size:clamp(24px,3.6vw,32px);font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+.hstat-l{font-size:12.5px;font-weight:500;color:var(--muted);margin-top:5px}
+
+/* MARQUEE */
+.marquee{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-soft);padding:18px 0;overflow:hidden;position:relative}
+.marquee::before,.marquee::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--bg-soft),transparent)}
+.marquee::after{right:0;background:linear-gradient(-90deg,var(--bg-soft),transparent)}
+.mq-track{display:flex;gap:36px;width:max-content;animation:mq 44s linear infinite;align-items:center}
+.mq-item{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:600;color:var(--muted);white-space:nowrap}
+.mq-item img{width:18px;height:18px;object-fit:contain}
+.mq-dot{width:4px;height:4px;border-radius:50%;background:var(--border-2);flex-shrink:0}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+.sec{max-width:var(--maxw);margin:0 auto;padding:80px 32px}
+.sec-head{max-width:660px;margin:0 auto 46px;text-align:center}
+.sec-tag{display:inline-block;padding:6px 13px;border-radius:100px;background:var(--accent-lt);color:var(--accent);font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:16px;border:1px solid var(--accent-mid)}
+.sec-title{font-size:clamp(28px,3.8vw,44px);letter-spacing:-.03em}
+.sec-sub{color:var(--muted);font-size:16.5px;margin-top:14px;line-height:1.6}
+.bordered{border-top:1px solid var(--border)}
+
+/* CARDS (generic) */
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cards-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 26px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-2)}
+.icon-tile{width:46px;height:46px;border-radius:13px;background:var(--accent-lt);border:1px solid var(--accent-mid);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.icon-tile svg{width:23px;height:23px;stroke:var(--accent);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:18px;margin-bottom:8px;letter-spacing:-.02em}
+.card p{color:var(--muted);font-size:14.5px;line-height:1.6}
+.card-link{display:inline-flex;align-items:center;gap:6px;margin-top:15px;font-size:13.5px;font-weight:600;color:var(--accent)}
+.card-link svg{width:14px;height:14px;transition:transform .2s}
+.card:hover .card-link svg{transform:translateX(3px)}
+
+/* CHANNELS */
+.channels{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chan{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);padding:30px 28px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s}
+.chan:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-2)}
+.chan-top{display:flex;align-items:center;gap:14px;margin-bottom:15px}
+.brand-tile{width:52px;height:52px;border-radius:14px;background:var(--bg-soft);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.brand-tile img{width:27px;height:27px;object-fit:contain}
+.chan-eyebrow{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:3px}
+.chan h3{font-size:21px;letter-spacing:-.025em}
+.chan-desc{color:var(--muted);font-size:14.5px;line-height:1.62;margin-bottom:20px}
+.chan-list{list-style:none;display:flex;flex-direction:column;gap:11px;margin-top:auto}
+.chan-list li{display:flex;gap:11px;align-items:flex-start;font-size:14px;color:var(--ink-2);line-height:1.5}
+.tick{width:20px;height:20px;border-radius:6px;flex-shrink:0;background:var(--accent-lt);border:1px solid var(--accent-mid);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.tick svg{width:11px;height:11px;stroke:var(--accent);stroke-width:2.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* SHOT (real screenshot w/ fallback) */
+.gads-wrap{margin-top:20px;display:grid;grid-template-columns:1fr;gap:0}
+.shot{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface);box-shadow:var(--shadow-md)}
+.shot-bar{display:flex;align-items:center;gap:7px;padding:12px 16px;background:var(--bg-soft);border-bottom:1px solid var(--border)}
+.shot-bar span{width:11px;height:11px;border-radius:50%;background:var(--border-2)}
+.shot-bar i{margin-left:12px;font-size:12px;color:var(--muted);font-style:normal;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.shot>img{display:block;width:100%;height:auto}
+.shot-fallback{display:none}
+.shot.noshot>img{display:none}
+.shot.noshot .shot-fallback{display:block}
+.sf-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 24px 4px}
+.sf-title{font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:15px;color:var(--ink);letter-spacing:-.01em}
+.sf-live{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:600;color:var(--muted)}
+.sf-live .pdot{background:var(--accent)}
+.sf-live .pdot::after{border-color:rgba(120,86,255,.4)}
+.stat-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin:18px 0 0;border-top:1px solid var(--border)}
+.stat-tile{background:var(--surface);padding:28px 18px;text-align:center}
+.stat-tile-n{font-family:'Hanken Grotesk',sans-serif;font-size:clamp(26px,4vw,34px);font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+.stat-tile-l{font-size:12px;color:var(--muted);margin-top:7px;font-weight:500}
+
+/* GROWTH (dark) */
+.dark{background:linear-gradient(160deg,#2e1266 0%,#3f1f8f 55%,#241058 100%);color:#cbd5e1;position:relative;overflow:hidden;border-radius:36px 36px 0 0}
+.dark::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(150,120,255,.2),transparent 70%);pointer-events:none}
+.dark .sec{position:relative;z-index:1}
+.dark .sec-tag{background:rgba(120,86,255,.28);color:#d6ccff;border-color:rgba(120,86,255,.5)}
+.dark .sec-title{color:#fff}
+.dark .sec-sub{color:#94a3b8}
+.dark .card{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.09);display:flex;flex-direction:column}
+.dark .card:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.2)}
+.dark .card h3{color:#fff}
+.dark .card p{color:#94a3b8}
+.dark .icon-tile{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
+.dark .icon-tile svg{stroke:#e2e8f0}
+.mcard-stat{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.09);display:flex;align-items:baseline;gap:10px}
+.mcard-stat b{font-family:'Hanken Grotesk',sans-serif;font-size:30px;font-weight:800;letter-spacing:-.03em;color:#c9bcff;line-height:1}
+.mcard-stat small{font-size:12px;color:#94a3b8;font-weight:500}
+.card-link.on-dark{color:#c9bcff}
+.dark .card:hover .card-link.on-dark svg{transform:translateX(3px)}
+.tool-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:42px}
+.tpill{display:flex;align-items:center;gap:8px;padding:9px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;font-size:13px;font-weight:600;color:#cbd5e1;transition:all .18s}
+.tpill:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);color:#fff}
+.tpill img{width:16px;height:16px;object-fit:contain}
+.results{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:42px}
+.rstat{padding:26px 18px;text-align:center;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);transition:all .2s}
+.rstat:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)}
+.rstat-n{font-family:'Hanken Grotesk',sans-serif;font-size:30px;font-weight:800;letter-spacing:-.03em;color:#c9bcff}
+.rstat-l{font-size:12px;color:#94a3b8;margin-top:6px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:42px}
+.cta-pill{padding:13px 22px;border-radius:10px;border:1px solid rgba(255,255,255,.16);color:#e2e8f0;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.cta-pill:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.1);color:#fff}
+.cta-pill svg{width:15px;height:15px}
+
+/* CREATIVE LOOP */
+.loop{position:relative;max-width:840px;height:560px;margin:8px auto 0}
+.loop-svg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:360px;height:360px}
+.loop-svg .ring,.loop-svg .arc{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linecap:round}
+.loop-svg .ring{stroke:var(--accent-mid);stroke-width:1.6}
+.loop-svg .dot{fill:var(--accent)}
+.loop-svg .dot-ring{fill:#fff;stroke:var(--accent);stroke-width:2}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.15s cubic-bezier(.6,0,.35,1)}
+.draw.g1{transition-delay:.15s}.draw.g2{transition-delay:.42s}.draw.g3{transition-delay:.69s}.draw.g4{transition-delay:.96s}
+.reveal.in .draw{stroke-dashoffset:0}
+.loop-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center}
+.loop-center b{display:block;font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:22px;color:var(--ink);letter-spacing:-.02em;line-height:1.05}
+.loop-center span{display:block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-top:7px}
+.loop-step{position:absolute;width:230px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 20px;box-shadow:var(--shadow-sm);transition:box-shadow .25s,border-color .25s}
+.loop-step:hover{box-shadow:var(--shadow-md);border-color:var(--border-2)}
+.loop-num{font-family:'Hanken Grotesk',sans-serif;font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--accent);margin-bottom:6px}
+.loop-step h4{font-size:16.5px;letter-spacing:-.02em}
+.loop-step p{font-size:13px;color:var(--muted);line-height:1.5;margin-top:5px}
+.s-top{top:0;left:50%;transform:translateX(-50%);text-align:center}
+.s-right{top:50%;right:0;transform:translateY(-50%)}
+.s-bottom{bottom:0;left:50%;transform:translateX(-50%);text-align:center}
+.s-left{top:50%;left:0;transform:translateY(-50%);text-align:right}
+.loop-arrow{display:none}
+
+/* FUNNEL */
+.funnel{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap}
+.fstage{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 26px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s}
+.fstage:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-2)}
+.fbar{height:8px;border-radius:100px;background:linear-gradient(90deg,var(--accent),var(--accent-mid));margin-bottom:20px}
+.fstage-eyebrow{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2);margin-bottom:7px}
+.fstage h4{font-size:20px;letter-spacing:-.02em}
+.fstage p{color:var(--muted);font-size:14px;line-height:1.6;margin-top:10px;flex:1}
+.ftool{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:8px 14px;background:var(--bg-soft);border:1px solid var(--border);border-radius:100px;font-size:12.5px;font-weight:600;color:var(--ink-2);align-self:flex-start}
+.ftool img{width:15px;height:15px;object-fit:contain}
+.farrow{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:46px;color:var(--accent)}
+.farrow svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* REVIEWS */
+.rev-sec{background:transparent;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev-carousel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;height:640px;overflow:hidden;position:relative;-webkit-mask:linear-gradient(180deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask:linear-gradient(180deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+.rev-col{display:flex;flex-direction:column;gap:16px;will-change:transform;animation:revscroll 120s linear infinite}
+.rev-col.rev-down{animation-direction:reverse}
+.rev-carousel:hover .rev-col,.rev-carousel:focus-within .rev-col{animation-play-state:paused}
+@keyframes revscroll{to{transform:translateY(-50%)}}
+@media(max-width:760px){.rev-carousel{grid-template-columns:1fr 1fr;height:560px}.rev-col:nth-child(3){display:none}}
+@media(max-width:480px){.rev-carousel{grid-template-columns:1fr}.rev-col:nth-child(2){display:none}}
+@media(prefers-reduced-motion:reduce){.rev-carousel{height:auto;overflow:visible;-webkit-mask:none;mask:none}.rev-col{animation:none}}
+.rev{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;box-shadow:var(--shadow-xs);transition:transform .25s,box-shadow .25s,border-color .25s}
+.rev:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-2)}
+.rev-stars{color:var(--accent);font-size:13px;letter-spacing:3px;margin-bottom:12px}
+.rev-q{color:var(--ink-2);font-size:14.5px;line-height:1.62;flex:1}
+.rev-by{display:flex;align-items:center;gap:11px;margin-top:18px;padding-top:15px;border-top:1px solid var(--border)}
+.rev-av{width:34px;height:34px;border-radius:50%;background:var(--panel);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Hanken Grotesk',sans-serif;color:var(--ink-2);font-size:13px;flex-shrink:0}
+.rev-meta{min-width:0}
+.rev-name{font-size:13.5px;font-weight:700;color:var(--ink)}
+.rev-loc{font-size:12px;color:var(--muted)}
+.rev-repeat{margin-left:auto;font-size:10px;font-weight:700;letter-spacing:.03em;color:var(--ink-2);background:var(--panel);border:1px solid var(--border);padding:3px 9px;border-radius:100px;white-space:nowrap}
+.rev-proof{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:36px}
+.rev-chip{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;background:var(--surface);border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-2);box-shadow:var(--shadow-xs)}
+.rev-chip b{color:var(--ink);font-family:'Hanken Grotesk',sans-serif}
+.rev-chip .st{color:var(--accent);letter-spacing:1px}
+
+/* CTA BAND */
+.cta-band{position:relative;padding:104px 32px 116px;text-align:center;background:radial-gradient(ellipse 55% 45% at 50% 0%,#ffe6d6 0%,transparent 55%),linear-gradient(180deg,#ffffff 0%,#f3eeff 42%,#d8caff 78%,#c2b1f2 100%)}
+.cta-band h2{font-size:clamp(30px,4.6vw,52px);letter-spacing:-.03em;max-width:660px;margin:0 auto;color:var(--ink)}
+.cta-band p{color:var(--ink-2);font-size:17px;line-height:1.6;margin:16px auto 0;max-width:520px}
+.cta-band .hero-actions{margin-top:34px}
+
+/* FOOTER */
+footer{background:linear-gradient(180deg,#e8e0ff 0%,#f3eeff 100%);color:var(--ink-2);border-radius:36px 36px 0 0;position:relative}
+.foot-top{max-width:var(--maxw);margin:0 auto;padding:64px 32px 42px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px}
+.foot-logo{display:flex;align-items:center;gap:10px;font-family:'Hanken Grotesk',sans-serif;font-size:17px;font-weight:800;color:var(--ink);margin-bottom:14px}
+.foot-desc{color:var(--muted);font-size:14px;line-height:1.7;max-width:330px}
+.foot-col-t{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);margin-bottom:16px}
+.foot-links{display:flex;flex-direction:column;gap:11px}
+.foot-links a{font-size:14px;font-weight:500;color:var(--ink-2);transition:color .18s}
+.foot-links a:hover{color:var(--accent)}
+.foot-bottom{border-top:1px solid var(--border);max-width:var(--maxw);margin:0 auto;padding:22px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.foot-bottom p{font-size:12.5px;color:var(--muted-2)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.06s}.d2{transition-delay:.12s}.d3{transition-delay:.18s}.d4{transition-delay:.24s}.d5{transition-delay:.3s}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .cards-3{grid-template-columns:repeat(2,1fr)}
+  .cards-4{grid-template-columns:repeat(2,1fr)}
+  .rev-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-top{grid-template-columns:1fr 1fr;gap:36px}
+  .foot-top>:first-child{grid-column:1/-1}
+}
+@media(max-width:820px){
+  .loop{height:auto;max-width:460px;display:flex;flex-direction:column;gap:14px}
+  .loop-svg,.loop-center{display:none}
+  .loop-step{position:static;width:auto;transform:none;text-align:left!important}
+  .loop-arrow{display:flex;align-items:center;justify-content:center;color:var(--accent)}
+  .loop-arrow svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+}
+@media(max-width:760px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .nav-inner,.wrap{padding-left:20px;padding-right:20px}
+  .hero{padding:118px 20px 68px}
+  .hero-stats{grid-template-columns:1fr}
+  .hstat{border-right:none;border-bottom:1px solid var(--border)}
+  .hstat:last-child{border-bottom:none}
+  .sec{padding:68px 20px}
+  .cards-3{grid-template-columns:1fr}
+  .cards-4{grid-template-columns:1fr}
+  .channels{grid-template-columns:1fr}
+  .rev-grid{grid-template-columns:1fr}
+  .results{grid-template-columns:1fr 1fr}
+  .funnel{flex-direction:column}
+  .farrow{width:auto;padding:6px 0;transform:rotate(90deg)}
+  .foot-top{grid-template-columns:1fr;gap:30px;padding:44px 20px 30px}
+  .foot-top>:first-child{grid-column:1}
+  .foot-bottom{flex-direction:column;text-align:center;gap:6px}
+}
+@media(max-width:440px){ .stat-tiles{grid-template-columns:1fr} }
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  .draw{stroke-dashoffset:0}
+}
+
+/* ── reviews v3: designed cards, no pricing ── */
+.rev-carousel{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;height:720px;overflow:hidden;position:relative;-webkit-mask:linear-gradient(180deg,transparent 0,#000 6%,#000 94%,transparent 100%);mask:linear-gradient(180deg,transparent 0,#000 6%,#000 94%,transparent 100%)}
+.rev-col{display:flex;flex-direction:column;gap:18px;will-change:transform;animation:revscroll 120s linear infinite}
+.rev-col.rev-down{animation-direction:reverse}
+.rev-carousel:hover .rev-col,.rev-carousel:focus-within .rev-col{animation-play-state:paused}
+@keyframes revscroll{to{transform:translateY(-50%)}}
+.rev{position:relative;background:linear-gradient(180deg,#ffffff 0%,#fcfbff 100%);border:1px solid var(--border);border-radius:18px;padding:24px 24px 20px;box-shadow:0 1px 2px rgba(31,20,64,.04),0 14px 34px -20px rgba(31,20,64,.16);display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.rev:hover{transform:translateY(-4px);border-color:var(--accent-mid);box-shadow:0 2px 5px rgba(31,20,64,.05),0 26px 52px -22px rgba(120,86,255,.32)}
+.rev-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:13px}
+.rev-stars{color:var(--accent);font-size:14px;letter-spacing:2.5px;text-shadow:0 1px 0 rgba(120,86,255,.15)}
+.rev-plat{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.02em;padding:4px 11px;border-radius:100px;border:1px solid var(--border);background:#fff;color:var(--ink-2)}
+.rev-plat i{width:7px;height:7px;border-radius:50%}
+.rev-plat-fv i{background:#1dbf73}
+.rev-plat-uw i{background:#14a800}
+.rev-role{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted-2);margin:-4px 0 8px}
+.rev-q{color:var(--ink-2);font-size:15.5px;line-height:1.68;flex:1;font-weight:450}
+.rev-by{display:flex;align-items:center;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--border)}
+.rev-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#b39dff);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Hanken Grotesk',sans-serif;font-size:15px;flex-shrink:0;box-shadow:0 4px 10px rgba(120,86,255,.3)}
+.rev-meta{min-width:0}
+.rev-name{font-size:14px;font-weight:700;color:var(--ink)}
+.rev-loc{font-size:12px;color:var(--muted);margin-top:1px}
+.rev-repeat{margin-left:auto;font-size:10px;font-weight:700;color:var(--accent);background:var(--accent-lt);border:1px solid var(--accent-mid);padding:4px 10px;border-radius:100px;white-space:nowrap}
+@media(max-width:760px){.rev-carousel{grid-template-columns:1fr 1fr;height:600px}.rev-col:nth-child(3){display:none}}
+@media(max-width:480px){.rev-carousel{grid-template-columns:1fr}.rev-col:nth-child(2){display:none}}
+@media(prefers-reduced-motion:reduce){.rev-carousel{height:auto;overflow:visible;-webkit-mask:none;mask:none}.rev-col{animation:none}}
+/* ── micro-polish ── */
+::selection{background:var(--accent);color:#fff}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}
+.btn-lg svg,.btn-cta svg,.card-link svg,.spot-link svg,.cta-pill svg{transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+.btn-lg:hover svg,.spot-link:hover svg,.cta-pill:hover svg{transform:translateX(3px)}
+.nav-links a{position:relative}
+.nav-links a::after{content:'';position:absolute;left:13px;right:13px;bottom:5px;height:2px;border-radius:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.2,.7,.2,1)}
+.nav-links a:hover::after{transform:scaleX(1)}
+
+/* ── v4: light bands + seamless colored bottom ── */
+.dark,.hero-fin{background:linear-gradient(180deg,#f1ebff 0%,#e2d5ff 100%)!important;color:var(--ink-2)!important}
+.dark::before{display:none!important}
+.dark .sec-tag,.hero-fin .sec-tag{background:#fff!important;color:var(--accent)!important;border:1px solid var(--accent-mid)!important}
+.dark .sec-title,.hero-fin .sec-title,.dark h2,.dark h3,.hero-fin h1{color:var(--ink)!important}
+.dark .sec-sub,.dark p,.hero-fin .hero-sub{color:var(--muted)!important}
+.dark .card{background:var(--surface)!important;border-color:var(--border)!important;backdrop-filter:none!important}
+.dark .card:hover{border-color:var(--accent-mid)!important}
+.dark .icon-tile{background:var(--accent-lt)!important;border-color:var(--accent-mid)!important}
+.dark .icon-tile svg{stroke:var(--accent)!important}
+.dark .tpill{background:#fff!important;border-color:var(--border)!important;color:var(--ink-2)!important}
+.dark .rstat{background:#fff!important;border-color:var(--border)!important}
+.dark .rstat-n{color:var(--accent)!important}
+.dark .rstat-l{color:var(--muted)!important}
+.dark .cta-pill{border-color:var(--border-2)!important;color:var(--ink)!important;background:#fff!important}
+.dark .cta-pill:hover{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+.hero-fin .btn-ghost{background:#fff!important;color:var(--ink)!important;border-color:var(--border-2)!important}
+/* timeline light + animated numbering */
+.tl-track{background:var(--accent-mid)!important}
+.tl-fill{background:linear-gradient(90deg,var(--accent),#b39dff)!important}
+.tl-dot{background:#fff!important;border:2px solid var(--accent)!important;color:var(--accent)!important;font-weight:800}
+.tl-body h3{color:var(--ink)!important}
+.tl-body p{color:var(--muted)!important}
+@keyframes stepPop{0%{transform:scale(.3);opacity:0}55%{transform:scale(1.18)}100%{transform:scale(1);opacity:1}}
+@keyframes stepRing{0%{box-shadow:0 0 0 0 rgba(120,86,255,.4)}100%{box-shadow:0 0 0 22px rgba(120,86,255,0)}}
+.reveal.in .tl-dot{animation:stepPop .6s cubic-bezier(.34,1.56,.64,1) both,stepRing 1.1s ease-out both}
+.tl-step:nth-child(1) .tl-dot{animation-delay:.05s,.45s}
+.tl-step:nth-child(2) .tl-dot{animation-delay:.17s,.57s}
+.tl-step:nth-child(3) .tl-dot{animation-delay:.29s,.69s}
+.tl-step:nth-child(4) .tl-dot{animation-delay:.41s,.81s}
+.tl-step:nth-child(5) .tl-dot{animation-delay:.53s,.93s}
+.tl-step:nth-child(6) .tl-dot{animation-delay:.65s,1.05s}
+/* seamless: cta-band flows into footer, color runs to the very end */
+.cta-band{background:radial-gradient(ellipse 55% 45% at 50% 0%,#ffe6d6 0%,transparent 55%),linear-gradient(180deg,#ffffff 0%,#f0e8ff 34%,#d9c8ff 68%,#c3aaff 100%)!important}
+footer{background:linear-gradient(180deg,#c3aaff 0%,#b193f8 60%,#a486f0 100%)!important;border-radius:0!important;color:#3b2f66!important}
+.foot-desc{color:#4a3f75!important}
+.foot-col-t{color:#5c4d8f!important}
+.foot-links a{color:#3b2f66!important}
+.foot-links a:hover{color:var(--ink)!important}
+.foot-logo{color:var(--ink)!important}
+.foot-bottom{border-top:1px solid rgba(36,16,88,.16)!important}
+.foot-bottom p{color:#5c4d8f!important}
+
+.dark h4,.hero-fin h4,.tl-body h4{color:var(--ink)!important}
+.dark h5,.dark strong,.dark b{color:var(--ink)!important}
+
+/* ── v5: real review screenshots, zoomed wide ── */
+.rev-carousel{width:min(1340px,calc(100vw - 48px));position:relative;left:50%;transform:translateX(-50%);grid-template-columns:repeat(3,1fr);height:800px}
+.rev-shot{margin:0;background:#fff;border:1px solid var(--border);border-radius:16px;padding:8px;box-shadow:0 1px 2px rgba(31,20,64,.05),0 14px 34px -20px rgba(31,20,64,.16);transition:transform .3s,box-shadow .3s}
+.rev-shot:hover{transform:translateY(-3px);box-shadow:0 20px 44px -18px rgba(120,86,255,.3)}
+.rev-shot img{width:100%;height:auto;display:block;border-radius:10px}
+@media(max-width:760px){.rev-carousel{grid-template-columns:1fr 1fr;height:640px;width:calc(100vw - 40px)}}
+@media(max-width:480px){.rev-carousel{grid-template-columns:1fr}}
+
+.dark .checks li,.hero-fin .checks li{color:var(--ink-2)!important}
+.dark li{color:var(--ink-2)!important}
+
+/* v4c-li-accent-fix */
+.dark .checks li,.hero-fin .checks li,.dark li{color:var(--ink-2)!important}
+.dark .sec-title .accent,.dark .accent{color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important;background:linear-gradient(transparent 78%,var(--accent-mid) 78%)!important}
+
+/* v6: loop arrowheads (solid accent) + measurement-section contrast */
+.loop-svg .loop-arw{fill:var(--accent)!important;stroke:none!important}
+.loop-svg .dot-ring{display:none!important}
+#measurement .sec-title span{color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important;background:linear-gradient(transparent 78%,var(--accent-mid) 78%)!important}
+.dark .card-link.on-dark{color:var(--accent)!important}
+.dark .card-link.on-dark svg{stroke:var(--accent)!important}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Muneeb Arshad","url":"https://muneebarshad.com","jobTitle":"Mobile App Developer & Growth Marketer","description":"Growth marketer scaling mobile apps with performance marketing across Meta, TikTok, Google & Apple Search Ads, measured with AppsFlyer and RevenueCat.","knowsAbout":["Growth Marketing","Performance Marketing","User Acquisition","Meta Ads","TikTok Ads","Google Ads","Apple Search Ads","AppsFlyer","RevenueCat","SKAdNetwork","App Store Optimization","Attribution","Mobile App Development"]}
+</script>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/"><span class="logo-mark"><img src="/assets/muneeb-avatar.jpg" alt="Muneeb Arshad" onerror="this.remove()">M</span>Muneeb Arshad</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/apps/">All Apps</a></li>
+      <li><a href="/ai-apps/">AI Development</a></li>
+      <li><a href="/growth/" aria-current="page">Growth</a></li>
+      <li><a href="/revenuecat/">Subscriptions</a></li>
+      <li><a href="/appsflyer/">Attribution</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/apps/" class="btn-cta">View All Apps</a>
+      <button class="hamburger" id="hb" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mm">
+  <a href="/" onclick="closeMenu()">Home</a>
+  <a href="/apps/" onclick="closeMenu()">All Apps</a>
+  <a href="/ai-apps/" onclick="closeMenu()">AI Development</a>
+  <a href="/growth/" aria-current="page" onclick="closeMenu()">Growth</a>
+  <a href="/revenuecat/" onclick="closeMenu()">Subscriptions</a>
+  <a href="/appsflyer/" onclick="closeMenu()">Attribution</a>
+  <a href="/apps/" class="btn-cta" onclick="closeMenu()">View All Apps</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="badge"><span class="pdot"></span>Performance marketing that pays back</div>
+    <h1>I don't just build apps. <em class="accent">I scale them.</em></h1>
+    <p class="hero-sub">Once your app is live, growth is a system — not a guess. Paid acquisition across Meta, TikTok, Google &amp; Apple Search Ads, wired to AppsFlyer attribution and RevenueCat revenue truth, so every dollar is traced from install to paid subscription.</p>
+    <div class="hero-actions">
+      <a href="#channels" class="btn-lg btn-primary">See the growth stack <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="/apps/" class="btn-lg btn-ghost">View My Apps</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-n"><span class="count" data-count="277" data-suffix="%">0</span></div><div class="hstat-l">ROAS D7 · live campaign</div></div>
+      <div class="hstat"><div class="hstat-n">$<span class="count" data-count="2" data-suffix="M+">0</span></div><div class="hstat-l">Revenue driven</div></div>
+      <div class="hstat"><div class="hstat-n"><span class="count" data-count="6.79" data-decimals="2" data-suffix="k">0</span></div><div class="hstat-l">Google Ads clicks driven</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-label="Growth platforms and tools">
+  <div class="mq-track">
+    <span class="mq-item"><img src="https://cdn.simpleicons.org/meta/0081FB" alt="">Meta Ads</span><span class="mq-dot"></span>
+    <span class="mq-item"><img src="https://cdn.simpleicons.org/instagram/000000" alt="">Instagram</span><span class="mq-dot"></span>
+    <span class="mq-item"><img src="https://cdn.simpleicons.org/tiktok/000000" alt="">TikTok Ads</span><span class="mq-dot"></span>
+    <span class="mq-item"><img src="https://cdn.simpleicons.org/googleads/4285F4" alt="">Google Ads</span><span class="mq-dot"></span>
+    <span class="mq-item"><img src="https://cdn.simpleicons.org/apple/000000" alt="">Apple Search Ads</span><span class="mq-dot"></span>
+    <span class="mq-item"><img src="https://www.appsflyer.com/favicon.ico" alt="">AppsFlyer</span><span class="mq-dot"></span>
+    <span class="mq-item"><img src="https://cdn.simpleicons.org/revenuecat/F25A5A" alt="">RevenueCat</span><span class="mq-dot"></span>
+    <span class="mq-item"><img src="https://cdn.simpleicons.org/appstore/000000" alt="">SKAdNetwork</span><span class="mq-dot"></span>
+    <span class="mq-item"><img src="https://cdn.simpleicons.org/firebase/FFCA28" alt="">Firebase</span><span class="mq-dot"></span>
+    <span class="mq-item"><img src="https://cdn.simpleicons.org/googleplay/000000" alt="">Play Console</span><span class="mq-dot"></span>
+    <span class="mq-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/meta/0081FB" alt="">Meta Ads</span><span class="mq-dot" aria-hidden="true"></span>
+    <span class="mq-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/instagram/000000" alt="">Instagram</span><span class="mq-dot" aria-hidden="true"></span>
+    <span class="mq-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/tiktok/000000" alt="">TikTok Ads</span><span class="mq-dot" aria-hidden="true"></span>
+    <span class="mq-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/googleads/4285F4" alt="">Google Ads</span><span class="mq-dot" aria-hidden="true"></span>
+    <span class="mq-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/apple/000000" alt="">Apple Search Ads</span><span class="mq-dot" aria-hidden="true"></span>
+    <span class="mq-item" aria-hidden="true"><img src="https://www.appsflyer.com/favicon.ico" alt="">AppsFlyer</span><span class="mq-dot" aria-hidden="true"></span>
+    <span class="mq-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/revenuecat/F25A5A" alt="">RevenueCat</span><span class="mq-dot" aria-hidden="true"></span>
+    <span class="mq-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/appstore/000000" alt="">SKAdNetwork</span><span class="mq-dot" aria-hidden="true"></span>
+    <span class="mq-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/firebase/FFCA28" alt="">Firebase</span><span class="mq-dot" aria-hidden="true"></span>
+    <span class="mq-item" aria-hidden="true"><img src="https://cdn.simpleicons.org/googleplay/000000" alt="">Play Console</span><span class="mq-dot" aria-hidden="true"></span>
+  </div>
+</div>
+
+<!-- CHANNELS -->
+<section id="channels">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Acquisition Channels</span>
+      <h2 class="sec-title">Every major channel, one <span class="accent">acquisition engine</span></h2>
+      <p class="sec-sub">Meta, TikTok, Google, Apple Search, Snapchat, YouTube — and more. Every platform run with the same discipline: clean campaign structure, relentless creative testing, and budget that only follows what's working.</p>
+    </div>
+    <div class="channels">
+      <article class="chan reveal">
+        <div class="chan-top">
+          <span class="brand-tile"><img src="https://cdn.simpleicons.org/meta/0866FF" alt="Meta"></span>
+          <div><div class="chan-eyebrow">Meta Ads</div><h3>Facebook &amp; Instagram</h3></div>
+        </div>
+        <p class="chan-desc">Where scale lives. Broad, signal-fed campaigns that let Meta's delivery find your buyers — then hard budget discipline on top.</p>
+        <ul class="chan-list">
+          <li><span class="tick"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>FB + IG user acquisition across feeds, reels &amp; stories</li>
+          <li><span class="tick"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Systematic creative testing — hooks, angles, formats</li>
+          <li><span class="tick"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>CBO scaling &amp; Advantage+ with clean spend ladders</li>
+        </ul>
+      </article>
+      <article class="chan reveal d1">
+        <div class="chan-top">
+          <span class="brand-tile"><img src="https://cdn.simpleicons.org/tiktok/000000" alt="TikTok"></span>
+          <div><div class="chan-eyebrow">TikTok Ads</div><h3>TikTok</h3></div>
+        </div>
+        <p class="chan-desc">Native-first acquisition. Ads that look like content, not banners — so the feed keeps scrolling and the installs keep coming.</p>
+        <ul class="chan-list">
+          <li><span class="tick"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Spark Ads that boost real, high-performing posts</li>
+          <li><span class="tick"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Creator-style UGC creatives built for the hook</li>
+          <li><span class="tick"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Broad targeting fed by creative volume</li>
+        </ul>
+      </article>
+      <article class="chan reveal">
+        <div class="chan-top">
+          <span class="brand-tile"><img src="https://cdn.simpleicons.org/googleads/4285F4" alt="Google Ads"></span>
+          <div><div class="chan-eyebrow">Google Ads</div><h3>App Campaigns</h3></div>
+        </div>
+        <p class="chan-desc">Intent at scale across Search, Play, YouTube &amp; Display. One campaign type, feeding Google's models the signals that matter.</p>
+        <ul class="chan-list">
+          <li><span class="tick"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Universal App Campaigns across the Google network</li>
+          <li><span class="tick"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Bid strategy tuned to CPA and target ROAS</li>
+          <li><span class="tick"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Conversion tracking &amp; value-based optimization</li>
+        </ul>
+      </article>
+      <article class="chan reveal d1">
+        <div class="chan-top">
+          <span class="brand-tile"><img src="https://cdn.simpleicons.org/apple/000000" alt="Apple"></span>
+          <div><div class="chan-eyebrow">Apple Search Ads</div><h3>App Store Search</h3></div>
+        </div>
+        <p class="chan-desc">The highest-intent traffic on iOS. Users already searching for what you do — captured at the moment they're ready to install.</p>
+        <ul class="chan-list">
+          <li><span class="tick"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Keyword research &amp; competitor mapping</li>
+          <li><span class="tick"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Exact-match core keywords for efficiency</li>
+          <li><span class="tick"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Discovery campaigns to expand the keyword set</li>
+        </ul>
+      </article>
+      <article class="chan reveal">
+        <div class="chan-top">
+          <span class="brand-tile"><img src="https://cdn.simpleicons.org/snapchat/000000" alt="Snapchat"></span>
+          <div><div class="chan-eyebrow">Snapchat Ads</div><h3>Snapchat</h3></div>
+        </div>
+        <p class="chan-desc">A younger, mobile-first audience reached with full-screen vertical creatives built natively for the platform.</p>
+        <ul class="chan-list">
+          <li><span class="tick"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Snap Ads &amp; Story Ads tuned for installs</li>
+          <li><span class="tick"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Vertical, sound-on creative built for Gen&nbsp;Z</li>
+          <li><span class="tick"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Goal-based bidding on installs &amp; purchases</li>
+        </ul>
+      </article>
+      <article class="chan reveal d1">
+        <div class="chan-top">
+          <span class="brand-tile"><img src="https://cdn.simpleicons.org/youtube/FF0000" alt="YouTube"></span>
+          <div><div class="chan-eyebrow">YouTube Ads</div><h3>YouTube</h3></div>
+        </div>
+        <p class="chan-desc">Video at scale — in-stream and Shorts placements that put your app in front of high-intent viewers.</p>
+        <ul class="chan-list">
+          <li><span class="tick"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>In-stream &amp; Shorts app-promo placements</li>
+          <li><span class="tick"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Hook-first video creative for retention</li>
+          <li><span class="tick"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Fed into Google App Campaigns for reach</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CREATIVE LOOP -->
+<section class="bordered">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Creative Engine</span>
+      <h2 class="sec-title">Creative is the algorithm — <span class="accent">so I loop it</span></h2>
+      <p class="sec-sub">Paid social is won on creative, not settings. Every winner comes from a fast, repeatable cycle — the ads improve because the process does.</p>
+    </div>
+
+    <div class="loop reveal">
+      <svg class="loop-svg" viewBox="0 0 360 360" aria-hidden="true">
+        <circle class="ring" cx="180" cy="180" r="130"></circle>
+        <path class="arc draw g1" d="M180,50 A130,130 0 0 1 310,180" pathLength="1"></path>
+        <path class="arc draw g2" d="M310,180 A130,130 0 0 1 180,310" pathLength="1"></path>
+        <path class="arc draw g3" d="M180,310 A130,130 0 0 1 50,180" pathLength="1"></path>
+        <path class="arc draw g4" d="M50,180 A130,130 0 0 1 180,50" pathLength="1"></path>
+        <path class="loop-arw" d="M190,50 L177,42 L177,58 Z"></path>
+        <path class="loop-arw" d="M310,190 L302,177 L318,177 Z"></path>
+        <path class="loop-arw" d="M170,310 L183,302 L183,318 Z"></path>
+        <path class="loop-arw" d="M50,170 L42,183 L58,183 Z"></path>
+      </svg>
+      <div class="loop-center"><b>Creative<br>Loop</b><span>Test · Learn · Repeat</span></div>
+
+      <div class="loop-step s-top"><div class="loop-num">01</div><h4>Hypothesis</h4><p>A sharp angle: who it's for, the pain, the promise worth testing.</p></div>
+      <div class="loop-arrow"><svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
+      <div class="loop-step s-right"><div class="loop-num">02</div><h4>Creative batch</h4><p>A batch of variations around the hook — formats, edits, UGC.</p></div>
+      <div class="loop-arrow"><svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
+      <div class="loop-step s-bottom"><div class="loop-num">03</div><h4>Test</h4><p>Ship them live and let spend plus AppsFlyer data pick the winners.</p></div>
+      <div class="loop-arrow"><svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
+      <div class="loop-step s-left"><div class="loop-num">04</div><h4>Scale winners</h4><p>Pour budget into what works, cut the rest, feed learnings back in.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MEASUREMENT (dark) -->
+<section id="measurement" class="dark">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Full-Funnel Measurement</span>
+      <h2 class="sec-title">Spend is only half the story — <span style="color:#c9bcff">I measure the rest</span></h2>
+      <p class="sec-sub">A three-layer measurement stack so you're never guessing which channel, campaign, or creative actually made money.</p>
+    </div>
+    <div class="cards-3">
+      <div class="card reveal">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <h3>AppsFlyer attribution</h3>
+        <p>Every install traced to its source — SDK, deep linking, postbacks, and cohort ROAS so you know exactly which creative and channel drove the result.</p>
+        <div class="mcard-stat"><b><span class="count" data-count="277" data-suffix="%">0</span></b><small>ROAS D7 on a live campaign</small></div>
+        <a href="/appsflyer/" class="card-link on-dark">AppsFlyer attribution <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="card reveal d1">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M4 7l8-4 8 4v10l-8 4-8-4z"/><path d="M4 7l8 4 8-4"/><path d="M12 11v10"/></svg></div>
+        <h3>RevenueCat revenue truth</h3>
+        <p>One source of truth for subscriptions across iOS &amp; Android. Trials, renewals, and churn reconciled into the real MRR behind the funnel.</p>
+        <div class="mcard-stat"><b>$<span class="count" data-count="2" data-suffix="M+">0</span></b><small>Revenue driven</small></div>
+        <a href="/revenuecat/" class="card-link on-dark">RevenueCat subscriptions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="card reveal d2">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M9 6h6"/><path d="M12 17.5h.01"/></svg></div>
+        <h3>SKAdNetwork &amp; SKAN</h3>
+        <p>Privacy-first iOS measurement. SKAdNetwork conversion values and Apple's on-device attribution wired in so campaigns keep optimizing after ATT.</p>
+        <div class="mcard-stat"><b><span class="count" data-count="2160">0</span></b><small>Non-organic installs · 30 days</small></div>
+      </div>
+    </div>
+
+    <div class="tool-pills reveal">
+      <span class="tpill"><img src="https://www.appsflyer.com/favicon.ico" alt="">AppsFlyer</span>
+      <span class="tpill"><img src="https://cdn.simpleicons.org/revenuecat/F25A5A" alt="">RevenueCat</span>
+      <span class="tpill"><img src="https://cdn.simpleicons.org/meta/0081FB" alt="">Meta Ads</span>
+      <span class="tpill"><img src="https://cdn.simpleicons.org/tiktok/000000" alt="">TikTok Ads</span>
+      <span class="tpill"><img src="https://cdn.simpleicons.org/googleads/4285F4" alt="">Google Ads</span>
+      <span class="tpill"><img src="https://cdn.simpleicons.org/apple/000000" alt="">Apple Search Ads</span>
+      <span class="tpill"><img src="https://cdn.simpleicons.org/firebase/FFCA28" alt="">Firebase</span>
+    </div>
+
+    <div class="results reveal">
+      <div class="rstat"><div class="rstat-n"><span class="count" data-count="277" data-suffix="%">0</span></div><div class="rstat-l">ROAS D7 · live campaign</div></div>
+      <div class="rstat"><div class="rstat-n">$<span class="count" data-count="2" data-suffix="M+">0</span></div><div class="rstat-l">Revenue driven</div></div>
+      <div class="rstat"><div class="rstat-n"><span class="count" data-count="2389">0</span></div><div class="rstat-l">Active subscriptions</div></div>
+      <div class="rstat"><div class="rstat-n"><span class="count" data-count="2160">0</span></div><div class="rstat-l">Paid installs · 30 days</div></div>
+    </div>
+
+    <div class="cta-row reveal">
+      <a class="cta-pill" href="/appsflyer/">AppsFlyer Attribution <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="cta-pill" href="/revenuecat/">RevenueCat Subscriptions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- FUNNEL -->
+<section>
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">The Funnel</span>
+      <h2 class="sec-title">Install to paid — <span class="accent">measured at every step</span></h2>
+      <p class="sec-sub">Growth isn't installs, it's revenue. Each stage of the funnel is instrumented with the tool built to measure it.</p>
+    </div>
+    <div class="funnel reveal">
+      <div class="fstage">
+        <div class="fbar" style="width:100%"></div>
+        <div class="fstage-eyebrow">Stage 01</div>
+        <h4>Install</h4>
+        <p>The first click to first open. Attribution ties every install back to the exact campaign, ad set, and creative that earned it.</p>
+        <span class="ftool"><img src="https://www.appsflyer.com/favicon.ico" alt="">Measured with AppsFlyer</span>
+      </div>
+      <div class="farrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="fstage">
+        <div class="fbar" style="width:66%"></div>
+        <div class="fstage-eyebrow">Stage 02</div>
+        <h4>Trial</h4>
+        <p>Onboarding into a trial start. Paywall views and trial conversions tracked in real time across iOS &amp; Android.</p>
+        <span class="ftool"><img src="https://cdn.simpleicons.org/revenuecat/F25A5A" alt="">Measured with RevenueCat</span>
+      </div>
+      <div class="farrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="fstage">
+        <div class="fbar" style="width:42%"></div>
+        <div class="fstage-eyebrow">Stage 03</div>
+        <h4>Paid subscription</h4>
+        <p>Trial to paid, renewals, and churn — the revenue that actually lands, reconciled back to each acquisition source.</p>
+        <span class="ftool"><img src="https://cdn.simpleicons.org/revenuecat/F25A5A" alt="">Measured with RevenueCat</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ASO -->
+<section class="bordered">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">App Store Optimization</span>
+      <h2 class="sec-title">Cheaper installs start <span class="accent">on the store page</span></h2>
+      <p class="sec-sub">Paid traffic converts better when the listing does. ASO lifts organic installs and lowers blended CPA at the same time.</p>
+    </div>
+    <div class="cards-4">
+      <div class="card reveal">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7.5"/><path d="M21 21l-4.3-4.3"/><path d="M8 11h6M11 8v6"/></svg></div>
+        <h3>Keyword strategy</h3>
+        <p>Research and prioritize the terms your buyers actually search — then map them into title, subtitle, and keyword fields.</p>
+      </div>
+      <div class="card reveal d1">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h10M4 19h13"/></svg></div>
+        <h3>Metadata optimization</h3>
+        <p>Titles, subtitles, and descriptions written for ranking and clarity — every character earning its place.</p>
+      </div>
+      <div class="card reveal d2">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="14" y="4" width="7" height="16" rx="1.5"/></svg></div>
+        <h3>Screenshot A/B testing</h3>
+        <p>Test screenshot sets and app previews to find the story that converts browsers into installs.</p>
+      </div>
+      <div class="card reveal d3">
+        <div class="icon-tile"><svg viewBox="0 0 24 24"><path d="M3 17l5-5 4 3 6-7"/><path d="M15 8h4v4"/><path d="M3 21h18"/></svg></div>
+        <h3>Conversion-rate optimization</h3>
+        <p>Turn more product-page views into downloads — the single lever that improves every channel feeding the store.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="rev-sec">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Testimonials</span>
+      <h2 class="sec-title">Growth clients, in their words</h2>
+      <p class="sec-sub">5.0★ across Fiverr &amp; Upwork — including the founders whose attribution and subscription stacks I built and scaled.</p>
+    </div>
+    <div class="rev-carousel">
+      <div class="rev-col"><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-01.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-04.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-07.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-10.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-13.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-16.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-19.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-01.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-04.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-07.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-10.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-13.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-16.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-19.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure></div>
+      <div class="rev-col rev-down"><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-02.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-05.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-08.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-11.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-14.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-17.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-20.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-02.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-05.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-08.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-11.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-14.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-17.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-20.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure></div>
+      <div class="rev-col"><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-03.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-06.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-09.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-12.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-15.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-18.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-21.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-03.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-06.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-09.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-12.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-15.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-18.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure><figure class="rev-shot"><img loading="lazy" src="/assets/reviews/review-21.png" alt="Verified 5-star client review from Fiverr / Upwork"></figure></div>
+    </div>
+    <div class="rev-proof reveal">
+      <span class="rev-chip"><span class="st">★★★★★</span> <b>5.0</b> on Fiverr</span>
+      <span class="rev-chip"><b>Top Rated</b> seller</span>
+      <span class="rev-chip"><b>5.0</b> on Upwork</span>
+      <span class="rev-chip">Repeat clients across <b>US · Europe · Asia</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="reveal">
+    <span class="sec-tag">Let's scale</span>
+    <h2>Got an app live? Let's <span class="accent">grow it.</span></h2>
+    <p>See the apps behind the numbers — and the AI development that ships them fast enough to scale.</p>
+    <div class="hero-actions">
+      <a href="/apps/" class="btn-lg btn-primary">View All Apps <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="/ai-apps/" class="btn-lg btn-ghost">AI Development</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-top">
+    <div>
+      <a class="foot-logo" href="/"><span class="logo-mark"><img src="/assets/muneeb-avatar.jpg" alt="Muneeb Arshad" onerror="this.remove()">M</span>Muneeb Arshad</a>
+      <p class="foot-desc">Mobile app developer &amp; growth marketer — building AI-powered apps and scaling them with performance marketing. 100+ apps shipped worldwide.</p>
+    </div>
+    <div>
+      <p class="foot-col-t">Pages</p>
+      <div class="foot-links">
+        <a href="/">Home</a>
+        <a href="/apps/">All Apps</a>
+        <a href="/ai-apps/">AI Development</a>
+        <a href="/growth/">Growth Marketing</a>
+        <a href="/revenuecat/">Subscriptions &amp; RevenueCat</a>
+        <a href="/appsflyer/">Attribution &amp; AppsFlyer</a>
+      </div>
+    </div>
+    <div>
+      <p class="foot-col-t">Solutions</p>
+      <div class="foot-links">
+        <a href="/beauty/">Beauty &amp; Style AI</a>
+        <a href="/wellness/">Health &amp; Wellness</a>
+        <a href="/finance/">Trading &amp; Finance</a>
+        <a href="/productivity/">Productivity &amp; Lifestyle</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p>© 2026 Muneeb Arshad. All rights reserved.</p>
+    <p>Mobile App Developer · Growth Marketer</p>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30),{passive:true});
+const hb=document.getElementById('hb'),mm=document.getElementById('mm');
+hb.addEventListener('click',()=>{hb.classList.toggle('open');mm.classList.toggle('open')});
+function closeMenu(){hb.classList.remove('open');mm.classList.remove('open')}
+document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!mm.contains(e.target))closeMenu()});
+
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const easeOut=t=>1-Math.pow(1-t,4);
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function finalVal(el){const d=+(el.dataset.decimals||0);return (el.dataset.prefix||'')+(d?parseFloat(el.dataset.count).toFixed(d):Math.round(el.dataset.count).toLocaleString('en-US'))+(el.dataset.suffix||'')}
+function runCount(el){
+ const target=parseFloat(el.dataset.count),dec=+(el.dataset.decimals||0),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';
+ const dur=1500,t0=performance.now();let done=false;
+ function step(now){if(done)return;const p=Math.min((now-t0)/dur,1),v=target*easeOut(p);
+  el.textContent=pre+(dec?v.toFixed(dec):Math.round(v).toLocaleString('en-US'))+suf;
+  if(p<1)requestAnimationFrame(step); else{done=true;el.textContent=finalVal(el);}}
+ requestAnimationFrame(step);
+ setTimeout(()=>{if(!done){done=true;el.textContent=finalVal(el);}},dur+400);
+}
+const cio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){reduce?e.target.textContent=finalVal(e.target):runCount(e.target);cio.unobserve(e.target)}})},{threshold:.5});
+document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+</script>
+</body>
+</html>
